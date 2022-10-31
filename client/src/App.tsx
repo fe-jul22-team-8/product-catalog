@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { PhonesPage } from "./components/pages/PhonesPage";
+import './App.scss';
 
 function App() {
   return (
