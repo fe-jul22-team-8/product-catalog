@@ -1,13 +1,15 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { PhonesPage } from "./components/pages/PhonesPage";
 import './App.scss';
+import { Header } from "./components/pages/Header/header";
 
 function App() {
   return (
     <>
+      <Header />
+
       <nav>
         <Link to="/phones">
-          Phones
         </Link>
       </nav>
 
