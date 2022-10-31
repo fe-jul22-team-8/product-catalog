@@ -21,7 +21,7 @@
     "ecmaVersion": 12,
     "project": "tsconfig.json",
     "sourceType": "module",
-    "tsconfigRootDir": "./"
+    "tsconfigRootDir": "./client"
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "rules": {
