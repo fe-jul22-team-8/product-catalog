@@ -3,7 +3,7 @@ const BASE_URL = 'http://localhost:3000';
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
 function wait(delay: number) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
 }
@@ -23,7 +23,7 @@ function request<T>(
   }
   return wait(300)
     .then(() => fetch(BASE_URL + url, options))
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error();
       }

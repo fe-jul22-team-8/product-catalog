@@ -37,7 +37,7 @@ export const Header = () => {
         />
       </div>
 
-      <div className='header__burger'>
+      <div className="header__burger">
         <Link to="/" className="burger_menu" />
       </div>
     </div>

@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { getPhones } from "../api/phones";
-import { Card } from "../components/Card";
-import { Loader } from "../components/Loader";
-import { Phone } from "../types/Phone";
+import { useEffect, useState } from 'react';
+import { getPhones } from '../api/phones';
+import { Card } from '../components/Card';
+import { Loader } from '../components/Loader';
+import { Phone } from '../types/Phone';
 
 interface Props {
-  page: number,
-  pageCount: number,
-  resultPerPage: Phone[],
+  page: number;
+  pageCount: number;
+  resultPerPage: Phone[];
 }
 
 export const PhonesPage = () => {
@@ -16,27 +16,28 @@ export const PhonesPage = () => {
   const [isError, setIsError] = useState(false); // need for error message and reload button
   const [isLoading, setIsLoading] = useState(false);
 
-  const loadData =async () => {
+  const loadData = async () => {
     try {
       const phonesFromServer = await getPhones('/phones');
-      setIsLoading(true)
-      setData(phonesFromServer)
-      setPhonesList(phonesFromServer.resultPerPage.slice(0, 8))
-    } catch (error){
-      setIsError(true)
+      setIsLoading(true);
+      setData(phonesFromServer);
+      setPhonesList(phonesFromServer.resultPerPage.slice(0, 8));
+    } catch (error) {
+      setIsError(true);
     }
-  }
+  };
   useEffect(() => {
     loadData();
   }, []);
-  console.log(phonesList)
-  return(
-  <>
-    <h1 className="title">Phones Page</h1>
-    {isLoading
-      ? <Card phonesList={phonesList}/> // need to rewrite with PhonesList component
-      : <Loader />
-    }
-  </>
-  )
+  console.log(phonesList);
+  return (
+    <>
+      <h1 className="title">Phones Page</h1>
+      {isLoading ? (
+        <Card phonesList={phonesList} /> // need to rewrite with PhonesList component
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
 };
