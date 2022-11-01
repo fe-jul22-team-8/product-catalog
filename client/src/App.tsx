@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { PhonesPage } from "./components/pages/PhonesPage";
+import { PhonesPage } from "./pages/PhonesPage";
 import './App.scss';
-import { Header } from "./components/pages/Header";
+import { Header } from "./components/Header";
 
 function App() {
   return (
