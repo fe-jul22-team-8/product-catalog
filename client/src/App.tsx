@@ -1,8 +1,8 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import { PhonesPage } from './pages/PhonesPage';
 import './App.scss';
-import { Header } from "./components/Header/Header";
-import { Footer } from './components/Footer'
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer';
 
 function App() {
   return (

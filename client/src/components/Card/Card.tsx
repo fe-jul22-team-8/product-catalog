@@ -1,12 +1,12 @@
 import './Card.scss';
 
 interface Props {
-  name: string,
-  price:number,
-  fullPrice:number,
-  capacity:string,
-  ram:string,
-  screen:string,
+  name: string;
+  price: number;
+  fullPrice: number;
+  capacity: string;
+  ram: string;
+  screen: string;
 }
 
 export const Card: React.FC<Props> = ({
@@ -17,7 +17,7 @@ export const Card: React.FC<Props> = ({
   ram,
   screen,
 }) => {
-  console.log('hello')
+  console.log('hello');
   return (
     <div className="card">
       <img
@@ -47,5 +47,5 @@ export const Card: React.FC<Props> = ({
         <button className="card_wishlist"></button>
       </div>
     </div>
-  )
+  );
 };

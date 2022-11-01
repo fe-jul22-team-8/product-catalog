@@ -33,10 +33,7 @@ export const PhonesPage = () => {
   return (
     <>
       <h1 className="title">Phones Page</h1>
-      {isLoading 
-      ? <PhonesList phonesList={phonesList} /> 
-      : <Loader />
-      }
+      {isLoading ? <PhonesList phonesList={phonesList} /> : <Loader />}
     </>
   );
 };
