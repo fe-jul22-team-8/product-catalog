@@ -1,0 +1,149 @@
+// @import url('../../fonts/Mont-Bold.otf');
+
+html,
+body,
+ul,
+li,
+div {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+.burger {
+	background-color: #fff;
+	height: 100vh;
+	padding: 0;
+	overflow-x: hidden;
+
+	&__list {
+		box-sizing: border-box;
+		list-style: none;
+	}
+
+	&__item {
+		text-align: center;
+		margin-bottom: 32px;
+
+		&:first-child {
+			margin-top: 32px;
+		}
+
+		&:last-child {
+			margin-bottom: 260px;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		letter-spacing: 0.04em;
+		font-family: sans-serif;
+		color: #89939a;
+		transition-duration: 0.5s;
+		font-weight: 800;
+		font-size: 12px;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #313237;
+			padding-bottom: 6px;
+			border-bottom: 2px solid #313237;
+			transition-duration: 0.5s;
+		}
+	}
+
+	&__top {
+		display: flex;
+		height: 55px;
+		width: 100%;
+		align-items: center;
+		padding: 0px;
+		gap: 16px;
+		border-bottom: 1px solid #E2E6E9;
+
+		&-cross {
+			display: flex;
+			width: 60px;
+			height: 55px;
+			position: absolute;
+			right: 0;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #E2E6E9;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 70px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		border-top: 1px solid #E2E6E9;
+		width: 100%;
+
+		&-basket {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			right: 0;
+			width: 50%;
+			height: 70px;
+			border-left: 1px solid #E2E6E9;
+
+			&:focus {
+				border-bottom: 2px solid #313237
+			}
+		}
+
+		&-heart {
+			height: 15px;
+		}
+	}
+
+	&__favourites {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		width: 50%;
+		height: 70px;
+		
+
+		&:focus {
+			border-bottom: 2px solid #313237;
+		}
+	}
+}
+
+.basket-img {
+	height: 20px;
+}
+
+.mainLogo {
+	display: flex;
+	align-items: center;
+	height: 55px;
+	width: 250px;
+	padding-left: 10px;
+}
+
+.logo-img {
+	width: 85px;
+}
+
+.cross-icon {
+	width: 15px;
+	transition: transform 1s;
+
+	&:hover {
+		transform: rotate(180deg)
+	}
+}
