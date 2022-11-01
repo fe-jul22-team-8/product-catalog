@@ -1,7 +1,7 @@
 import { HeaderList } from './HeaderList/HeaderList';
 import { Link, NavLink } from 'react-router-dom';
 import '../Header/header.scss';
-import logo from './img/Logo.png';
+import logo from '../../..img/Logo.png';
 
 export const Header = () => {
   return (
