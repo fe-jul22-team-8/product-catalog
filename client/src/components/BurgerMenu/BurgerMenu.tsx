@@ -4,7 +4,7 @@ import logo from '../../icons/logo.png';
 import cross from '../../icons/cross.png';
 import basket from '../../icons/basket.png';
 
-function BurgerMenu() {
+export function BurgerMenu() {
   return (
     <div className="burger">
       <section className="burger__top">
@@ -54,5 +54,3 @@ function BurgerMenu() {
     </div>
   );
 }
-
-export default BurgerMenu;
