@@ -1,9 +1,12 @@
+import { BurgerMenu } from "../components/BurgerMenu/BurgerMenu";
 import { Card } from "../components/Card";
+import { Title } from "../components/Title/Title";
 import "./PhonesPage.scss";
 
 export const PhonesPage = () => (
   <>
-    <h1 className="title">Phones Page</h1>
+    {/* <BurgerMenu /> */}
+    <Title />
     <div className="container">
       <Card />
       <Card />

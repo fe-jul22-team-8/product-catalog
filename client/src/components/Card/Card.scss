@@ -29,6 +29,7 @@ button {
 }
 
 .card {
+  margin-top: 55px;
   padding: 32px;
   height: 440px;
   width: 287px;
@@ -46,6 +47,10 @@ button {
   @include onTablet {
     height: 506px;
     width: 272px;
+  }
+
+  @include onMobile {
+    margin-top: 30px;
   }
 
   &_logo {
