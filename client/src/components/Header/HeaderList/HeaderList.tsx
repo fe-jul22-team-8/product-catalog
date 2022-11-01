@@ -10,7 +10,7 @@ export const HeaderList: React.FC = () => (
       Home
     </NavLink>
     <NavLink
-      to="/Phone"
+      to="/phones"
       className="header__link"
     >
       Phones
