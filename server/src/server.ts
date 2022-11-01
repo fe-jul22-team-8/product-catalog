@@ -1,15 +1,12 @@
-import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import * as server from './createServer.js';
 
 dotenv.config();
 
-const app: Express = express();
+const app = server.createServer();
 const port = process.env.PORT;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express App with typescript');
-});
-
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`⚡️ Server is running at http://localhost:${port}`);
 });
