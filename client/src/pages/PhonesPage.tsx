@@ -1,8 +1,42 @@
+import { useEffect, useState } from "react";
+import { getPhones } from "../api/phones";
 import { Card } from "../components/Card";
+import { Loader } from "../components/Loader";
+import { Phone } from "../types/Phone";
 
-export const PhonesPage = () => (
+interface Props {
+  page: number,
+  pageCount: number,
+  resultPerPage: Phone[],
+}
+
+export const PhonesPage = () => {
+  const [phonesList, setPhonesList] = useState<Phone[]>([]);
+  const [data, setData] = useState<Props | null>(null); // need for pagination
+  const [isError, setIsError] = useState(false); // need for error message and reload button
+  const [isLoading, setIsLoading] = useState(false);
+
+  const loadData =async () => {
+    try {
+      const phonesFromServer = await getPhones('/phones');
+      setIsLoading(true)
+      setData(phonesFromServer)
+      setPhonesList(phonesFromServer.resultPerPage.slice(0, 8))
+    } catch (error){
+      setIsError(true)
+    }
+  }
+  useEffect(() => {
+    loadData();
+  }, []);
+  console.log(phonesList)
+  return(
   <>
     <h1 className="title">Phones Page</h1>
-    <Card />
+    {isLoading
+      ? <Card phonesList={phonesList}/> // need to rewrite with PhonesList component
+      : <Loader />
+    }
   </>
-);
+  )
+};

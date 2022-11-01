@@ -1,6 +1,13 @@
+import { Phone } from '../../types/Phone';
 import './Card.scss';
 
-export const Card = () => (
+interface Props{
+    phonesList: Phone[],
+}
+
+export const Card: React.FC<Props> = ({ phonesList }) => {
+    const phone = phonesList[0];
+    return (
     <div className="card">
         <img
             src="https://i.imgur.com/yesSOSx.png"
@@ -8,14 +15,14 @@ export const Card = () => (
             className="card_logo"
         />
         <span className='card_title'>
-            Apple iPhone Xs 64GB Silver (iMT9G2FSA)
+            {phone.name} (iMT9G2FSA)
         </span>
         <div className='card_price'>
             <span className='card_newPrice'>
-                $500
+              ${phone.price}
             </span>
             <span className='card_oldPrice'>
-                $800
+              ${phone.fullPrice}
             </span>
         </div>
         <div className='card_description'>
@@ -23,7 +30,7 @@ export const Card = () => (
                 Screen
             </span>
             <span className='card_value'>
-                5.8" OLED
+                {phone.screen}
             </span>
         </div>
         <div className='card_description'>
@@ -31,7 +38,7 @@ export const Card = () => (
                 Capacity
             </span>
             <span className='card_value'>
-                128 GB
+                {phone.capacity}
             </span>
         </div>
         <div className='card_description'>
@@ -39,7 +46,7 @@ export const Card = () => (
                 RAM
             </span>
             <span className='card_value'>
-                4GB
+                {phone.ram}
             </span>
         </div>
         <div className='card_buttons'>
@@ -50,7 +57,5 @@ export const Card = () => (
                 
             </button>
         </div>
-
-
     </div>
-);
+)};
