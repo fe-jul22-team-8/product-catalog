@@ -11,7 +11,7 @@
   padding-left: 16px;
 
   background-color: $colorWhite;
-  box-shadow: 0px 1px 0px #E2E6E9;
+  box-shadow: 0px 1px 0px $colorElements;
 
   @include onDesktop {
     padding-left: 24px;
@@ -56,13 +56,13 @@
     }
 
     &-favourites {
-      background-image: url(../../img/favourites.png);
+      background-image: url(../../icons/favourites.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
 
     &-cart {
-      background-image: url(../../img/Cart.png);
+      background-image: url(../../icons/cart.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -74,7 +74,7 @@
     height: 48px;
     border: 1px solid $colorElements;
   
-    background-image: url(../../img/burger_icon.png);
+    background-image: url(../../icons/union.svg);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;

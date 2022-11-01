@@ -1,0 +1,121 @@
+@import "../../utils/mixin";
+@import "../../utils/reset";
+@import "../../utils/vars";
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../fonts/Mont-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 16px;
+
+  border-top: 1px solid $colorElements;
+  background-color: $colorWhite;
+
+  @include onTablet {
+    padding: 0 32px;
+  }
+
+  @include onDesktop {
+    padding: 0 152px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      height: 96px;
+      margin-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-items: center;
+    margin: 32px 0;
+    width: 89px;
+    height: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 13.5px
+    }
+
+    @include onDesktop {
+      gap: 107px;
+    }
+  }
+
+  &__list-item {
+    font-family: 'Mont-Bold';
+    color: $colorSecondary;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 11px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    font-family: Mont;
+    color: $colorSecondary;
+    font-weight: 600;
+    font-size: 12px;
+    border: none;
+    background: $colorWhite;
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin-top: 32px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #B4BDC4;
+      margin-left: 16px;
+    }
+  }
+};
