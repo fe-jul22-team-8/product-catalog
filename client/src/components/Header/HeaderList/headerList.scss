@@ -1,6 +1,6 @@
-@import "../../../utils/mixin";
-@import "../../../utils/reset";
-@import "../../../utils/vars";
+@import '../../../utils/mixin';
+@import '../../../utils/reset';
+@import '../../../utils/vars';
 @font-face {
   font-family: 'Mont';
   font-style: normal;
@@ -51,7 +51,7 @@
     &:hover {
       color: $colorPrimary;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 26.5px;
         bottom: 0;

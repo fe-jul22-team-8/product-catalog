@@ -1,6 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../icons/logo.png';
-import arrow from '../../icons/arrow.svg'
+import arrow from '../../icons/arrow.svg';
 import './footer.scss';
 
 export const Footer = () => {
@@ -12,22 +12,13 @@ export const Footer = () => {
         </Link>
 
         <div className="footer__list">
-          <NavLink
-            to="/Home"
-            className="footer__list-item"
-          >
+          <NavLink to="/Home" className="footer__list-item">
             Github
           </NavLink>
-          <NavLink
-            to="/Phone"
-            className="footer__list-item"
-          >
+          <NavLink to="/Phone" className="footer__list-item">
             Contacts
           </NavLink>
-          <NavLink
-            to="/Tablets"
-            className="footer__list-item"
-          >
+          <NavLink to="/Tablets" className="footer__list-item">
             Rights
           </NavLink>
         </div>

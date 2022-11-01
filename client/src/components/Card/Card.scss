@@ -1,5 +1,5 @@
-@import "../../utils/mixin";
-@import "../../utils/vars";
+@import '../../utils/mixin';
+@import '../../utils/vars';
 
 @font-face {
   font-family: 'Mont-Bold';
@@ -57,7 +57,7 @@ button {
       height: 208px;
       width: 196px;
     }
-  
+
     @include onTablet {
       height: 208px;
       width: 196px;

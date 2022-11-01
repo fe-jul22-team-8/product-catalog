@@ -1,0 +1,153 @@
+@import '../../utils/reset';
+@import '../../utils/vars';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../fonts/Mont-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+html {
+  height: 100%;
+}
+
+.burger {
+  background-color: $colorWhite;
+  height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+
+  &__list {
+    box-sizing: border-box;
+    list-style: none;
+  }
+
+  &__item {
+    text-align: center;
+    margin-bottom: 32px;
+
+    &:first-child {
+      margin-top: 32px;
+    }
+
+    &:last-child {
+      margin-bottom: 260px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    font-family: 'Mont-Bold';
+    color: $colorSecondary;
+    transition-duration: 0.5s;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $colorPrimary;
+      padding-bottom: 6px;
+      border-bottom: 2px solid $colorPrimary;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__top {
+    display: flex;
+    height: 55px;
+    width: 100%;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    border-bottom: 1px solid $colorElements;
+
+    &-cross {
+      display: flex;
+      width: 60px;
+      height: 55px;
+      position: absolute;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $colorElements;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid $colorElements;
+    width: 100%;
+
+    &-basket {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 70px;
+      border-left: 1px solid $colorElements;
+
+      &:focus {
+        border-bottom: 2px solid $colorPrimary;
+      }
+    }
+
+    &-heart {
+      height: 15px;
+    }
+  }
+
+  &__favourites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 70px;
+
+    &:focus {
+      border-bottom: 2px solid $colorPrimary;
+    }
+  }
+}
+
+.basket-img {
+  height: 20px;
+}
+
+.mainLogo {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  width: 250px;
+  padding-left: 10px;
+}
+
+.logo-img {
+  width: 85px;
+}
+
+.cross-icon {
+  width: 15px;
+  transition: transform 1s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}

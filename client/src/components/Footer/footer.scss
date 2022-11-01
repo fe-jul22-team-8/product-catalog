@@ -1,6 +1,6 @@
-@import "../../utils/mixin";
-@import "../../utils/reset";
-@import "../../utils/vars";
+@import '../../utils/mixin';
+@import '../../utils/reset';
+@import '../../utils/vars';
 
 @font-face {
   font-family: 'Mont-Bold';
@@ -63,7 +63,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 13.5px
+      gap: 13.5px;
     }
 
     @include onDesktop {
@@ -115,8 +115,8 @@
     &-icon {
       width: 32px;
       height: 32px;
-      border: 1px solid #B4BDC4;
+      border: 1px solid #b4bdc4;
       margin-left: 16px;
     }
   }
-};
+}

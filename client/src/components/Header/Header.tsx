@@ -9,12 +9,7 @@ export const Header = () => {
       <div className="header__nav">
         <div className="header__icon">
           <Link to="/">
-            <img
-              src={logo}
-
-              alt="logo"
-              className="header__logo"
-            />
+            <img src={logo} alt="logo" className="header__logo" />
           </Link>
         </div>
 
@@ -38,7 +33,7 @@ export const Header = () => {
         />
       </div>
 
-      <div className='header__burger'>
+      <div className="header__burger">
         <Link to="/" className="burger_menu" />
       </div>
     </div>
