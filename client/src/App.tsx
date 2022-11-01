@@ -1,8 +1,8 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { PhonesPage } from "./components/pages/PhonesPage";
+import { PhonesPage } from "./pages/PhonesPage";
 import './App.scss';
-import { Header } from "./components/pages/Header/header";
-import { Footer } from "./components/pages/Footer/Footer";
+import { Header } from "./components/Header";
+
 
 function App() {
   return (
@@ -22,8 +22,6 @@ function App() {
           />
         </Routes>
       </main>
-
-      <Footer />
     </>
   );
 }
