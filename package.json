@@ -1,18 +1,19 @@
 {
-  "name": "product_catalog",
+  "name": "product-catalog",
+  "version": "1.0.0",
+  "description": "",
   "main": "server.ts",
   "scripts": {
-    "start": "node ./server/src/server.ts"
+    "start": "node ./server/src/server.ts",
   },
-  "keywords": [
-    "heroku"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.9.8"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fe-jul22-team-8/product-catalog.git"
   },
-  "engines": {
-    "node": "14.x"
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fe-jul22-team-8/product-catalog/issues"
+  },
+  "homepage": "https://github.com/fe-jul22-team-8/product-catalog#readme"
 }
