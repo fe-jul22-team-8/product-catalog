@@ -1,13 +1,16 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { PhonesPage } from "./components/pages/PhonesPage";
 import './App.scss';
+import { Header } from "./components/pages/Header/header";
+import { Footer } from "./components/pages/Footer/Footer";
 
 function App() {
   return (
     <>
+      <Header />
+
       <nav>
         <Link to="/phones">
-          Phones
         </Link>
       </nav>
 
@@ -19,6 +22,8 @@ function App() {
           />
         </Routes>
       </main>
+
+      <Footer />
     </>
   );
 }
