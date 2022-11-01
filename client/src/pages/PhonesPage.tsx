@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getPhones } from '../api/phones';
-import { Card } from '../components/Card';
 import { Loader } from '../components/Loader';
+import { PhonesList } from '../components/PhonesList';
 import { Phone } from '../types/Phone';
 
 interface Props {
@@ -33,11 +33,10 @@ export const PhonesPage = () => {
   return (
     <>
       <h1 className="title">Phones Page</h1>
-      {isLoading ? (
-        <Card phonesList={phonesList} /> // need to rewrite with PhonesList component
-      ) : (
-        <Loader />
-      )}
+      {isLoading 
+      ? <PhonesList phonesList={phonesList} /> 
+      : <Loader />
+      }
     </>
   );
 };

@@ -4,7 +4,7 @@ import * as server from './createServer.js';
 dotenv.config();
 
 const app = server.createServer();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

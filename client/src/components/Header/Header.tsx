@@ -1,7 +1,7 @@
 import { HeaderList } from './HeaderList';
 import { Link, NavLink } from 'react-router-dom';
 import '../Header/header.scss';
-// import logo from '../../img/logo.png';
+import logo from '../../icons/logo.png';
 
 export const Header = () => {
   return (
@@ -10,7 +10,8 @@ export const Header = () => {
         <div className="header__icon">
           <Link to="/">
             <img
-              // src={logo}
+              src={logo}
+
               alt="logo"
               className="header__logo"
             />

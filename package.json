@@ -1,10 +1,11 @@
 {
-  "name": "package",
+  "name": "product-catalog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku-start": "ts-node \"./server/src/server.ts\"",
+    "start": "node ./server/src/server.ts"
   },
   "repository": {
     "type": "git",
