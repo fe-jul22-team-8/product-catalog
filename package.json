@@ -1,11 +1,11 @@
 {
-  "name": "package",
+  "name": "product-catalog",
   "version": "1.0.0",
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node ./server/src/server.ts"
+    "start": "ts-node-esm ./server/src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
