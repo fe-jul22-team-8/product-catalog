@@ -8,7 +8,7 @@ import { CartItem } from './components/Cart-Item/CartItem';
 function App() {
   return (
     <>
-      {/* <Header />
+      <Header />
 
       <nav>
         <Link to="/phones"></Link>
@@ -18,11 +18,8 @@ function App() {
         <Routes>
           <Route path="/phones" element={<PhonesPage />} />
         </Routes>
-      </main> */}
-
-      <CartItem />
-
-      {/* <Footer/> */}
+      </main>
+      <Footer/>
     </>
   );
 }
