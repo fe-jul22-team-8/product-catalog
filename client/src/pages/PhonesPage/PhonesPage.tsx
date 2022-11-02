@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getPhones } from '../api/phones';
-import { Loader } from '../components/Loader';
-import { PhonesList } from '../components/PhonesList';
-import { Phone } from '../types/Phone';
+import { getPhones } from '../../api/phones';
+import { Loader } from '../../components/Loader';
+import { PhonesList } from '../../components/PhonesList';
+import { Phone } from '../../types/Phone';
 import styles from './PhonesPage.module.scss';
 
 interface Props {

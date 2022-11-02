@@ -1,0 +1,227 @@
+@import '../../utils/mixin';
+@import '../../utils/vars';
+@import '../../utils/reset';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: bold;
+  font-weight: 900;
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+.container {
+  max-width: 1136px;
+  padding: 25px 16px 0px;
+
+  @include onTablet {
+    padding: 41px 24px 0px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 41px 0 0;
+    margin: 0 auto;
+  }
+}
+
+.title {
+  display: flex;
+
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  @media (min-width: 640px) and (max-width: 900px) {
+    max-width: 560px;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  &__arrow {
+    transform: scaleX(-1);
+    margin-right: 10px;
+    margin-left: 5px;
+    height: 10px;
+  }
+
+  &__arrowText {
+    font-family: 'Mont';
+    font-size: 12px;
+    line-height: 15px;
+    color: $colorSecondary;
+  }
+
+  &__headline {
+    font-family: 'Mont-Bold';
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    color: $colorPrimary;
+
+    @include onMobile {
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+}
+
+.CartContainer {
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.CartPages {
+  gap: 16px;
+  max-width: 288px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 640px) and (max-width: 900px) {
+    max-width: 592px;
+  }
+
+  @include onDesktop {
+    max-width: 752px;
+  }
+
+  &__headline {
+    margin-top: 40px;
+    font-family: 'Mont-Bold';
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    color: $colorPrimary;
+
+    @include onMobile {
+      margin-top: 24px;
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    @media (min-width: 640px) and (max-width: 900px) {
+      flex-direction: column;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__cost-wrapper {
+    width: 368px;
+    border: 1px solid rgb(237, 25, 25);
+
+    @media (min-width: 640px) and (max-width: 900px) {
+      width: 560px;
+    }
+
+    @include onMobile {
+      width: 270px;
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 752px;
+
+    @media (min-width: 640px) and (max-width: 900px) {
+      max-width: 592px;
+    }
+
+    @include onMobile {
+      max-width: 288px;
+    }
+  }
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 368px;
+  padding: 20px 0;
+  border: 1px solid $colorElements;
+
+  &__total {
+    font-family: 'Mont-Bold';
+    font-weight: 800;
+    font-size: 32px;
+    color: $colorPrimary;
+
+    line-height: 41px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  &__count {
+    font-family: 'Mont';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+
+    margin: 5px 20px 16px;
+    color: $colorSecondary;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $colorElements;
+  }
+
+  &__button {
+    font-family: 'Mont';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: $colorWhite;
+    background: #313237;
+
+    width: 240px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 300ms background-color;
+
+    @include onTablet {
+      width: 544px;
+      margin: 0 24px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 320px;
+    }
+
+    &:hover {
+      background-color: rgba(217, 208, 32, 0.4);
+      color: black;
+    }
+  }
+}
