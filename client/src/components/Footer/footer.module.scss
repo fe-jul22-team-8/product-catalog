@@ -17,8 +17,8 @@
 }
 
 .footer {
-  // position: fixed;
-  bottom: 0;
+  // bottom: 0;
+  // position: absolute;
   width: 100%;
   padding: 0 16px;
   margin-top: 80px;
@@ -71,7 +71,7 @@
     }
   }
 
-  &__list-item {
+  &__item {
     font-family: 'Mont-Bold';
     color: $colorSecondary;
     font-weight: 700;
@@ -111,12 +111,12 @@
     @include onTablet {
       margin-top: 0;
     }
+  }
 
-    &-icon {
-      width: 32px;
-      height: 32px;
-      border: 1px solid #b4bdc4;
-      margin-left: 16px;
-    }
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #b4bdc4;
+    margin-left: 16px;
   }
 }
