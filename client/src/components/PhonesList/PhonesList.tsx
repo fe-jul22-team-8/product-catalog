@@ -25,13 +25,12 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
-  // console.log(phonesList);
   return (
     <>
       <Title count={phonesList.length} />
       <div className={styles.container}>
 
-        {phonesList.map(
+        {phonesList.slice(start - 1, end).map(
           ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card
               key={id}
