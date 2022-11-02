@@ -25,7 +25,7 @@ export const Header = () => {
             "
         />
         <NavLink
-          to="/"
+          to="/cart"
           className="
               header__item-link
               header__item-link-cart
