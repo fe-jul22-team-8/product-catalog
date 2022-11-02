@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/fe-jul22-team-8/product-catalog#readme",
   "dependencies": {
-    "typescript: npm i typescript -s"
+    "typescript": "^4.8.4"
   }
 }
