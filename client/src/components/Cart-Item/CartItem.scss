@@ -1,0 +1,136 @@
+@import '../../utils/_vars';
+@import '../../utils/_reset';
+@import '../../utils/_mixin.scss';
+
+.cartItem {
+  @include onTablet {
+    height: 128px;
+    width: 592px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+    width: 752px;
+    height: 128px;
+  }
+
+  width: 288px;
+  height: 160px;
+  border: 1px solid #E2E6E9;
+
+  &__info {
+    @include onDesktop {
+      margin-top: 0;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    margin-top: 25px;
+  }
+
+  &__delete-button {
+    padding-left: 20px;
+    padding-right: 27px;
+    cursor: pointer;
+  }
+
+  &__delete-button-img {
+    width: 13px;
+  }
+
+  &__img {
+    @include onTablet {
+      padding-right: 31px;
+    }
+    @include onDesktop {
+      padding-right: 31px;
+    }
+
+    padding-right: 23px;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    
+    @include onDesktop {
+      width: 336px;
+      padding-right: 0;
+    }
+    @include onTablet {
+      width: 176px;
+      padding-right: 0;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: $colorPrimary;
+
+    padding-right: 16px;
+  }
+
+  &__count {
+    @include onTablet {
+      padding-left: 24px;
+    }
+    @include onDesktop {
+      padding-left: 24px;
+    }
+
+    display: inline-flex;
+    align-items: center;
+
+    padding-left: 16px;
+
+    &-button {
+      display: flex;
+      font-size: 30px;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #b4bdc4;
+      cursor: pointer;
+      transition: .5s;
+
+      &:hover {
+        background-color: #dae3ea;
+        transition: .5s;
+      }
+
+      &-symbol {
+        width: 10px;
+      }
+    }
+
+    &-number {
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      padding-right: 14px;
+      padding-left: 14px;
+    }
+  }
+
+  &__price {
+    @include onTablet {
+      padding-left: 53px;
+    }
+    @include onDesktop {
+      padding-left: 53px;
+      padding-right: 24px;
+    }
+
+    font-family: 'Mont-Regular';
+    font-weight: bolder;
+    font-size: 22px;
+
+    display: inline-flex;
+    padding-left: 110px;
+  }
+}
