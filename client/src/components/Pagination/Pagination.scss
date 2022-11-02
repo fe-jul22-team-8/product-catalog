@@ -1,0 +1,91 @@
+@import '../../utils/mixin';
+@import '../../utils/vars';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: bold;
+  font-weight: 900;
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul > li {
+  display: inline-block;
+}
+
+.pagination {
+  margin: 40px auto;
+  max-width: 1136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 900px) and (max-width: 1199px) {
+    max-width: 845px;
+  }
+
+  @media (min-width: 640px) and (max-width: 900px) {
+    max-width: 560px;
+  }
+
+  @include onMobile {
+    max-width: 270px;
+  }
+}
+
+.page-item {
+  border: 1px solid #e2e6e9;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+  @include onMobile {
+    margin-top: 8px;
+  }
+  transition: box-shadow 0.3s;
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
+
+.page-link {
+  display: inline-block;
+  padding: 8px 16px;
+  font-family: 'Mont-Bold';
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: $colorPrimary;
+}
+
+.page-active {
+  background: #313237;
+  color: $colorWhite;
+}
+
+.link-active {
+  color: $colorWhite;
+}
+
+.page-arrow {
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 16px 19px;
+}
+
+.right {
+  background-image: url('../../icons/greyArrowRight.svg');
+}
+
+.left {
+  background-image: url('../../icons/greyArrowLeft.svg');
+}
