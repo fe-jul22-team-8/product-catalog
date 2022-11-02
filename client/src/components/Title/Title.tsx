@@ -3,7 +3,7 @@ import house from '../../icons/house.svg';
 import arrow from '../../icons/arrowRight.svg';
 
 interface Props {
-    count: number;
+  count: number;
 }
 
 export const Title: React.FC<Props> = ({ count }) => (

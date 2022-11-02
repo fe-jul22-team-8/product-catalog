@@ -18,7 +18,7 @@ export const Card: React.FC<Props> = ({
   capacity,
   ram,
   screen,
-  image
+  image,
 }) => {
   console.log('hello');
   return (
