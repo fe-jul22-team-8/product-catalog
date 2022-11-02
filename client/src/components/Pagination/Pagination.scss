@@ -43,43 +43,45 @@ ul > li {
   }
 }
 
-.page-item {
-  border: 1px solid #e2e6e9;
-  &:not(:last-child) {
-    margin-right: 8px;
+.page {
+  &-item {
+    border: 1px solid #e2e6e9;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+    @include onMobile {
+      margin-top: 8px;
+    }
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+    }
   }
-  @include onMobile {
-    margin-top: 8px;
-  }
-  transition: box-shadow 0.3s;
-  &:hover {
-    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
-  }
-}
 
-.page-link {
-  display: inline-block;
-  padding: 8px 16px;
-  font-family: 'Mont-Bold';
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  color: $colorPrimary;
-}
+  &-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-family: 'Mont-Bold';
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: $colorPrimary;
+  }
 
-.page-active {
-  background: #313237;
-  color: $colorWhite;
+  &-active {
+    background: #313237;
+    color: $colorWhite;
+  }
+
+  &-arrow {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 16px 19px;
+  }
 }
 
 .link-active {
   color: $colorWhite;
-}
-
-.page-arrow {
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 16px 19px;
 }
 
 .right {

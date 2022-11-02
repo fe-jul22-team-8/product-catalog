@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
@@ -9,7 +10,14 @@ interface Props {
   phonesList: Phone[];
 }
 export const PhonesList: React.FC<Props> = ({ phonesList }) => {
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(+(searchParams.get('page') || 1));
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    params.append('page', `${page}`);
+    setSearchParams(params.toString());
+  }, [page]);
 
   const start = (page - 1) * 16 + 1;
   const end = Math.min(page * 16, phonesList.length);
@@ -17,14 +25,11 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
-  console.log(phonesList);
+  // console.log(phonesList);
   return (
     <>
       <Title count={phonesList.length} />
       <div className="container">
-
-
-
         {phonesList.slice(start - 1, end).map(
           ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card

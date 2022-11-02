@@ -41,11 +41,7 @@ export const Pagination: React.FC<Props> = ({
   return (
     <div className="pagination">
     <ul className='pagination-ul'>
-      <li
-        className={classNames(
-          'page-item', { disabled: currentPage === 1 },
-        )}
-      >
+      <li className="page-item">
         <a
           className="page-link page-arrow left"
           href="#prev"
@@ -56,7 +52,7 @@ export const Pagination: React.FC<Props> = ({
         </a>
       </li>
       {getNumbers(1, totalPages).map((page) => (
-        <li className={classNames(
+        <li key={page} className={classNames(
           'page-item', { 'page-active': page === currentPage },
         )}
         >
@@ -72,11 +68,7 @@ export const Pagination: React.FC<Props> = ({
           </a>
         </li>
       ))}
-      <li
-        className={classNames(
-          'page-item', { disabled: currentPage === totalPages },
-        )}
-      >
+      <li className="page-item">
         <a
           className="page-link page-arrow right"
           href="#next"
