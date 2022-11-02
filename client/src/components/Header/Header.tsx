@@ -29,7 +29,7 @@ export const Header = () => {
           }
         />
         <NavLink
-          to="/"
+          to="/cart"
           className={
             [styles.header__item,
             styles.header__cart].join(' ')

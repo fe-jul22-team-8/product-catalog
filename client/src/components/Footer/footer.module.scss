@@ -1,6 +1,6 @@
-@import '../../utils/mixin';
-@import '../../utils/reset';
-@import '../../utils/vars';
+@import '../../styles/mixin';
+@import '../../styles/reset';
+@import '../../styles/vars';
 
 @font-face {
   font-family: 'Mont-Bold';
@@ -17,8 +17,6 @@
 }
 
 .footer {
-  // bottom: 0;
-  // position: absolute;
   width: 100%;
   padding: 0 16px;
   margin-top: 80px;
