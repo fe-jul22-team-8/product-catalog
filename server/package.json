@@ -18,11 +18,10 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "build": "tsc",
-    "prestart": "npm run build",
-    "postinstall": "tsc",
-    "start": "node dist/server.js",
-    "dev": "ts-node-esm ./src/server.ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore --fix",
     "fix-style": "npm run format && npm run lint -- --fix",
