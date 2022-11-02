@@ -1,5 +1,6 @@
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
+import { Title } from '../Title';
 import './PhonesList.scss';
 
 interface Props {
@@ -8,8 +9,10 @@ interface Props {
 export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   console.log(phonesList);
   return (
-    <div className="container">
-      <>
+    <>
+      <Title count={phonesList.length} />
+      <div className="container">
+
         {phonesList.map(
           ({ name, price, fullPrice, capacity, ram, screen, id }) => (
             <Card
@@ -23,7 +26,8 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
             />
           ),
         )}
-      </>
-    </div>
+
+      </div>
+    </>
   );
 };

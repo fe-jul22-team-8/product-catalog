@@ -32,7 +32,6 @@ export const PhonesPage = () => {
   console.log(phonesList);
   return (
     <>
-      <h1 className="title">Phones Page</h1>
       {isLoading ? <PhonesList phonesList={phonesList} /> : <Loader />}
     </>
   );
