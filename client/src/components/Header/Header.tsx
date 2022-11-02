@@ -9,7 +9,11 @@ export const Header = () => {
       <div className={styles.header__nav}>
         <div className={styles.header__icon}>
           <Link to="/">
-            <img src={logo} alt="logo" className={styles.header__logo} />
+            <img
+              src={logo}
+              alt="logo"
+              className={styles.header__logo}
+            />
           </Link>
         </div>
 
