@@ -5,9 +5,9 @@
   "main": "server.ts",
   "scripts": {
     "build:server": "npm run build --prefix server",
+    "start": "npm start --prefix server",
     "build:client": "npm run build --prefix client",
-    "start:api": "npm run start --prefix ./server"
-    "start": "npm run start --prefix ./server"
+    "start:server": "npm run start --prefix ./server"
   },
   "keywords": [
     "heroku"
