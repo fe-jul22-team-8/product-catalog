@@ -1,6 +1,7 @@
 {
   "name": "server",
-  "main": "dist/server.js",
+  "main": "dist/server",
+  "typings": "dist/server",
   "type": "module",
   "devDependencies": {
     "@swc/cli": "^0.1.57",
