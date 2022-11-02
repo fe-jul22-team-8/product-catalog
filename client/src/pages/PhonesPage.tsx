@@ -21,7 +21,7 @@ export const PhonesPage = () => {
       const phonesFromServer = await getPhones('/phones');
       setIsLoading(true);
       setData(phonesFromServer);
-      setPhonesList(phonesFromServer.resultPerPage.slice(0, 8));
+      setPhonesList(phonesFromServer.resultPerPage);
     } catch (error) {
       setIsError(true);
     }

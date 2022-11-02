@@ -14,7 +14,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
       <div className="container">
 
         {phonesList.map(
-          ({ name, price, fullPrice, capacity, ram, screen, id }) => (
+          ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card
               key={id}
               name={name}
@@ -23,6 +23,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
               capacity={capacity}
               ram={ram}
               screen={screen}
+              image={image}
             />
           ),
         )}

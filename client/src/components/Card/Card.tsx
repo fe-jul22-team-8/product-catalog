@@ -1,4 +1,5 @@
 import './Card.scss';
+import { BASE_URL } from '../../utils/fetchProducts';
 
 interface Props {
   name: string;
@@ -7,6 +8,7 @@ interface Props {
   capacity: string;
   ram: string;
   screen: string;
+  image: string;
 }
 
 export const Card: React.FC<Props> = ({
@@ -16,12 +18,13 @@ export const Card: React.FC<Props> = ({
   capacity,
   ram,
   screen,
+  image
 }) => {
   console.log('hello');
   return (
     <div className="card">
       <img
-        src="https://i.imgur.com/yesSOSx.png"
+        src={`${BASE_URL}/${image}`}
         alt="card-logo"
         className="card_logo"
       />
