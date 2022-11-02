@@ -2,9 +2,9 @@
   "name": "product-catalog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "node ./server/src/server.ts"
+    "start": "ts-node ./server/src/server.ts"
   },
   "keywords": [
     "heroku"
