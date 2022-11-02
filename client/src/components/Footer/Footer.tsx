@@ -8,11 +8,7 @@ export const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footer__content}>
         <Link to="/" className={styles.footer__icon}>
-          <img
-            src={logo}
-            alt="logo"
-            className={styles.footer__logo}
-          />
+          <img src={logo} alt="logo" className={styles.footer__logo} />
         </Link>
 
         <div className={styles.footer__list}>
@@ -29,11 +25,7 @@ export const Footer = () => {
 
         <button className={styles.footer__button}>
           Back to top
-          <img
-            src={arrow}
-            alt="logo"
-            className={styles.footer__arrow}
-          />
+          <img src={arrow} alt="logo" className={styles.footer__arrow} />
         </button>
       </div>
     </div>

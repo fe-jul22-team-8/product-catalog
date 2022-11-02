@@ -20,7 +20,6 @@ export const Card: React.FC<Props> = ({
   screen,
   image,
 }) => {
-  console.log('hello');
   return (
     <div className={styles.card}>
       <img

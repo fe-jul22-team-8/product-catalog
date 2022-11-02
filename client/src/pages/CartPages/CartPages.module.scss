@@ -1,21 +1,21 @@
-@import '../utils/mixin';
-@import '../utils/vars';
+@import '../../styles/mixin';
+@import '../../styles/vars';
 
 @font-face {
   font-family: 'Mont-Bold';
   font-style: bold;
   font-weight: 900;
-  src: url('../fonts/Mont-Bold.otf') format('opentype');
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Mont';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/Mont-Regular.otf') format('opentype');
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
 }
 
-.CartPages {
+.cartPages {
   gap: 16px;
   max-width: 1136px;
   margin: 0 auto;
@@ -59,13 +59,13 @@
     }
   }
 
-  &__card-wrapper {
+  &__wrapperCard {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  &__cost-wrapper {
+  &__wrapperCost {
     width: 368px;
     border: 1px solid rgb(237, 25, 25);
 
@@ -97,7 +97,6 @@
   margin-top: 25px;
   flex-direction: column;
   margin-bottom: 32px;
-  max-width: 1136px;
 
   @media (min-width: 640px) and (max-width: 900px) {
     max-width: 560px;

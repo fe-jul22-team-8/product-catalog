@@ -1,18 +1,26 @@
 import { NavLink } from 'react-router-dom';
 import './headerList.scss';
 
+export const ROUTER = {
+  home: '/',
+  phones: '/phones',
+  tablets: '/tablets',
+  accessories: '/accessories',
+  cart: '/cart',
+};
+
 export const HeaderList: React.FC = () => (
   <nav className="header__list">
-    <NavLink to="/Home" className="header__link">
+    <NavLink to={ROUTER.home} className="header__link">
       Home
     </NavLink>
-    <NavLink to="/phones" className="header__link">
+    <NavLink to={ROUTER.phones} className="header__link">
       Phones
     </NavLink>
-    <NavLink to="/Tablets" className="header__link">
+    <NavLink to={ROUTER.tablets} className="header__link">
       Tablets
     </NavLink>
-    <NavLink to="/Accessories" className="header__link">
+    <NavLink to={ROUTER.accessories} className="header__link">
       Accessories
     </NavLink>
   </nav>
