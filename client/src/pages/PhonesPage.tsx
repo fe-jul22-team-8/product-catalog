@@ -3,7 +3,7 @@ import { getPhones } from '../api/phones';
 import { Loader } from '../components/Loader';
 import { PhonesList } from '../components/PhonesList';
 import { Phone } from '../types/Phone';
-import './PhonesPage.scss'
+import './PhonesPage.scss';
 
 interface Props {
   page: number;
@@ -31,10 +31,8 @@ export const PhonesPage = () => {
     loadData();
   }, []);
   return (
-    <section className='PhonesPage'>
-    <>
-      {isLoading ? <PhonesList phonesList={phonesList} /> : <Loader />}
-    </>
+    <section className="PhonesPage">
+      <>{isLoading ? <PhonesList phonesList={phonesList} /> : <Loader />}</>
     </section>
   );
 };

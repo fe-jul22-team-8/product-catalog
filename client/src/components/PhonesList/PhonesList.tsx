@@ -12,7 +12,6 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
     <>
       <Title count={phonesList.length} />
       <div className="container">
-
         {phonesList.map(
           ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card
@@ -27,7 +26,6 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
             />
           ),
         )}
-
       </div>
     </>
   );

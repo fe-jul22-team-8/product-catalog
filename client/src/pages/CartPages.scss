@@ -52,11 +52,11 @@
 
     @media (min-width: 640px) and (max-width: 900px) {
       flex-direction: column;
-     }
+    }
 
-     @include onMobile {
+    @include onMobile {
       flex-direction: column;
-     }
+    }
   }
 
   &__card-wrapper {
@@ -68,11 +68,11 @@
   &__cost-wrapper {
     width: 368px;
     border: 1px solid rgb(237, 25, 25);
-  
+
     @media (min-width: 640px) and (max-width: 900px) {
       width: 560px;
     }
-  
+
     @include onMobile {
       width: 270px;
     }
@@ -82,11 +82,10 @@
     border: 1px solid black;
     width: 752px;
 
-          
     @media (min-width: 640px) and (max-width: 900px) {
       max-width: 560px;
     }
-  
+
     @include onMobile {
       max-width: 270px;
     }
@@ -107,7 +106,7 @@
   @include onMobile {
     max-width: 270px;
   }
-  
+
   &__navigation {
     display: flex;
     flex-direction: row;

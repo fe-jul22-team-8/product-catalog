@@ -18,16 +18,12 @@ export const Card: React.FC<Props> = ({
   capacity,
   ram,
   screen,
-  image
+  image,
 }) => {
   console.log('hello');
   return (
     <div className="card">
-      <img
-        src={`${BASE_URL}/${image}`}
-        alt="card-logo"
-        className="card_logo"
-      />
+      <img src={`${BASE_URL}/${image}`} alt="card-logo" className="card_logo" />
       <span className="card_title">{name} (iMT9G2FSA)</span>
       <div className="card_price">
         <span className="card_newPrice">${price}</span>
