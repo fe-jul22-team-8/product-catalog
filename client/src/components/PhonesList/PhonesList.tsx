@@ -29,20 +29,22 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
     <>
       <Title count={phonesList.length} />
       <div className={styles.container}>
-        {phonesList.slice(start - 1, end).map(
-          ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
-            <Card
-              key={id}
-              name={name}
-              price={price}
-              fullPrice={fullPrice}
-              capacity={capacity}
-              ram={ram}
-              screen={screen}
-              image={image}
-            />
-          ),
-        )}
+        {phonesList
+          .slice(start - 1, end)
+          .map(
+            ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
+              <Card
+                key={id}
+                name={name}
+                price={price}
+                fullPrice={fullPrice}
+                capacity={capacity}
+                ram={ram}
+                screen={screen}
+                image={image}
+              />
+            ),
+          )}
       </div>
 
       <Pagination
