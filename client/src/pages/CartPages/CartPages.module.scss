@@ -59,13 +59,13 @@
     }
   }
 
-  &__card__wrapper {
+  &__wrapperCard {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  &__cost__wrapper {
+  &__wrapperCost {
     width: 368px;
     border: 1px solid rgb(237, 25, 25);
 
@@ -97,7 +97,6 @@
   margin-top: 25px;
   flex-direction: column;
   margin-bottom: 32px;
-  // max-width: 1136px;
 
   @media (min-width: 640px) and (max-width: 900px) {
     max-width: 560px;

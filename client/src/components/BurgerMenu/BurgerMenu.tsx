@@ -37,9 +37,12 @@ export function BurgerMenu() {
           </a>
         </li>
         <li className={styles.burger__item}>
-          <a href="#" className={
-            [styles.burger__link, styles.burger__accessories].join(' ')
-          }>
+          <a
+            href="#"
+            className={[styles.burger__link, styles.burger__accessories].join(
+              ' ',
+            )}
+          >
             accessories
           </a>
         </li>
@@ -47,18 +50,10 @@ export function BurgerMenu() {
 
       <footer className={styles.burger__bottom}>
         <a href="#" className={styles.burger__favourites}>
-          <img
-            src={heart}
-            alt=""
-            className={styles.burger__heart}
-          />
+          <img src={heart} alt="" className={styles.burger__heart} />
         </a>
         <a href="#" className={styles.burger__basket}>
-          <img
-            src={basket}
-            alt=""
-            className={styles.basket_img}
-          />
+          <img src={basket} alt="" className={styles.basket_img} />
         </a>
       </footer>
     </div>

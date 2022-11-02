@@ -4,7 +4,7 @@ import { PhonesPage } from './pages/PhonesPage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CartPages } from './pages/CartPages';
-import { ROUTER } from './components/Header/HeaderList/HeaderList' 
+import { ROUTER } from './components/Header/HeaderList/HeaderList';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path={ROUTER.phones} element={<PhonesPage />} />
           <Route path={ROUTER.cart} element={<CartPages />} />
-          <Route path="*" element={ < NotFoundPage/> } />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

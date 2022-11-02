@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import './headerList.scss';
 
-export const ROUTER ={
+export const ROUTER = {
   home: '/',
   phones: '/phones',
   tablets: '/tablets',
   accessories: '/accessories',
-  cart :'/cart'
-}
+  cart: '/cart',
+};
 
 export const HeaderList: React.FC = () => (
   <nav className="header__list">

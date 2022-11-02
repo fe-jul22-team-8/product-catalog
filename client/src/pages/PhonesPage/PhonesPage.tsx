@@ -33,10 +33,7 @@ export const PhonesPage = () => {
 
   return (
     <section className={styles.PhonesPage}>
-        {isLoading 
-          ?  <Loader />
-          : <PhonesList phonesList={phonesList} />
-        }
+      {isLoading ? <Loader /> : <PhonesList phonesList={phonesList} />}
     </section>
   );
 };

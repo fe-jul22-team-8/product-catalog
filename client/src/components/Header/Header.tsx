@@ -9,11 +9,7 @@ export const Header = () => {
       <div className={styles.header__nav}>
         <div className={styles.header__icon}>
           <Link to="/">
-            <img
-              src={logo}
-              alt="logo"
-              className={styles.header__logo}
-            />
+            <img src={logo} alt="logo" className={styles.header__logo} />
           </Link>
         </div>
 
@@ -23,17 +19,11 @@ export const Header = () => {
       <div className={styles.header__icons}>
         <NavLink
           to="/"
-          className={
-            [styles.header__item,
-            styles.header__favourites].join(' ')
-          }
+          className={[styles.header__item, styles.header__favourites].join(' ')}
         />
         <NavLink
           to="/cart"
-          className={
-            [styles.header__item,
-            styles.header__cart].join(' ')
-          }
+          className={[styles.header__item, styles.header__cart].join(' ')}
         />
       </div>
 
