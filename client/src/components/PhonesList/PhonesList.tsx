@@ -4,7 +4,7 @@ import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { Title } from '../Title';
-import './PhonesList.scss';
+import styles from './PhonesList.module.scss';
 
 interface Props {
   phonesList: Phone[];
@@ -29,8 +29,9 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   return (
     <>
       <Title count={phonesList.length} />
-      <div className="container">
-        {phonesList.slice(start - 1, end).map(
+      <div className={styles.container}>
+
+        {phonesList.map(
           ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card
               key={id}
@@ -45,6 +46,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
           ),
         )}
       </div>
+
       <Pagination
         total={phonesList.length}
         perPage={16}

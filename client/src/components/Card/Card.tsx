@@ -1,4 +1,4 @@
-import './Card.scss';
+import styles from './Card.module.scss';
 import { BASE_URL } from '../../utils/fetchProducts';
 
 interface Props {
@@ -18,36 +18,36 @@ export const Card: React.FC<Props> = ({
   capacity,
   ram,
   screen,
-  image
+  image,
 }) => {
   console.log('hello');
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img
         src={`${BASE_URL}/${image}`}
         alt="card-logo"
-        className="card_logo"
+        className={styles.card_logo}
       />
-      <span className="card_title">{name} (iMT9G2FSA)</span>
-      <div className="card_price">
-        <span className="card_newPrice">${price}</span>
-        <span className="card_oldPrice">${fullPrice}</span>
+      <span className={styles.card_title}>{name} (iMT9G2FSA)</span>
+      <div className={styles.card_price}>
+        <span className={styles.card_newPrice}>${price}</span>
+        <span className={styles.card_oldPrice}>${fullPrice}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">Screen</span>
-        <span className="card_value">{screen}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>Screen</span>
+        <span className={styles.card_value}>{screen}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">Capacity</span>
-        <span className="card_value">{capacity}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>Capacity</span>
+        <span className={styles.card_value}>{capacity}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">RAM</span>
-        <span className="card_value">{ram}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>RAM</span>
+        <span className={styles.card_value}>{ram}</span>
       </div>
-      <div className="card_buttons">
-        <button className="card_checkout">Add to cart</button>
-        <button className="card_wishlist"></button>
+      <div className={styles.card_buttons}>
+        <button className={styles.card_checkout}>Add to cart</button>
+        <button className={styles.card_wishlist}></button>
       </div>
     </div>
   );

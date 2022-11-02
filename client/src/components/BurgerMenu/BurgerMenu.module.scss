@@ -68,17 +68,17 @@ html {
     padding: 0px;
     gap: 16px;
     border-bottom: 1px solid $colorElements;
+  }
 
-    &-cross {
-      display: flex;
-      width: 60px;
-      height: 55px;
-      position: absolute;
-      right: 0;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $colorElements;
-    }
+  &__cross {
+    display: flex;
+    width: 60px;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $colorElements;
   }
 
   &__bottom {
@@ -91,24 +91,24 @@ html {
     bottom: 0;
     border-top: 1px solid $colorElements;
     width: 100%;
+  }
 
-    &-basket {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      right: 0;
-      width: 50%;
-      height: 70px;
-      border-left: 1px solid $colorElements;
+  &__heart {
+    height: 15px;
+  }
 
-      &:focus {
-        border-bottom: 2px solid $colorPrimary;
-      }
-    }
+  &__basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 70px;
+    border-left: 1px solid $colorElements;
 
-    &-heart {
-      height: 15px;
+    &:focus {
+      border-bottom: 2px solid $colorPrimary;
     }
   }
 
@@ -127,7 +127,7 @@ html {
   }
 }
 
-.basket-img {
+.basket_img {
   height: 20px;
 }
 
@@ -139,11 +139,11 @@ html {
   padding-left: 10px;
 }
 
-.logo-img {
+.logo_img {
   width: 85px;
 }
 
-.cross-icon {
+.cross_icon {
   width: 15px;
   transition: transform 1s;
 
