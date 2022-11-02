@@ -1,7 +1,7 @@
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
 import { Title } from '../Title';
-import './PhonesList.scss';
+import styles from './PhonesList.module.scss';
 
 interface Props {
   phonesList: Phone[];
@@ -11,7 +11,8 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   return (
     <>
       <Title count={phonesList.length} />
-      <div className="container">
+      <div className={styles.container}>
+
         {phonesList.map(
           ({ name, price, fullPrice, capacity, ram, screen, id, image }) => (
             <Card
@@ -26,6 +27,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
             />
           ),
         )}
+
       </div>
     </>
   );

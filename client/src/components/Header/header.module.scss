@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
 
+  position: sticky;
+  top: 0;
+
   height: 48px;
   padding-left: 16px;
 
@@ -42,30 +45,31 @@
     }
   }
 
-  &__item-link {
+  &__item {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 48px;
     height: 48px;
-    border: 1px solid $colorElements;
 
     @include onDesktop {
       width: 64px;
       height: 64px;
     }
+  }
 
-    &-favourites {
-      background-image: url(../../icons/favourites.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  &__cart {
+    background-image: url(../../icons/cart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-    &-cart {
-      background-image: url(../../icons/cart.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+  &__favourites {
+    background-image: url(../../icons/favourites.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    box-shadow: 0 0 0 1px $colorElements;
   }
 
   &__burger {
