@@ -1,15 +1,15 @@
 import classNames from 'classnames';
-import  './Pagination.scss';
+import styles from './Pagination.module.scss';
 
 function getNumbers(from: number, to: number): number[] {
-    const numbers = [];
-  
-    for (let n = from; n <= to; n += 1) {
-      numbers.push(n);
-    }
-  
-    return numbers;
+  const numbers = [];
+
+  for (let n = from; n <= to; n += 1) {
+    numbers.push(n);
   }
+
+  return numbers;
+}
 
 type Props = {
   total: number;
@@ -39,47 +39,47 @@ export const Pagination: React.FC<Props> = ({
   };
 
   return (
-    <div className="pagination">
-    <ul className='pagination-ul'>
-      <li className="page-item">
-        <a
-          className="page-link page-arrow left"
-          href="#prev"
-          data-current-page={currentPage - 1}
-          aria-disabled={currentPage === 1}
-          onClick={handleSetPage}
-        >
-        </a>
-      </li>
-      {getNumbers(1, totalPages).map((page) => (
-        <li key={page} className={classNames(
-          'page-item', { 'page-active': page === currentPage },
-        )}
-        >
+    <div className={styles.pagination}>
+      <ul className={styles.pagination_ul}>
+        <li className={styles.page_item}>
           <a
-            className={classNames(
-                'page-link', { 'link-active': page === currentPage },
-              )}
-            data-current-page={page}
-            href={`#${page}`}
+            className={classNames(styles.page_link, styles.page_arrow, styles.left)}
+            href="#prev"
+            data-current-page={currentPage - 1}
+            aria-disabled={currentPage === 1}
             onClick={handleSetPage}
           >
-            {page}
           </a>
         </li>
-      ))}
-      <li className="page-item">
-        <a
-          className="page-link page-arrow right"
-          href="#next"
-          data-current-page={currentPage + 1}
-          aria-disabled={currentPage === totalPages}
-          onClick={handleSetPage}
-        >
-          
-        </a>
-      </li>
-    </ul>
-    </div>
+        {getNumbers(1, totalPages).map((page) => (
+          <li key={page} className={classNames(
+            styles.page_item, { [styles.page_active]: page === currentPage },
+          )}
+          >
+            <a
+              className={classNames(
+                styles.page_link, { [styles.link_active]: page === currentPage },
+              )}
+              data-current-page={page}
+              href={`#${page}`}
+              onClick={handleSetPage}
+            >
+              {page}
+            </a>
+          </li>
+        ))}
+        <li className={styles.page_item}>
+          <a
+            className={classNames(styles.page_link, styles.page_arrow, styles.right)}
+            href="#next"
+            data-current-page={currentPage + 1}
+            aria-disabled={currentPage === totalPages}
+            onClick={handleSetPage}
+          >
+
+          </a>
+        </li>
+      </ul>
+    </div >
   );
 };

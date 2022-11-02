@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
-import { Pagination } from '../Pagination/Pagination';
+import { Pagination } from '../Pagination';
 import { Title } from '../Title';
 import styles from './PhonesList.module.scss';
 
