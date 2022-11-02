@@ -1,8 +1,6 @@
 {
   "name": "server",
   "main": "dist/index.js",
-  "typings": "dist/index.js",
-  "type": "module",
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@swc/cli": "^0.1.57",
