@@ -1,25 +1,28 @@
 import styles from './Card.module.scss';
 import { BASE_URL } from '../../utils/fetchProducts';
+import { useContext } from 'react';
+import { CardContext } from '../../context/CardContext';
+import { Phone } from '../../types/Phone';
+import classNames from 'classnames';
 
 interface Props {
-  name: string;
-  price: number;
-  fullPrice: number;
-  capacity: string;
-  ram: string;
-  screen: string;
-  image: string;
+  phone: Phone,
 }
 
 export const Card: React.FC<Props> = ({
-  name,
-  price,
-  fullPrice,
-  capacity,
-  ram,
-  screen,
-  image,
+  phone
 }) => {
+  const { setCardData, cardData } = useContext(CardContext);
+  const isCardInArray = cardData.includes(phone);
+
+  const handleSetCardInData = () => {
+    if (!isCardInArray) {
+      setCardData([...cardData, phone]);
+    } else {
+      setCardData(current => current.filter(currentPhone => currentPhone !== phone));
+    }
+  }
+  const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
     <div className={styles.card}>
       <img
@@ -45,7 +48,12 @@ export const Card: React.FC<Props> = ({
         <span className={styles.card_value}>{ram}</span>
       </div>
       <div className={styles.card_buttons}>
-        <button className={styles.card_checkout}>Add to cart</button>
+        <button className={classNames(
+          styles.card_checkout,
+          { [styles.card_uncheckout]: isCardInArray }
+        )}
+          onClick={handleSetCardInData}
+        >{isCardInArray ? 'Added' : 'Add to cart'}</button>
         <button className={styles.card_wishlist}></button>
       </div>
     </div>
