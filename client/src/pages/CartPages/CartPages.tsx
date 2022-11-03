@@ -1,5 +1,5 @@
 import './CartPages.scss';
-import arrow from '../../icons/arrowRight.svg';
+import arrow from '../../icons/greyArrowLeft.svg';
 import { useEffect, useState } from 'react';
 import { Phone } from '../../types/Phone';
 
