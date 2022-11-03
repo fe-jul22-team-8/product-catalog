@@ -6,13 +6,13 @@ export const CartList = () => {
   const { setCardData, cardData } = useContext(CardContext);
 
   return (
-    <div className={styles.CartPages}>
-      <section className={styles.CartPages__wrapper}>
-        <div className={styles.CartPages__cardWrapper}>
-          <div className={styles.CartPages__card}>cart</div>
-          <div className={styles.CartPages__card}>cart</div>
-          <div className={styles.CartPages__card}>cart</div>
-          <div className={styles.CartPages__card}>cart</div>
+    <div className={styles.CartList}>
+      <section className={styles.CartList__wrapper}>
+        <div className={styles.CartList__cardWrapper}>
+          <div className={styles.CartList__item}>cart</div>
+          <div className={styles.CartList__item}>cart</div>
+          <div className={styles.CartList__item}>cart</div>
+          <div className={styles.CartList__item}>cart</div>
         </div>
       </section>
     </div>

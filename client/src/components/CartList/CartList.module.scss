@@ -16,7 +16,7 @@
   src: url('../../fonts/Mont-Regular.otf') format('opentype');
 }
 
-.CartPages {
+.CartList {
   gap: 16px;
   max-width: 752px;
   display: flex;
@@ -48,7 +48,7 @@
     gap: 16px;
   }
 
-  &__card {
+  &__item {
     box-sizing: border-box;
     border: 1px solid black;
     width: 752px;
