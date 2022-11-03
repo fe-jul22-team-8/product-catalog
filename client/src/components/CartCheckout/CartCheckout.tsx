@@ -4,7 +4,6 @@ import styles from './CartCheckout.module.scss';
 
 export const CartCheckout = () => {
   const { setCardData, cardData } = useContext(CardContext);
-  console.log(cardData)
 
   const totalPrice = cardData.map(item => item.price).reduce((a, b) => a + b, 0);
 
