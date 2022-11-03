@@ -22,8 +22,8 @@ declare module '*.jpg' {
   export = value;
 }
 
-declare module '*.module.css' {
-  const value: string;
+declare module '*.module.scss' {
+  const value: any;
 
   export = value;
 }

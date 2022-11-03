@@ -1,53 +1,60 @@
-import './Card.scss';
+import styles from './Card.module.scss';
 import { BASE_URL } from '../../utils/fetchProducts';
+import { useContext } from 'react';
+import { CardContext } from '../../context/CardContext';
+import { Phone } from '../../types/Phone';
+import classNames from 'classnames';
 
 interface Props {
-  name: string;
-  price: number;
-  fullPrice: number;
-  capacity: string;
-  ram: string;
-  screen: string;
-  image: string;
+  phone: Phone,
 }
 
 export const Card: React.FC<Props> = ({
-  name,
-  price,
-  fullPrice,
-  capacity,
-  ram,
-  screen,
-  image
+  phone
 }) => {
-  console.log('hello');
+  const { setCardData, cardData } = useContext(CardContext);
+  const isCardInArray = cardData.includes(phone);
+
+  const handleSetCardInData = () => {
+    if (!isCardInArray) {
+      setCardData([...cardData, phone]);
+    } else {
+      setCardData(current => current.filter(currentPhone => currentPhone !== phone));
+    }
+  }
+  const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img
         src={`${BASE_URL}/${image}`}
         alt="card-logo"
-        className="card_logo"
+        className={styles.card_logo}
       />
-      <span className="card_title">{name} (iMT9G2FSA)</span>
-      <div className="card_price">
-        <span className="card_newPrice">${price}</span>
-        <span className="card_oldPrice">${fullPrice}</span>
+      <span className={styles.card_title}>{name} (iMT9G2FSA)</span>
+      <div className={styles.card_price}>
+        <span className={styles.card_newPrice}>${price}</span>
+        <span className={styles.card_oldPrice}>${fullPrice}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">Screen</span>
-        <span className="card_value">{screen}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>Screen</span>
+        <span className={styles.card_value}>{screen}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">Capacity</span>
-        <span className="card_value">{capacity}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>Capacity</span>
+        <span className={styles.card_value}>{capacity}</span>
       </div>
-      <div className="card_description">
-        <span className="card_text">RAM</span>
-        <span className="card_value">{ram}</span>
+      <div className={styles.card_description}>
+        <span className={styles.card_text}>RAM</span>
+        <span className={styles.card_value}>{ram}</span>
       </div>
-      <div className="card_buttons">
-        <button className="card_checkout">Add to cart</button>
-        <button className="card_wishlist"></button>
+      <div className={styles.card_buttons}>
+        <button className={classNames(
+          styles.card_checkout,
+          { [styles.card_uncheckout]: isCardInArray }
+        )}
+          onClick={handleSetCardInData}
+        >{isCardInArray ? 'Added' : 'Add to cart'}</button>
+        <button className={styles.card_wishlist}></button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-@import '../../utils/mixin';
-@import '../../utils/reset';
-@import '../../utils/vars';
+@import '../../styles/mixin';
+@import '../../styles/reset';
+@import '../../styles/vars';
 
 @font-face {
   font-family: 'Mont-Bold';
@@ -17,8 +17,6 @@
 }
 
 .footer {
-  // position: fixed;
-  bottom: 0;
   width: 100%;
   padding: 0 16px;
   margin-top: 80px;
@@ -71,7 +69,7 @@
     }
   }
 
-  &__list-item {
+  &__item {
     font-family: 'Mont-Bold';
     color: $colorSecondary;
     font-weight: 700;
@@ -111,12 +109,12 @@
     @include onTablet {
       margin-top: 0;
     }
+  }
 
-    &-icon {
-      width: 32px;
-      height: 32px;
-      border: 1px solid #b4bdc4;
-      margin-left: 16px;
-    }
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #b4bdc4;
+    margin-left: 16px;
   }
 }
