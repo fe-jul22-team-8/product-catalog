@@ -11,5 +11,5 @@ const port = process.env.PORT || 5050;
 app.use(express.static('./src'));
 
 app.listen(port, () => {
-  console.log(`⚡️ Server is running at http://localhost:${port}`);
+  console.log(`⚡️Server is running at http://localhost:${port}`);
 });
