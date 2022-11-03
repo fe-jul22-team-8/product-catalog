@@ -3,6 +3,8 @@ import arrow from '../../icons/arrowRight.svg';
 
 export const CartPages = () => {
   return (
+  <>
+    
     <div className={style.cartPages}>
       <div className={style.title}>
         <div className={style.title__navigation}>
@@ -21,5 +23,6 @@ export const CartPages = () => {
         <div className={style.cartPages__wrapperCost}>cost</div>
       </section>
     </div>
+  </>
   );
 };
