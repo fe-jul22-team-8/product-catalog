@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getPhones } from '../../api/phones';
 import { Loader } from '../../components/Loader';
 import { PhonesList } from '../../components/PhonesList';
@@ -27,8 +27,21 @@ export const PhonesPage = () => {
       setIsError(true);
     }
   };
+
+  const loaddData = useMemo(async () => {
+    try {
+      const phonesFromServer = await getPhones('/phones');
+      setIsLoading(false);
+      setData(phonesFromServer);
+      setPhonesList(phonesFromServer.resultPerPage);
+    } catch (error) {
+      setIsError(true);
+    }
+    return phonesList
+  }, [phonesList]);
+
   useEffect(() => {
-    loadData();
+    loaddData;
   }, []);
 
   return (

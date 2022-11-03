@@ -20,12 +20,16 @@ export const CardContext = createContext<Context>({
 
 export function CardProvider({ children }: { children?: ReactNode }) {
   const [cardData, setCardData] = useState<Phone[]>([]);
+  useEffect(() => {
+    if (window.localStorage.getItem('id')) {
+      // @ts-ignore
+      setCardData(JSON.parse(window.localStorage.getItem('id')));
+    }
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('id', JSON.stringify(cardData.map((cart) => cart.id)));
+    window.localStorage.setItem('id', JSON.stringify(cardData));
   }, [cardData]);
-
-  console.log(cardData.map((cart) => cart.id));
 
   return (
     <CardContext.Provider
