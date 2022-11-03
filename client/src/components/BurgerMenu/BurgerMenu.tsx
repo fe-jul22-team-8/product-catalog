@@ -1,10 +1,16 @@
 import styles from './BurgerMenu.module.scss';
 import heart from '../../icons/heart.svg';
-import logo from '../../icons/logo.png';
+import logo from '../../icons/logo.svg';
 import cross from '../../icons/cross.png';
 import basket from '../../icons/basket.png';
 
-export function BurgerMenu() {
+interface Props{
+  setBurgerMenuSelected: (value:boolean)=>void,
+  burgerMenuSelected:boolean,
+}
+
+export const BurgerMenu: React.FC<Props> = ({setBurgerMenuSelected, burgerMenuSelected}) => {
+  const handlerClick=((value:boolean)=>setBurgerMenuSelected(!value));
   return (
     <div className={styles.burger}>
       <section className={styles.burger__top}>
@@ -13,7 +19,7 @@ export function BurgerMenu() {
             <img src={logo} className={styles.logo_img} />
           </a>
         </div>
-        <div className={styles.burger__cross}>
+        <div className={styles.burger__cross} onClick={()=>handlerClick(burgerMenuSelected)}>
           <a href="#">
             <img src={cross} className={styles.cross_icon} />
           </a>
