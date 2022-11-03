@@ -3,8 +3,7 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "build": "swc src -d dist",
-    "start": "node dist/server.js",
+    "start": "node src/server.js",
     "build-dev": "npm run build && NODE_ENV=development node --inspect dist/server.js",
     "dev": "nodemon --ext ts --exec \"npm run build-dev\"",
     "format": "prettier --write . --ignore-path .gitignore",

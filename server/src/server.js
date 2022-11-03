@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import dotenv from 'dotenv';
 import * as server from './createServer.js';
 import express from 'express';
