@@ -1,0 +1,84 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+@import '../../styles/reset';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: bold;
+  font-weight: 900;
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 20px 0;
+  border: 1px solid $colorElements;
+
+  &__total {
+    font-family: 'Mont-Bold';
+    font-weight: 800;
+    font-size: 32px;
+    color: $colorPrimary;
+
+    line-height: 41px;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  &__count {
+    font-family: 'Mont';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+
+    margin: 5px 23px 16px;
+    color: $colorSecondary;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $colorElements;
+  }
+
+  &__button {
+    font-family: 'Mont';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: $colorWhite;
+    background: $colorPrimary;
+
+    width: 240px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 300ms background-color;
+
+    @include onTablet {
+      width: 544px;
+      margin: 0 24px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 320px;
+    }
+
+    &:hover {
+      background-color: rgba(254, 169, 99, 0.7);
+      color: black;
+    }
+  }
+}

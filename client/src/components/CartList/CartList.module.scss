@@ -1,0 +1,64 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+@import '../../styles/reset';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: bold;
+  font-weight: 900;
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+.CartPages {
+  gap: 16px;
+  max-width: 752px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  @media (min-width: 1200px) {
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    @media (min-width: 640px) and (max-width: 900px) {
+      flex-direction: column;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__cardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 752px;
+
+    @media (min-width: 640px) and (max-width: 900px) {
+      max-width: 592px;
+    }
+
+    @include onMobile {
+      max-width: 288px;
+    }
+  }
+}
