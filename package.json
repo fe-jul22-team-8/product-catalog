@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm start --prefix server",
     "build:client": "npm run build --prefix client",
-    "ci:client": "npm ci --prefix client",
-    "prepare": "cd && husky install ./server/.husky"
+    "ci:client": "npm ci --prefix client"
   },
   "keywords": [
     "heroku"
