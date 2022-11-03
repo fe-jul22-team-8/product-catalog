@@ -2,13 +2,14 @@
   "name": "product-catalog",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
     "start": "npm start --prefix server",
-    "build:server": "npm run build --prefix server",
+    "build": "npm run build --prefix server",
     "build:client": "npm run build --prefix client",
     "ci:client": "npm ci --prefix client",
-    "ci:server": "npm ci --prefix server"
+    "ci:server": "npm ci --prefix server",
+    "prepare": "cd .. && husky install ./server/.husky"
   },
   "keywords": [
     "heroku"
@@ -37,7 +38,6 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "tslib": "^2.4.1"
+    "concurrently": "^7.5.0"
   }
 }
