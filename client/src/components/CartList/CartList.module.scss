@@ -30,20 +30,6 @@
 
   &__wrapper {
     display: flex;
-    flex-direction: row;
-    gap: 16px;
-
-    @media (min-width: 640px) and (max-width: 900px) {
-      flex-direction: column;
-    }
-
-    @include onMobile {
-      flex-direction: column;
-    }
-  }
-
-  &__cardWrapper {
-    display: flex;
     flex-direction: column;
     gap: 16px;
   }

@@ -2,8 +2,19 @@ import styles from './CartItem.module.scss';
 import deleteCross from '../../icons/cross.svg';
 import plus from '../../icons/plus.svg';
 import minus from '../../icons/minus.svg';
+import { BASE_URL } from '../../utils/fetchProducts';
 
-export const CartItem = () => {
+interface Props {
+  name: string;
+  img: string;
+  price: number;
+};
+
+export const CartItem: React.FC<Props> = ({
+  name,
+  img,
+  price,
+}) => {
   return (
     <div className={styles.cartItem}>
       <div className={styles.cartItem__info}>
@@ -11,10 +22,10 @@ export const CartItem = () => {
           <img src={deleteCross} className={styles.cartItem__delete_button_img} />
         </div>
 
-        <img src='https://i.imgur.com/yesSOSx.png' className={styles.cartItem__img} />
+        <img src={`${BASE_URL}/${img}`} className={styles.cartItem__img} />
 
         <p className={styles.cartItem__description}>
-          Apple iPhone 14 Pro 128GB Silver (MQ023)
+          {name}
         </p>
       </div>
 
@@ -28,7 +39,7 @@ export const CartItem = () => {
         <div className={styles.cartItem__count_button}>
           <img src={plus} className={styles.cartItem__count_button_symbol} />
         </div>
-        <div className={styles.cartItem__price}>999$</div>
+        <div className={styles.cartItem__price}>{price}$</div>
       </div>
     </div>
   )

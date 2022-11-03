@@ -1,3 +1,4 @@
+import { Phone } from '@/types/Phone';
 import { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
 import { CartItem } from '../CartItem';
@@ -8,14 +9,16 @@ export const CartList = () => {
 
   return (
     <div className={styles.CartList}>
-      <section className={styles.CartList__wrapper}>
-        <div className={styles.CartList__cardWrapper}>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-        </div>
-      </section>
+      <div className={styles.CartList__wrapper}>
+        {cardData.map((phone: Phone) => (
+          <CartItem
+            key={+phone.id}
+            name={phone.name}
+            img={phone.image}
+            price={phone.price}
+          />
+        ))}
+      </div>
     </div>
   );
 }
