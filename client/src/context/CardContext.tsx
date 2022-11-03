@@ -1,5 +1,5 @@
 import { Phone } from '@/types/Phone';
-import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, } from 'react';
+import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect, } from 'react';
 
 interface Context {
     cardData: Phone[],
@@ -14,7 +14,11 @@ export const CardContext = createContext<Context>({
 export function CardProvider({ children }: { children?: ReactNode }) {
   const [cardData, setCardData] = useState<Phone[]>([]);
 
-  console.log(cardData);
+  useEffect(() => {
+    localStorage.setItem('id', JSON.stringify(cardData.map(cart=>cart.id)))
+  }, [cardData])
+
+  console.log(cardData.map(cart=>cart.id));
 
   return (
     <CardContext.Provider value={{
