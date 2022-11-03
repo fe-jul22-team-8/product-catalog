@@ -1,6 +1,7 @@
 import * as phoneService from '../service/phones.js';
+import { Request, Response } from 'express';
 
-export const getMany = (req, res) => {
+export const getMany = (req: Request, res: Response) => {
   const phones = phoneService.getAll();
 
   const perPage = req.query.perPage || phones.length;
@@ -18,7 +19,6 @@ export const getMany = (req, res) => {
       page,
       pageCount,
     });
-
     return;
   }
 
