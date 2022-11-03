@@ -10,8 +10,7 @@
     "dev": "ts-node-esm ./src/server.ts",
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore --fix",
-    "fix-style": "npm run format && npm run lint -- --fix",
-    "prepare": "cd .. && husky install ./server/.husky"
+    "fix-style": "npm run format && npm run lint -- --fix"
   },
   "lint-staged": {
     "*.js": "npm run lint"
