@@ -9,8 +9,8 @@ import React, {
 } from 'react';
 
 interface Context {
-  cardData: Phone[];
-  setCardData: Dispatch<SetStateAction<Phone[]>>;
+  cardData: string[];
+  setCardData: Dispatch<SetStateAction<string[]>>;
 }
 
 export const CardContext = createContext<Context>({
@@ -19,7 +19,8 @@ export const CardContext = createContext<Context>({
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
-  const [cardData, setCardData] = useState<Phone[]>([]);
+  const [cardData, setCardData] = useState<string[]>([]);
+
   useEffect(() => {
     if (window.localStorage.getItem('id')) {
       // @ts-ignore

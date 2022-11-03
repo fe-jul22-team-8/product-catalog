@@ -37,7 +37,7 @@ export const PhonesPage = () => {
     } catch (error) {
       setIsError(true);
     }
-    return phonesList
+    return phonesList;
   }, [phonesList]);
 
   useEffect(() => {
