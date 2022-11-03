@@ -1,3 +1,4 @@
+import { CardProvider } from '../../context/CardContext';
 import { useEffect, useState } from 'react';
 import { getPhones } from '../../api/phones';
 import { Loader } from '../../components/Loader';
@@ -33,7 +34,9 @@ export const PhonesPage = () => {
 
   return (
     <section className={styles.PhonesPage}>
+      <CardProvider>
       {isLoading ? <Loader /> : <PhonesList phonesList={phonesList} />}
+      </CardProvider>
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import styles from './Title.module.scss';
 import house from '../../icons/house.svg';
 import arrow from '../../icons/arrowRight.svg';
+import { ItemSelect } from './ItemSelect/ItemSelect';
 
 interface Props {
   count: number;
@@ -15,5 +16,7 @@ export const Title: React.FC<Props> = ({ count }) => (
     </div>
     <h1 className={styles.title_lable}>Mobile phones</h1>
     <p className={styles.title_count}>{`${count} models`}</p>
+    <p className={styles.title_select_text}>{'Items on page'}</p>
+    <ItemSelect count={count}/>
   </div>
 );
