@@ -6,12 +6,10 @@ import { Phone } from '../../types/Phone';
 import classNames from 'classnames';
 
 interface Props {
-  phone: Phone,
+  phone: Phone;
 }
 
-export const Card: React.FC<Props> = ({
-  phone
-}) => {
+export const Card: React.FC<Props> = ({ phone }) => {
   const { setCardData, cardData } = useContext(CardContext);
   const isCardInArray = cardData.includes(phone);
 
@@ -19,9 +17,11 @@ export const Card: React.FC<Props> = ({
     if (!isCardInArray) {
       setCardData([...cardData, phone]);
     } else {
-      setCardData(current => current.filter(currentPhone => currentPhone !== phone));
+      setCardData((current) =>
+        current.filter((currentPhone) => currentPhone !== phone),
+      );
     }
-  }
+  };
   const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
     <div className={styles.card}>
@@ -48,12 +48,14 @@ export const Card: React.FC<Props> = ({
         <span className={styles.card_value}>{ram}</span>
       </div>
       <div className={styles.card_buttons}>
-        <button className={classNames(
-          styles.card_checkout,
-          { [styles.card_uncheckout]: isCardInArray }
-        )}
+        <button
+          className={classNames(styles.card_checkout, {
+            [styles.card_uncheckout]: isCardInArray,
+          })}
           onClick={handleSetCardInData}
-        >{isCardInArray ? 'Added' : 'Add to cart'}</button>
+        >
+          {isCardInArray ? 'Added' : 'Add to cart'}
+        </button>
         <button className={styles.card_wishlist}></button>
       </div>
     </div>

@@ -31,13 +31,9 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
       <CardProvider>
         <Title count={phonesList.length} />
         <div className={styles.container}>
-          {phonesList.slice(start - 1, end).map(phone => (
-              <Card
-                key={phone.id}
-                phone={phone}
-              />
-            ),
-          )}
+          {phonesList.slice(start - 1, end).map((phone) => (
+            <Card key={phone.id} phone={phone} />
+          ))}
         </div>
 
         <Pagination
