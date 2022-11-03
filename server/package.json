@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "main": "dist/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

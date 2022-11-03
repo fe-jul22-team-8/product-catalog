@@ -9,7 +9,7 @@
     "build:client": "npm run build --prefix client",
     "ci:client": "npm ci --prefix client",
     "ci:server": "npm ci --prefix server",
-    "prepare": "cd .. && husky install ./server/.husky"
+    "prepare": "cd && husky install ./server/.husky"
   },
   "keywords": [
     "heroku"
@@ -38,6 +38,6 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "concurrently": "^7.5.0"
+    "husky": "^8.0.1"
   }
 }
