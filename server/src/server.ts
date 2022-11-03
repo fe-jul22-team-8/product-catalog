@@ -5,7 +5,7 @@ import express from 'express';
 dotenv.config();
 
 const app = server.createServer();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5050;
 
 app.use(express.static('./src'));
 
