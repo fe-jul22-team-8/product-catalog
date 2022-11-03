@@ -17,18 +17,7 @@ export const PhonesPage = () => {
   const [isError, setIsError] = useState(false); // need for error message and reload button
   const [isLoading, setIsLoading] = useState(true);
 
-  const loadData = async () => {
-    try {
-      const phonesFromServer = await getPhones('/phones');
-      setIsLoading(false);
-      setData(phonesFromServer);
-      setPhonesList(phonesFromServer.resultPerPage);
-    } catch (error) {
-      setIsError(true);
-    }
-  };
-
-  const loaddData = useMemo(async () => {
+  const loadData = useMemo(async () => {
     try {
       const phonesFromServer = await getPhones('/phones');
       setIsLoading(false);
@@ -41,7 +30,7 @@ export const PhonesPage = () => {
   }, [phonesList]);
 
   useEffect(() => {
-    loaddData;
+    loadData;
   }, []);
 
   return (
