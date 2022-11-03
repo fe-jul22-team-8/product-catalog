@@ -8,7 +8,10 @@ interface Props{
   burgerMenuSelected:boolean,
 }
 
-export const Header: React.FC<Props> = ({setBurgerMenuSelected, burgerMenuSelected}) => {
+export const Header: React.FC<Props> = ({
+  setBurgerMenuSelected, 
+  burgerMenuSelected
+}) => {
   const handlerClick=((value:boolean)=>setBurgerMenuSelected(!value));
   return (
     <div className={styles.header}>
