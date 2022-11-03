@@ -43,23 +43,28 @@ export const Pagination: React.FC<Props> = ({
       <ul className={styles.pagination_ul}>
         <li className={styles.page_item}>
           <a
-            className={classNames(styles.page_link, styles.page_arrow, styles.left)}
+            className={classNames(
+              styles.page_link,
+              styles.page_arrow,
+              styles.left,
+            )}
             href="#prev"
             data-current-page={currentPage - 1}
             aria-disabled={currentPage === 1}
             onClick={handleSetPage}
-          >
-          </a>
+          ></a>
         </li>
         {getNumbers(1, totalPages).map((page) => (
-          <li key={page} className={classNames(
-            styles.page_item, { [styles.page_active]: page === currentPage },
-          )}
+          <li
+            key={page}
+            className={classNames(styles.page_item, {
+              [styles.page_active]: page === currentPage,
+            })}
           >
             <a
-              className={classNames(
-                styles.page_link, { [styles.link_active]: page === currentPage },
-              )}
+              className={classNames(styles.page_link, {
+                [styles.link_active]: page === currentPage,
+              })}
               data-current-page={page}
               href={`#${page}`}
               onClick={handleSetPage}
@@ -70,16 +75,18 @@ export const Pagination: React.FC<Props> = ({
         ))}
         <li className={styles.page_item}>
           <a
-            className={classNames(styles.page_link, styles.page_arrow, styles.right)}
+            className={classNames(
+              styles.page_link,
+              styles.page_arrow,
+              styles.right,
+            )}
             href="#next"
             data-current-page={currentPage + 1}
             aria-disabled={currentPage === totalPages}
             onClick={handleSetPage}
-          >
-
-          </a>
+          ></a>
         </li>
       </ul>
-    </div >
+    </div>
   );
 };
