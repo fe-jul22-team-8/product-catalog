@@ -1,25 +1,25 @@
 import { Phone } from '@/types/Phone';
-import React, {
-  createContext,
-  ReactNode,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-} from 'react';
+import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect, } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 interface Context {
-  cardData: string[];
-  setCardData: Dispatch<SetStateAction<string[]>>;
+    cardData: Phone[],
+    setCardData: Dispatch<SetStateAction<Phone[]>>,
+    perPage: string,
+    setPerPage: Dispatch<SetStateAction<string>>,
 }
 
 export const CardContext = createContext<Context>({
-  setCardData: () => undefined,
-  cardData: [],
+    setCardData: () => undefined,
+    cardData: [],
+    perPage: '1',
+    setPerPage: () => undefined,
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
-  const [cardData, setCardData] = useState<string[]>([]);
+  const [cardData, setCardData] = useState<Phone[]>([]);
+  const [searchParams] = useSearchParams();
+  const [perPage, setPerPage] = useState(searchParams.get('perPage') || '8');
 
   useEffect(() => {
     if (window.localStorage.getItem('id')) {
@@ -37,8 +37,10 @@ export function CardProvider({ children }: { children?: ReactNode }) {
       value={{
         cardData,
         setCardData,
-      }}
-    >
+        perPage,
+        setPerPage,
+    }}>
+
       {children}
     </CardContext.Provider>
   );

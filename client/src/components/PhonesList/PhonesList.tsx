@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { CardContext, CardProvider } from '../../context/CardContext';
+import { useState, useEffect, useContext } from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
@@ -10,17 +12,22 @@ interface Props {
   phonesList: Phone[];
 }
 export const PhonesList: React.FC<Props> = ({ phonesList }) => {
+  const { perPage } = useContext(CardContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(+(searchParams.get('page') || 1));
+  const isCorrect = perPage === '8' || perPage === '16' || perPage === '4';
+
   useEffect(() => {
     const params = new URLSearchParams();
 
     params.append('page', `${page}`);
+    params.append('perPage', `${perPage}`);
     setSearchParams(params.toString());
-  }, [page]);
+  }, [page, perPage]);
 
-  const start = (page - 1) * 16 + 1;
-  const end = Math.min(page * 16, phonesList.length);
+
+  const start = (page - 1) * +perPage + 1;
+  const end = Math.min(page * +perPage, phonesList.length);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
@@ -34,12 +41,13 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
           ))}
         </div>
 
+      {isCorrect &&
         <Pagination
           total={phonesList.length}
-          perPage={16}
+          perPage={+perPage}
           currentPage={page}
           onPageChange={handlePageChange}
-        />
+        />}
     </>
   );
 };
