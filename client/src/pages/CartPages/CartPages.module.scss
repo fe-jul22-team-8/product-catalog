@@ -1,5 +1,6 @@
 @import '../../styles/mixin';
 @import '../../styles/vars';
+@import '../../styles/reset';
 
 @font-face {
   font-family: 'Mont-Bold';
@@ -15,126 +16,23 @@
   src: url('../../fonts/Mont-Regular.otf') format('opentype');
 }
 
-.cartPages {
-  gap: 16px;
+.container {
   max-width: 1136px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  padding: 25px 16px 0px;
 
-  @media (min-width: 640px) and (max-width: 900px) {
-    max-width: 560px;
+  @include onTablet {
+    padding: 41px 24px 0px;
   }
 
-  @include onMobile {
-    max-width: 270px;
-  }
-
-  &__headline {
-    margin-top: 40px;
-    font-family: 'Mont-Bold';
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 56px;
-    color: $colorPrimary;
-
-    @include onMobile {
-      margin-top: 24px;
-      font-size: 32px;
-      line-height: 41px;
-    }
-  }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-
-    @media (min-width: 640px) and (max-width: 900px) {
-      flex-direction: column;
-    }
-
-    @include onMobile {
-      flex-direction: column;
-    }
-  }
-
-  &__wrapperCard {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  &__wrapperCost {
-    width: 368px;
-    border: 1px solid rgb(237, 25, 25);
-
-    @media (min-width: 640px) and (max-width: 900px) {
-      width: 560px;
-    }
-
-    @include onMobile {
-      width: 270px;
-    }
-  }
-
-  &__card {
-    border: 1px solid black;
-    width: 752px;
-
-    @media (min-width: 640px) and (max-width: 900px) {
-      max-width: 560px;
-    }
-
-    @include onMobile {
-      max-width: 270px;
-    }
+  @media (min-width: 1200px) {
+    padding: 41px 0 0;
+    margin: 0 auto;
   }
 }
 
-.title {
-  display: flex;
-  margin-top: 25px;
-  flex-direction: column;
-  margin-bottom: 32px;
-
-  @media (min-width: 640px) and (max-width: 900px) {
-    max-width: 560px;
-  }
-
-  @include onMobile {
-    max-width: 270px;
-  }
-
-  &__navigation {
+.CartContainer {
+  @media (min-width: 1200px) {
     display: flex;
     flex-direction: row;
-    margin-bottom: 16px;
-    align-items: center;
-  }
-
-  &__arrow {
-    transform: scaleX(-1);
-    margin-right: 15px;
-    height: 10px;
-  }
-
-  &__arrowText {
-    font-family: 'Mont';
-    font-size: 12px;
-    line-height: 15px;
-  }
-
-  &__headline {
-    font-family: 'Mont-Bold';
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 56px;
-    color: $colorPrimary;
-
-    @include onMobile {
-      font-size: 32px;
-      line-height: 41px;
-    }
   }
 }

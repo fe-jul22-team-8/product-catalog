@@ -1,17 +1,19 @@
-// import express, { Express } from 'express';
 import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
-import * as phoneRouter from './router/phones.js';
 
-dotenv.config();
+import { router as phonesRouter } from './router/phones.js';
 
 export function createServer() {
-  // const app: Express = express();
   const app = express();
 
+  app.use(express.static('./src'));
+
   app.use(cors());
-  phoneRouter.showPhones(app);
+  app.use('/phones', phonesRouter);
+
+  app.get('/', (req, res) => {
+    res.send('Hi');
+  });
 
   return app;
 }
