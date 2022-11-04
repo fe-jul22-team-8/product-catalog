@@ -1,0 +1,76 @@
+@import '../../styles/mixin';
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "title"
+  "photo"
+  " variant"
+  "about"
+  "tech"
+  "like";
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas:
+    "title title"
+		"photo variant"
+		"about about"
+    "tech  tech"
+    "like like"
+  }
+
+  @media (min-width: 1200px){
+    grid-template-areas:
+    "title title"
+		"photo variant"
+		"about tech"
+    "like like"
+  }
+}
+
+.title{
+  border: 2px solid #4b8bbb;
+  background-color: #4b8bbb ;
+  margin: 10px;
+  grid-area: title;
+}
+
+.photo{
+  border: 2px solid #4d72a4;
+  background-color: #4d72a4 ;
+  margin: 10px;
+  grid-area: photo;
+}
+
+.variant{
+  border: 2px solid #6e9dca;
+  background-color: #6e9dca;
+  margin: 10px;
+  grid-area: variant;
+}
+
+.about{
+  border: 2px solid #acc5d3;
+  background-color: #acc5d3;
+  margin: 10px;
+  grid-area: about;
+}
+
+.tech{
+  border: 2px solid #394e6d;
+  background-color: #394e6d;
+  color: white;
+  margin: 10px;
+  grid-area: tech;
+}
+
+.like{
+  border: 2px solid #101522;
+  background-color: #101522 ;
+  color: white;
+  margin: 10px;
+  grid-area: like;
+}
