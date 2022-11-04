@@ -1,5 +1,6 @@
 import { CardContext, CardProvider } from '../../context/CardContext';
 import { useState, useEffect, useContext } from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card';
@@ -33,16 +34,12 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   };
   return (
     <>
-      <Title count={phonesList.length} />
-      <div className={styles.container}>
-        {phonesList.slice(start - 1, end).map(phone => (
-          <Card
-            key={phone.id}
-            phone={phone}
-          />
-        ),
-        )}
-      </div>
+        <Title count={phonesList.length} />
+        <div className={styles.container}>
+          {phonesList.slice(start - 1, end).map((phone) => (
+            <Card key={phone.id} phone={phone} />
+          ))}
+        </div>
 
       {isCorrect &&
         <Pagination

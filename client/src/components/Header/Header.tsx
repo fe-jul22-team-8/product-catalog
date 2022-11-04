@@ -3,7 +3,16 @@ import { Link, NavLink } from 'react-router-dom';
 import styles from './header.module.scss';
 import logo from '../../icons/logo.svg';
 
-export const Header = () => {
+interface Props {
+  setBurgerMenuSelected: (value: boolean) => void;
+  burgerMenuSelected: boolean;
+}
+
+export const Header: React.FC<Props> = ({
+  setBurgerMenuSelected,
+  burgerMenuSelected,
+}) => {
+  const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
   return (
     <div className={styles.header}>
       <div className={styles.header__nav}>
@@ -27,7 +36,10 @@ export const Header = () => {
         />
       </div>
 
-      <div className={styles.header__burger}>
+      <div
+        className={styles.header__burger}
+        onClick={() => handlerClick(burgerMenuSelected)}
+      >
         <Link to="/" className={styles.burger_menu} />
       </div>
     </div>

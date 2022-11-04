@@ -1,14 +1,17 @@
 import * as fs from 'fs';
 import path from 'path';
 
-const filePath = path.resolve('api', 'phones.json');
-
-function read() {
-  const data = fs.readFileSync(filePath, 'utf-8');
-
-  return JSON.parse(data);
-}
+const filePath = path.resolve('src', 'api', 'phones.json');
+const phones = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 export function getAll() {
-  return read();
+  return phones;
+}
+
+export function getById(phoneId:string) {
+  const foundPhone = phones.find(
+    (phone: { id: string }) => phone.id === phoneId,
+  );
+
+  return foundPhone || null;
 }

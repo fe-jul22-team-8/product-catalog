@@ -21,17 +21,26 @@ export function CardProvider({ children }: { children?: ReactNode }) {
   const [searchParams] = useSearchParams();
   const [perPage, setPerPage] = useState(searchParams.get('perPage') || '8');
 
+  useEffect(() => {
+    if (window.localStorage.getItem('id')) {
+      // @ts-ignore
+      setCardData(JSON.parse(window.localStorage.getItem('id')));
+    }
+  }, []);
 
-
-  console.log(cardData);
+  useEffect(() => {
+    window.localStorage.setItem('id', JSON.stringify(cardData));
+  }, [cardData]);
 
   return (
-    <CardContext.Provider value={{
-        cardData, 
+    <CardContext.Provider
+      value={{
+        cardData,
         setCardData,
         perPage,
         setPerPage,
     }}>
+
       {children}
     </CardContext.Provider>
   );
