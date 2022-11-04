@@ -11,14 +11,10 @@ interface Props {
   phonesList: Phone[];
 }
 export const PhonesList: React.FC<Props> = ({ phonesList }) => {
-  const { perPage, setPerPage } = useContext(CardContext);
+  const { perPage } = useContext(CardContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(+(searchParams.get('page') || 1));
-  console.log(searchParams.get('perPage'));
-  if (perPage === 1) {
-    setPerPage(+(searchParams.get('perPage') || 8));
-  }
-
+  const isCorrect = perPage === '8' || perPage === '16' || perPage === '4';
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -28,8 +24,9 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
     setSearchParams(params.toString());
   }, [page, perPage]);
 
-  const start = (page - 1) * perPage + 1;
-  const end = Math.min(page * perPage, phonesList.length);
+
+  const start = (page - 1) * +perPage + 1;
+  const end = Math.min(page * +perPage, phonesList.length);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
@@ -47,12 +44,13 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
         )}
       </div>
 
-      <Pagination
-        total={phonesList.length}
-        perPage={perPage}
-        currentPage={page}
-        onPageChange={handlePageChange}
-      />
+      {isCorrect &&
+        <Pagination
+          total={phonesList.length}
+          perPage={+perPage}
+          currentPage={page}
+          onPageChange={handlePageChange}
+        />}
     </>
   );
 };

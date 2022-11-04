@@ -7,16 +7,15 @@ interface Props {
 }
 
 export const ItemSelect: React.FC<Props> = ({ count }) => {
-  const { setPerPage } = useContext(CardContext);
+  const { setPerPage, perPage } = useContext(CardContext);
   const dropdown = useRef<HTMLSelectElement>(null);
 
   let countList = ["8", "4", "16", "All"];
-
+  const isCorrect = perPage === '8' || perPage === '16' || perPage === '4';
   const handleAddrTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value);
-    setPerPage(+event.target.value);
+    setPerPage(event.target.value);
     if (event.target.value === 'All') {
-      setPerPage(count);
+      setPerPage(count.toString());
     }
     if (dropdown.current) {
       dropdown.current.blur();
@@ -25,6 +24,7 @@ export const ItemSelect: React.FC<Props> = ({ count }) => {
 
   return (
     < select
+      value={isCorrect ? perPage : 'All'}
       ref={dropdown}
       onChange={e => handleAddrTypeChange(e)}
       className={styles.title_select} >
