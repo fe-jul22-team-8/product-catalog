@@ -1,25 +1,15 @@
-import { getPhones } from '../../api/phones';
-import { Phone } from '@/types/Phone';
-import { useContext, useEffect, useMemo, useState } from 'react';
-import { CardContext } from '../../context/CardContext';
+import { Phone } from '../../types/Phone';
+import { useContext } from 'react';
 import { CartItem } from '../CartItem';
 import styles from './CartList.module.scss';
+import { PhonesDataContext } from '../../context/DataContext';
 
 export const CartList = () => {
-  const [phonesList, setPhonesList] = useState<Phone[]>([]);
   const data = localStorage.getItem('id');
-  const loadData = useMemo(async () => {
-      const phonesFromServer = await getPhones('/phones');
-      setPhonesList(phonesFromServer.resultPerPage);
-      return phonesList;
-  }, [phonesList]);
+  const { phonesList } = useContext(PhonesDataContext);
 
-  useEffect(() => {
-    loadData;
-  }, []);
-  
-  const phones = phonesList.filter(phone=>data?.includes(phone.id));
-  
+  const phones = phonesList.filter((phone:Phone) => data?.includes(phone.id));
+
   return (
     <div className={styles.CartList}>
       <div className={styles.CartList__wrapper}>
@@ -34,4 +24,4 @@ export const CartList = () => {
       </div>
     </div>
   );
-}
+};

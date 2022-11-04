@@ -17,9 +17,9 @@ export const Card: React.FC<Props> = ({ phone }) => {
     if (!isCardInArray) {
       setCardData([...cardData, phone.id]);
     } else {
-      setCardData(current => [...current].filter(id => id !== phone.id));
+      setCardData((current) => [...current].filter((id) => id !== phone.id));
     }
-  }
+  };
   const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
     <div className={styles.card}>

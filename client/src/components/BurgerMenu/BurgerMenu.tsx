@@ -6,12 +6,15 @@ import basket from '../../icons/basket.png';
 import { NavLink } from 'react-router-dom';
 
 interface Props {
-  setBurgerMenuSelected: (value: boolean) => void,
-  burgerMenuSelected: boolean,
+  setBurgerMenuSelected: (value: boolean) => void;
+  burgerMenuSelected: boolean;
 }
 
-export const BurgerMenu: React.FC<Props> = ({ setBurgerMenuSelected, burgerMenuSelected }) => {
-  const handlerClick = ((value: boolean) => setBurgerMenuSelected(!value));
+export const BurgerMenu: React.FC<Props> = ({
+  setBurgerMenuSelected,
+  burgerMenuSelected,
+}) => {
+  const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
   return (
     <div className={styles.burger}>
       <div className={styles.burger__top}>
@@ -20,7 +23,10 @@ export const BurgerMenu: React.FC<Props> = ({ setBurgerMenuSelected, burgerMenuS
             <img src={logo} className={styles.logo_img} />
           </NavLink>
         </div>
-        <div className={styles.burger__cross} onClick={() => handlerClick(burgerMenuSelected)}>
+        <div
+          className={styles.burger__cross}
+          onClick={() => handlerClick(burgerMenuSelected)}
+        >
           <NavLink to="#">
             <img src={cross} className={styles.cross_icon} />
           </NavLink>
@@ -67,4 +73,4 @@ export const BurgerMenu: React.FC<Props> = ({ setBurgerMenuSelected, burgerMenuS
       </div>
     </div>
   );
-}
+};
