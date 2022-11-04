@@ -1,4 +1,3 @@
-import { CardProvider } from '../../context/CardContext';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
@@ -28,16 +27,11 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   };
   return (
     <>
-      <CardProvider>
         <Title count={phonesList.length} />
         <div className={styles.container}>
-          {phonesList.slice(start - 1, end).map(phone => (
-              <Card
-                key={phone.id}
-                phone={phone}
-              />
-            ),
-          )}
+          {phonesList.slice(start - 1, end).map((phone) => (
+            <Card key={phone.id} phone={phone} />
+          ))}
         </div>
 
         <Pagination
@@ -46,7 +40,6 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
           currentPage={page}
           onPageChange={handlePageChange}
         />
-      </CardProvider>
     </>
   );
 };

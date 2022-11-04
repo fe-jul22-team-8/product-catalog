@@ -1,16 +1,19 @@
-import { Phone } from '@/types/Phone';
+import { Phone } from '../../types/Phone';
 import { useContext } from 'react';
-import { CardContext } from '../../context/CardContext';
 import { CartItem } from '../CartItem';
 import styles from './CartList.module.scss';
+import { PhonesDataContext } from '../../context/DataContext';
 
 export const CartList = () => {
-  const { setCardData, cardData } = useContext(CardContext);
+  const data = localStorage.getItem('id');
+  const { phonesList } = useContext(PhonesDataContext);
+
+  const phones = phonesList.filter((phone:Phone) => data?.includes(phone.id));
 
   return (
     <div className={styles.CartList}>
       <div className={styles.CartList__wrapper}>
-        {cardData.map((phone: Phone) => (
+        {phones.map((phone: Phone) => (
           <CartItem
             key={+phone.id}
             name={phone.name}
@@ -21,4 +24,4 @@ export const CartList = () => {
       </div>
     </div>
   );
-}
+};
