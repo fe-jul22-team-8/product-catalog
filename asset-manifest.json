@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.f196c642.css",
-    "main.js": "/product-catalog/static/js/main.553e50ef.js",
+    "main.css": "/product-catalog/static/css/main.ad3637e5.css",
+    "main.js": "/product-catalog/static/js/main.0523c93a.js",
+    "static/media/logo.svg": "/product-catalog/static/media/logo.ec3bd7f9b2d37fe60f8d77c9877d8006.svg",
     "static/media/Mont-Regular.otf": "/product-catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product-catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/product-catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/cart.svg": "/product-catalog/static/media/cart.0089c9921342187cd543.svg",
     "static/media/favourites.svg": "/product-catalog/static/media/favourites.0a756ff14a135ac4523f.svg",
+    "static/media/house.svg": "/product-catalog/static/media/house.1816ab2ca60cac7cf0eb9e2fa68610f0.svg",
     "index.html": "/product-catalog/index.html",
     "static/media/union.svg": "/product-catalog/static/media/union.3eda38e880976ed7dd57.svg",
+    "static/media/arrowRight.svg": "/product-catalog/static/media/arrowRight.a36e74fa66c087c3db88ae6b2cd1af65.svg",
+    "static/media/greyArrowRight.svg": "/product-catalog/static/media/greyArrowRight.2fa48d83bd23bcb64688.svg",
+    "static/media/greyArrowLeft.svg": "/product-catalog/static/media/greyArrowLeft.4950b64053795792025b.svg",
     "static/media/arrow.svg": "/product-catalog/static/media/arrow.58b2ee615d3cdaee40b0523297736069.svg",
-    "main.f196c642.css.map": "/product-catalog/static/css/main.f196c642.css.map",
-    "main.553e50ef.js.map": "/product-catalog/static/js/main.553e50ef.js.map"
+    "main.ad3637e5.css.map": "/product-catalog/static/css/main.ad3637e5.css.map",
+    "main.0523c93a.js.map": "/product-catalog/static/js/main.0523c93a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f196c642.css",
-    "static/js/main.553e50ef.js"
+    "static/css/main.ad3637e5.css",
+    "static/js/main.0523c93a.js"
   ]
 }
