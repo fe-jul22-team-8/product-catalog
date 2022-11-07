@@ -7,11 +7,11 @@ interface Context {
 
 export const ModalContext = createContext<Context>({
     setModalOpen: () => undefined,
-    modalOpen: true,
+    modalOpen: false,
 });
 
 export function ModalProvider({ children }: { children?: ReactNode }) {
-    const [modalOpen, setModalOpen] = useState(true);
+    const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <ModalContext.Provider value={{

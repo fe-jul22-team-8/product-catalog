@@ -4,6 +4,7 @@ import { CartList } from '../../components/CartList';
 import { CartCheckout } from '../../components/CartCheckout';
 
 export const CartPages = () => {
+
   return (
     <>
       <div className={styles.container}>

@@ -1,13 +1,14 @@
 import React from "react";
 import logo from '../../icons/succ.png';
 import style from './Modal.module.scss';
+import ReactDOM from "react-dom";
 
 interface Props {
   setOpenModal: (value: boolean) => void,
 }
 
 export const ModalWindow: React.FC<Props> = ({ setOpenModal }) => {
-  return (
+  return ReactDOM.createPortal(
     <div className={style.modal}>
       <div className={style.modal_container}>
         <div className={style.modal_close_container}>
@@ -36,6 +37,7 @@ export const ModalWindow: React.FC<Props> = ({ setOpenModal }) => {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal") as HTMLElement
   );
 }
