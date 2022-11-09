@@ -11,15 +11,15 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ phone }) => {
   const { setCardData, cardData } = useContext(CardContext);
-//@ts-ignore
+
   const isCardInArray = cardData.includes(phone.id);
 
   const handleSetCardInData = () => {
     if (!isCardInArray) {
-      //@ts-ignore
+
       setCardData([...cardData, phone.id]);
     } else {
-        //@ts-ignore
+
       setCardData((current) => [...current].filter((id) => id !== phone.id));
     }
   };

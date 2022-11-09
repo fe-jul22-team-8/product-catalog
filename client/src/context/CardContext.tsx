@@ -3,8 +3,8 @@ import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, us
 import { useSearchParams } from 'react-router-dom';
 
 interface Context {
-    cardData: Phone[],
-    setCardData: Dispatch<SetStateAction<Phone[]>>,
+    cardData: string[],
+    setCardData: Dispatch<SetStateAction<string[]>>,
     perPage: string,
     setPerPage: Dispatch<SetStateAction<string>>,
 }
@@ -17,14 +17,15 @@ export const CardContext = createContext<Context>({
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
-  const [cardData, setCardData] = useState<Phone[]>([]);
+  const [cardData, setCardData] = useState<string[]>([]);
   const [searchParams] = useSearchParams();
   const [perPage, setPerPage] = useState(searchParams.get('perPage') || '8');
 
   useEffect(() => {
-    if (window.localStorage.getItem('id')) {
-      // @ts-ignore
-      setCardData(JSON.parse(window.localStorage.getItem('id')));
+    const idArray = window.localStorage.getItem('id');
+    if (idArray) {
+
+      setCardData(JSON.parse(idArray));
     }
   }, []);
 

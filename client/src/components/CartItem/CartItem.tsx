@@ -3,19 +3,40 @@ import deleteCross from '../../icons/cross.svg';
 import plus from '../../icons/plus.svg';
 import minus from '../../icons/minus.svg';
 import { BASE_URL } from '../../utils/fetchProducts';
+import { useContext, Dispatch, SetStateAction } from 'react';
+import { PhonesDataContext } from '../../context/DataContext';
+import { Phone } from '@/types/Phone';
 
 interface Props {
   name: string;
   img: string;
   price: number;
+  keyItem: string;
+  setCartList: Dispatch<SetStateAction<Phone[]>>,
+  setCardData: Dispatch<SetStateAction<string[]>>,
+  setPhonesList: Dispatch<SetStateAction<Phone[]>>,
 }
 
-export const CartItem: React.FC<Props> = ({ name, img, price }) => {
+
+export const CartItem: React.FC<Props> = ({ name, img, price, keyItem, setCartList, setCardData, setPhonesList }) => {
+
+  const goods = JSON.parse(localStorage.getItem('id') || '{}');
+
+  const handleRemoveItem = () => {
+    goods.splice(goods.indexOf(keyItem), 1);
+    localStorage.setItem('id', JSON.stringify(goods));
+    setCartList(oldState => oldState.filter(phone => phone.id !== keyItem));
+    setCardData(oldState => oldState.filter(phone => phone !== keyItem));
+    setPhonesList(oldState => oldState.filter(phone => phone.id !== keyItem));
+    
+  }
+
   return (
     <div className={styles.cartItem}>
       <div className={styles.cartItem__info}>
         <div className={styles.cartItem__delete_button}>
           <img
+            onClick={handleRemoveItem}
             src={deleteCross}
             className={styles.cartItem__delete_button_img}
           />

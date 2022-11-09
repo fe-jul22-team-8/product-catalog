@@ -1,0 +1,21 @@
+@import '../../styles/mixin';
+
+.container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFound {
+    // object-fit: cover;
+    // width: 100%;
+    max-height: 500px;
+    max-width: 500px;
+
+    @include onMobile {
+        max-height: 300px;
+        max-width: 300px;
+        transform: translate(0%, -30%);
+    }
+}
