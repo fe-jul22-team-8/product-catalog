@@ -7,13 +7,17 @@ import { ModalWindow } from '../ModalWindow/ModalWindow';
 import classNames from 'classnames';
 
 export const CartCheckout = () => {
-  const { setCardData, cardData } = useContext(CardContext);
+  const { setCardData, cardData, sumOfItems, setSumOfItems } = useContext(CardContext);
   const data = localStorage.getItem('id');
 
   const { phonesList, setPhonesList } = useContext(PhonesDataContext);
   const { setModalOpen, modalOpen } = useContext(ModalContext);
 
   const phones = phonesList.filter((phone) => data?.includes(phone.id));
+
+  const sum = Object.values(sumOfItems).reduce((a, b) => a + b, 0);
+
+  console.log(sum);
 
   const totalPrice = phones
     .map((item) => item.price)
@@ -24,13 +28,14 @@ export const CartCheckout = () => {
     localStorage.clear();
     setCardData([]);
     setPhonesList([]);
+    setSumOfItems({});
   }
 
-  console.log(cardData.length);
+  // console.log(sum);
 
   return (
     <div className={styles.checkout}>
-      <h3 className={styles.checkout__total}>${totalPrice}</h3>
+      <h3 className={styles.checkout__total}>${sum}</h3>
       <p className={styles.checkout__count}>
         Total for {cardData.length} items
       </p>

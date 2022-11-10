@@ -9,7 +9,7 @@ import { CardContext } from '../..//context/CardContext';
 export const CartList = () => {
   const data = JSON.parse(localStorage.getItem('id') || '{}');
   const { phonesList, setPhonesList } = useContext(PhonesDataContext);
-  const { cardData, setCardData } = useContext(CardContext);
+  const { cardData, setCardData, setSumOfItems, sumOfItems } = useContext(CardContext);
 
   const [cartList, setCartList] = useState<Phone[]>([]);
 
@@ -18,12 +18,13 @@ export const CartList = () => {
   }, [phonesList]);
 
 
-  useEffect(() => {
-    setCartList(phonesList.filter((phone:Phone) => data?.includes(phone.id)));
-  }, [cardData]);
 
-  console.log(data);
-  console.log(cardData);
+  // useEffect(() => {
+  //   setCartList(phonesList.filter((phone:Phone) => data?.includes(phone.id)));
+  // }, [cardData]);
+
+  console.log(sumOfItems);
+  // console.log(cardData);
 
   return (
     <div className={styles.CartList}>
@@ -38,6 +39,9 @@ export const CartList = () => {
             setCartList={setCartList}
             setCardData={setCardData}
             setPhonesList={setPhonesList}
+            cardData={cardData}
+            setSumOfItems={setSumOfItems}
+            sumOfItems={sumOfItems}
           />
         ))}
       </div>
