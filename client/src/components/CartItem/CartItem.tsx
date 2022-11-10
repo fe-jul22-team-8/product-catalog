@@ -14,48 +14,64 @@ interface Props {
   img: string;
   price: number;
   keyItem: string;
-  setCartList: Dispatch<SetStateAction<Phone[]>>,
-  setCardData: Dispatch<SetStateAction<string[]>>,
-  setPhonesList: Dispatch<SetStateAction<Phone[]>>,
-  setSumOfItems: Dispatch<SetStateAction<Sum>>,
-  sumOfItems: Sum,
-  cardData: string[],
+  setCartList: Dispatch<SetStateAction<Phone[]>>;
+  setCardData: Dispatch<SetStateAction<string[]>>;
+  setPhonesList: Dispatch<SetStateAction<Phone[]>>;
+  setSumOfItems: Dispatch<SetStateAction<Sum>>;
+  sumOfItems: Sum;
+  cardData: string[];
 }
 
-
-export const CartItem: React.FC<Props> = ({ name, img, price, keyItem, setCartList, setCardData, setPhonesList, cardData, setSumOfItems, sumOfItems }) => {
-
+export const CartItem: React.FC<Props> = ({
+  name,
+  img,
+  price,
+  keyItem,
+  setCartList,
+  setCardData,
+  setPhonesList,
+  cardData,
+  setSumOfItems,
+}) => {
   const goods = JSON.parse(localStorage.getItem('id') || '{}');
 
-  const count = cardData.filter(item => item === keyItem).length;
+  const count = cardData.filter((item) => item === keyItem).length;
 
   useEffect(() => {
-    setSumOfItems(oldState => ({...oldState, [keyItem]: price * count}));
+    setSumOfItems((oldState) => ({ ...oldState, [keyItem]: price * count }));
   }, []);
 
   const handleRemoveItem = () => {
     goods.splice(goods.indexOf(keyItem), 1);
     localStorage.setItem('id', JSON.stringify(goods));
-    setCartList(oldState => oldState.filter(phone => phone.id !== keyItem));
-    setCardData(oldState => oldState.filter(phone => phone !== keyItem));
-    setPhonesList(oldState => oldState.filter(phone => phone.id !== keyItem));
-    setSumOfItems(oldState => ({...oldState, [keyItem]: 0}));
-  }
+    setCartList((oldState) => oldState.filter((phone) => phone.id !== keyItem));
+    setCardData((oldState) => oldState.filter((phone) => phone !== keyItem));
+    setPhonesList((oldState) =>
+      oldState.filter((phone) => phone.id !== keyItem),
+    );
+    setSumOfItems((oldState) => ({ ...oldState, [keyItem]: 0 }));
+  };
 
   const handleCountUp = () => {
-    setSumOfItems(oldState => ({...oldState, [keyItem]: price * (count + 1)}));
-    setCardData(oldState => [...oldState, keyItem]);
-  }
+    setSumOfItems((oldState) => ({
+      ...oldState,
+      [keyItem]: price * (count + 1),
+    }));
+    setCardData((oldState) => [...oldState, keyItem]);
+  };
 
   const handleCountDown = () => {
-    setSumOfItems(oldState => ({...oldState, [keyItem]: price * (count - 1)}));
+    setSumOfItems((oldState) => ({
+      ...oldState,
+      [keyItem]: price * (count - 1),
+    }));
     const index = cardData.indexOf(keyItem);
     if (index > -1) {
       const copy = [...cardData];
       copy.splice(index, 1);
       setCardData(copy);
     }
-  }
+  };
 
   return (
     <div className={styles.cartItem}>
@@ -74,16 +90,20 @@ export const CartItem: React.FC<Props> = ({ name, img, price, keyItem, setCartLi
       </div>
 
       <div className={styles.cartItem__count}>
-        <button 
-        className={classNames(styles.cartItem__count_button, {
-          [styles.cartItem__count_button_disabled]: count < 1,
-        })} 
-        onClick={handleCountDown} 
-        disabled={count < 1}>
+        <button
+          className={classNames(styles.cartItem__count_button, {
+            [styles.cartItem__count_button_disabled]: count < 1,
+          })}
+          onClick={handleCountDown}
+          disabled={count < 1}
+        >
           <img src={minus} className={styles.cartItem__count_button_symbol} />
         </button>
         <div className={styles.cartItem__count_number}>{count}</div>
-        <button className={styles.cartItem__count_button} onClick={handleCountUp}>
+        <button
+          className={styles.cartItem__count_button}
+          onClick={handleCountUp}
+        >
           <img src={plus} className={styles.cartItem__count_button_symbol} />
         </button>
         <div className={styles.cartItem__price}>{count * price}$</div>

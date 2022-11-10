@@ -13,8 +13,8 @@ export const PhonesPage = () => {
   const { phonesList, isLoading } = useContext(PhonesDataContext);
 
   return (
-      <section className={styles.PhonesPage}>
-        {isLoading ? <Loader /> : <PhonesList phonesList={phonesList} />}
-      </section>
+    <section className={styles.PhonesPage}>
+      {isLoading ? <Loader /> : <PhonesList phonesList={phonesList} />}
+    </section>
   );
 };

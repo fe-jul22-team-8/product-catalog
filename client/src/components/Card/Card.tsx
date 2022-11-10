@@ -16,10 +16,8 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   const handleSetCardInData = () => {
     if (!isCardInArray) {
-
       setCardData([...cardData, phone.id]);
     } else {
-
       setCardData((current) => [...current].filter((id) => id !== phone.id));
     }
   };

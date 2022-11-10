@@ -25,7 +25,6 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
     setSearchParams(params.toString());
   }, [page, perPage]);
 
-
   const start = (page - 1) * +perPage + 1;
   const end = Math.min(page * +perPage, phonesList.length);
 
@@ -34,20 +33,21 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   };
   return (
     <>
-        <Title count={phonesList.length} />
-        <div className={styles.container}>
-          {phonesList.slice(start - 1, end).map((phone) => (
-            <Card key={phone.id} phone={phone} />
-          ))}
-        </div>
+      <Title count={phonesList.length} />
+      <div className={styles.container}>
+        {phonesList.slice(start - 1, end).map((phone) => (
+          <Card key={phone.id} phone={phone} />
+        ))}
+      </div>
 
-      {isCorrect &&
+      {isCorrect && (
         <Pagination
           total={phonesList.length}
           perPage={+perPage}
           currentPage={page}
           onPageChange={handlePageChange}
-        />}
+        />
+      )}
     </>
   );
 };

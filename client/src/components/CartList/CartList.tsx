@@ -5,7 +5,6 @@ import styles from './CartList.module.scss';
 import { PhonesDataContext } from '../../context/DataContext';
 import { CardContext } from '../..//context/CardContext';
 
-
 export const CartList = () => {
   const data = JSON.parse(localStorage.getItem('id') || '{}');
   const { phonesList, setPhonesList } = useContext(PhonesDataContext);
@@ -14,17 +13,8 @@ export const CartList = () => {
   const [cartList, setCartList] = useState<Phone[]>([]);
 
   useEffect(() => {
-    setCartList(phonesList.filter((phone:Phone) => data?.includes(phone.id)));
+    setCartList(phonesList.filter((phone: Phone) => data?.includes(phone.id)));
   }, [phonesList]);
-
-
-
-  // useEffect(() => {
-  //   setCartList(phonesList.filter((phone:Phone) => data?.includes(phone.id)));
-  // }, [cardData]);
-
-  console.log(sumOfItems);
-  // console.log(cardData);
 
   return (
     <div className={styles.CartList}>

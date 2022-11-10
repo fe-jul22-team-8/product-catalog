@@ -1,27 +1,34 @@
 import { Phone } from '@/types/Phone';
-import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect, } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useState,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+} from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export interface Sum {
-  [name: string]: number
+  [name: string]: number;
 }
 
 interface Context {
-    cardData: string[],
-    setCardData: Dispatch<SetStateAction<string[]>>,
-    perPage: string,
-    setPerPage: Dispatch<SetStateAction<string>>,
-    sumOfItems: Sum,
-    setSumOfItems: Dispatch<SetStateAction<Sum>>,
+  cardData: string[];
+  setCardData: Dispatch<SetStateAction<string[]>>;
+  perPage: string;
+  setPerPage: Dispatch<SetStateAction<string>>;
+  sumOfItems: Sum;
+  setSumOfItems: Dispatch<SetStateAction<Sum>>;
 }
 
 export const CardContext = createContext<Context>({
-    setCardData: () => undefined,
-    cardData: [],
-    perPage: '1',
-    setPerPage: () => undefined,
-    sumOfItems: {},
-    setSumOfItems: () => undefined,
+  setCardData: () => undefined,
+  cardData: [],
+  perPage: '1',
+  setPerPage: () => undefined,
+  sumOfItems: {},
+  setSumOfItems: () => undefined,
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
@@ -33,7 +40,6 @@ export function CardProvider({ children }: { children?: ReactNode }) {
   useEffect(() => {
     const idArray = window.localStorage.getItem('id');
     if (idArray) {
-
       setCardData(JSON.parse(idArray));
     }
   }, []);
@@ -41,7 +47,6 @@ export function CardProvider({ children }: { children?: ReactNode }) {
   useEffect(() => {
     window.localStorage.setItem('id', JSON.stringify(cardData));
   }, [cardData]);
-
 
   return (
     <CardContext.Provider
@@ -51,9 +56,9 @@ export function CardProvider({ children }: { children?: ReactNode }) {
         perPage,
         setPerPage,
         sumOfItems,
-        setSumOfItems
-    }}>
-
+        setSumOfItems,
+      }}
+    >
       {children}
     </CardContext.Provider>
   );

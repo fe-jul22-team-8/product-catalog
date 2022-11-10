@@ -17,6 +17,6 @@ export const Title: React.FC<Props> = ({ count }) => (
     <h1 className={styles.title_lable}>Mobile phones</h1>
     <p className={styles.title_count}>{`${count} models`}</p>
     <p className={styles.title_select_text}>{'Items on page'}</p>
-    <ItemSelect count={count}/>
+    <ItemSelect count={count} />
   </div>
 );
