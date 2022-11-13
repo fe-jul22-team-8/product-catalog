@@ -20,6 +20,8 @@ interface Context {
   setPerPage: Dispatch<SetStateAction<string>>;
   sumOfItems: Sum;
   setSumOfItems: Dispatch<SetStateAction<Sum>>;
+  favouriteList: string[];
+  setFavouriteList: Dispatch<SetStateAction<string[]>>;
 }
 
 export const CardContext = createContext<Context>({
@@ -29,6 +31,8 @@ export const CardContext = createContext<Context>({
   setPerPage: () => undefined,
   sumOfItems: {},
   setSumOfItems: () => undefined,
+  favouriteList: [],
+  setFavouriteList: () => undefined,
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
@@ -36,17 +40,24 @@ export function CardProvider({ children }: { children?: ReactNode }) {
   const [searchParams] = useSearchParams();
   const [perPage, setPerPage] = useState(searchParams.get('perPage') || '8');
   const [sumOfItems, setSumOfItems] = useState<Sum>({});
+  const [favouriteList, setFavouriteList] = useState<string[]>([]);
 
   useEffect(() => {
     const idArray = window.localStorage.getItem('id');
+    const favouriteIdArray = window.localStorage.getItem('favourite');
     if (idArray) {
       setCardData(JSON.parse(idArray));
+    }
+
+    if (favouriteIdArray) {
+      setFavouriteList(JSON.parse(favouriteIdArray));
     }
   }, []);
 
   useEffect(() => {
     window.localStorage.setItem('id', JSON.stringify(cardData));
-  }, [cardData]);
+    window.localStorage.setItem('favourite', JSON.stringify(favouriteList));
+  }, [cardData, favouriteList]);
 
   return (
     <CardContext.Provider
@@ -57,6 +68,8 @@ export function CardProvider({ children }: { children?: ReactNode }) {
         setPerPage,
         sumOfItems,
         setSumOfItems,
+        favouriteList,
+        setFavouriteList,
       }}
     >
       {children}

@@ -15,7 +15,6 @@ export const Header: React.FC<Props> = ({
   burgerMenuSelected,
 }) => {
   const { cardData } = useContext(CardContext);
-  console.log(cardData.length);
   const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
   return (
     <div className={styles.header}>
@@ -31,7 +30,7 @@ export const Header: React.FC<Props> = ({
 
       <div className={styles.header__icons}>
         <NavLink
-          to="/"
+          to="/favourite"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
         {cardData.length > 0 &&
