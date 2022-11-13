@@ -1,5 +1,5 @@
 import express from 'express';
-import * as phoneController from '../controller/phones.js'
+import * as phoneController from '../controller/phones.js';
 
 export const router = express.Router();
 
