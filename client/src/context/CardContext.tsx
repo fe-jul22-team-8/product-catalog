@@ -1,30 +1,46 @@
 import { Phone } from '@/types/Phone';
-import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect, } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useState,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+} from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+export interface Sum {
+  [name: string]: number;
+}
+
 interface Context {
-    cardData: Phone[],
-    setCardData: Dispatch<SetStateAction<Phone[]>>,
-    perPage: string,
-    setPerPage: Dispatch<SetStateAction<string>>,
+  cardData: string[];
+  setCardData: Dispatch<SetStateAction<string[]>>;
+  perPage: string;
+  setPerPage: Dispatch<SetStateAction<string>>;
+  sumOfItems: Sum;
+  setSumOfItems: Dispatch<SetStateAction<Sum>>;
 }
 
 export const CardContext = createContext<Context>({
-    setCardData: () => undefined,
-    cardData: [],
-    perPage: '1',
-    setPerPage: () => undefined,
+  setCardData: () => undefined,
+  cardData: [],
+  perPage: '1',
+  setPerPage: () => undefined,
+  sumOfItems: {},
+  setSumOfItems: () => undefined,
 });
 
 export function CardProvider({ children }: { children?: ReactNode }) {
-  const [cardData, setCardData] = useState<Phone[]>([]);
+  const [cardData, setCardData] = useState<string[]>([]);
   const [searchParams] = useSearchParams();
   const [perPage, setPerPage] = useState(searchParams.get('perPage') || '8');
+  const [sumOfItems, setSumOfItems] = useState<Sum>({});
 
   useEffect(() => {
-    if (window.localStorage.getItem('id')) {
-      // @ts-ignore
-      setCardData(JSON.parse(window.localStorage.getItem('id')));
+    const idArray = window.localStorage.getItem('id');
+    if (idArray) {
+      setCardData(JSON.parse(idArray));
     }
   }, []);
 
@@ -39,8 +55,10 @@ export function CardProvider({ children }: { children?: ReactNode }) {
         setCardData,
         perPage,
         setPerPage,
-    }}>
-
+        sumOfItems,
+        setSumOfItems,
+      }}
+    >
       {children}
     </CardContext.Provider>
   );

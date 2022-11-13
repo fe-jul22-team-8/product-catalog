@@ -1,3 +1,10 @@
-main {
-    padding-bottom: 150px;
+@import './styles/mixin';
+
+.section {
+  height: 100%;
+  padding-bottom: 150px;
+
+  @include onMobile {
+    padding-bottom: 300px;
+  }
 }

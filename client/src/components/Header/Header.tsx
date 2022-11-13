@@ -2,6 +2,8 @@ import { HeaderList } from './HeaderList';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './header.module.scss';
 import logo from '../../icons/logo.svg';
+import { useContext } from 'react';
+import { CardContext } from '../../context/CardContext';
 
 interface Props {
   setBurgerMenuSelected: (value: boolean) => void;
@@ -12,6 +14,8 @@ export const Header: React.FC<Props> = ({
   setBurgerMenuSelected,
   burgerMenuSelected,
 }) => {
+  const { cardData } = useContext(CardContext);
+  console.log(cardData.length);
   const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
   return (
     <div className={styles.header}>
@@ -30,10 +34,17 @@ export const Header: React.FC<Props> = ({
           to="/"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
+        {cardData.length > 0 &&
+          <div className={styles.header__counter}>
+            <span className={styles.header__counter_text}>{cardData.length}</span>
+          </div>
+        }
+
         <NavLink
           to="/cart"
           className={[styles.header__item, styles.header__cart].join(' ')}
         />
+
       </div>
 
       <div
