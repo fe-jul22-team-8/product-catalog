@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { BurgerMenu } from './components/BurgerMenu';
 import { PhoneDataProvider } from './context/DataContext';
 import { CardProvider } from './context/CardContext';
+import { ProductDetalePage } from './pages/ProductDetalePage/ProductDetalePage';
 
 function App() {
   const [burgerMenuSelected, setBurgerMenuSelected] = useState(false);
@@ -32,6 +33,10 @@ function App() {
                 <Routes>
                   <Route path={ROUTER.phones} element={<PhonesPage />} />
                   <Route path={ROUTER.cart} element={<CartPages />} />
+                  <Route
+                    path={`${ROUTER.phones}/${ROUTER.productDetalePage}`}
+                    element={<ProductDetalePage />}
+                  />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

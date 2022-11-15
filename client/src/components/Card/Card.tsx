@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CardContext, CardProvider } from '../../context/CardContext';
 import { Phone } from '../../types/Phone';
 import classNames from 'classnames';
+import { useParams } from 'react-router-dom';
 
 interface Props {
   phone: Phone;

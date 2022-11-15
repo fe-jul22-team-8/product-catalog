@@ -43,6 +43,7 @@ export function PhoneDataProvider({ children }: { children?: ReactNode }) {
   const [data, setData] = useState<DataType | null>(null);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
   const loadData = useMemo(async () => {
     try {
       const phonesFromServer = await getPhones('/phones');

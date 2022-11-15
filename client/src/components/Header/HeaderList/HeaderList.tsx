@@ -7,6 +7,7 @@ export const ROUTER = {
   tablets: '/tablets',
   accessories: '/accessories',
   cart: '/cart',
+  productDetalePage: ':productId',
 };
 
 export const HeaderList: React.FC = () => (

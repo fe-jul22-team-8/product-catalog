@@ -9,7 +9,6 @@ export const CartList = () => {
   const data = JSON.parse(localStorage.getItem('id') || '{}');
   const { phonesList, setPhonesList } = useContext(PhonesDataContext);
   const { cardData, setCardData, setSumOfItems, sumOfItems } = useContext(CardContext);
-
   const [cartList, setCartList] = useState<Phone[]>([]);
 
   useEffect(() => {
