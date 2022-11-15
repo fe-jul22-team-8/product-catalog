@@ -6,7 +6,7 @@ import { ModalProvider } from './context/ModalContext';
 const Root = () => (
   <Router>
     <ModalProvider>
-    <App />
+      <App />
     </ModalProvider>
   </Router>
 );

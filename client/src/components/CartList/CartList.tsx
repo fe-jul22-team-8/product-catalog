@@ -8,7 +8,7 @@ export const CartList = () => {
   const data = localStorage.getItem('id');
   const { phonesList } = useContext(PhonesDataContext);
 
-  const phones = phonesList.filter((phone:Phone) => data?.includes(phone.id));
+  const phones = phonesList.filter((phone: Phone) => data?.includes(phone.id));
 
   return (
     <div className={styles.CartList}>

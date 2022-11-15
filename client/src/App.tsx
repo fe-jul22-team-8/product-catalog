@@ -33,7 +33,10 @@ function App() {
                 <Routes>
                   <Route path={ROUTER.phones} element={<PhonesPage />} />
                   <Route path={ROUTER.cart} element={<CartPages />} />
-                  <Route path={`${ROUTER.phones}/${ROUTER.productDetalePage}`} element={<ProductDetalePage />} />
+                  <Route
+                    path={`${ROUTER.phones}/${ROUTER.productDetalePage}`}
+                    element={<ProductDetalePage />}
+                  />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

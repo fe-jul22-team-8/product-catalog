@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import logo from '../../icons/succ.png';
 import style from './Modal.module.scss';
 
 interface Props {
-  setOpenModal: (value: boolean) => void,
+  setOpenModal: (value: boolean) => void;
 }
 
 export const ModalWindow: React.FC<Props> = ({ setOpenModal }) => {
@@ -16,8 +16,7 @@ export const ModalWindow: React.FC<Props> = ({ setOpenModal }) => {
               setOpenModal(false);
             }}
             className={style.modal_close}
-          >
-          </button>
+          ></button>
         </div>
         <div className={style.modal_container_title}>
           <img src={logo} className={style.modal_circle}></img>
@@ -38,4 +37,4 @@ export const ModalWindow: React.FC<Props> = ({ setOpenModal }) => {
       </div>
     </div>
   );
-}
+};

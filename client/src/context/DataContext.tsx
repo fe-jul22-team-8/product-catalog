@@ -43,7 +43,7 @@ export function PhoneDataProvider({ children }: { children?: ReactNode }) {
   const [data, setData] = useState<DataType | null>(null); // need for pagination
   const [isError, setIsError] = useState(false); // need for error message and reload button
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const loadData = useMemo(async () => {
     try {
       const phonesFromServer = await getPhones('/phones');
