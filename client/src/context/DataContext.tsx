@@ -40,8 +40,8 @@ export const PhonesDataContext = createContext<Context>({
 
 export function PhoneDataProvider({ children }: { children?: ReactNode }) {
   const [phonesList, setPhonesList] = useState<Phone[]>([]);
-  const [data, setData] = useState<DataType | null>(null); // need for pagination
-  const [isError, setIsError] = useState(false); // need for error message and reload button
+  const [data, setData] = useState<DataType | null>(null);
+  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadData = useMemo(async () => {

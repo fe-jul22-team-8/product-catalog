@@ -2,8 +2,13 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../icons/logo.svg';
 import arrow from '../../icons/arrow.svg';
 import styles from './footer.module.scss';
+import { animateScroll as scroll } from 'react-scroll';
 
 export const Footer = () => {
+
+  const handleToTheTop = () => {
+      scroll.scrollToTop();
+  }
   return (
     <div className={styles.footer}>
       <div className={styles.footer__content}>
@@ -23,7 +28,7 @@ export const Footer = () => {
           </NavLink>
         </div>
 
-        <button className={styles.footer__button}>
+        <button className={styles.footer__button} onClick={handleToTheTop}>
           Back to top
           <img src={arrow} alt="logo" className={styles.footer__arrow} />
         </button>

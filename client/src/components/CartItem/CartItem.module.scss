@@ -50,11 +50,11 @@
   &__delete_button {
     padding-left: 3px;
     padding-right: 26px;
-    cursor: pointer;
   }
 
   &__delete_button_img {
     width: 13px;
+    cursor: pointer;
   }
 
   &__img {
@@ -115,6 +115,7 @@
       border: 1px solid #b4bdc4;
       cursor: pointer;
       transition: 0.5s;
+      background-color: white;
 
       &:hover {
         border: 1px solid $colorPrimary;
@@ -123,6 +124,13 @@
 
       &_symbol {
         width: 10px;
+      }
+
+      &_disabled {
+        background-color: grey;
+        &:hover {
+          border: 1px solid #b4bdc4;
+        }
       }
     }
 

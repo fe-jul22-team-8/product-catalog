@@ -163,6 +163,10 @@ button {
       border-color: $black;
       cursor: pointer;
     }
+
+    &_heart {
+      background-image: url('../../icons/redHeart.svg');
+    }
   }
 
   &_buttons {

@@ -24,12 +24,12 @@ export const getAll = (req: Request, res: Response) => {
   }
 
   res.send(phones);
-}
+};
 
 export const getOne = (req: Request, res: Response) => {
   const { phoneId } = req.params;
 
-  const foundPhone = phoneService.getById(phoneId)
+  const foundPhone = phoneService.getById(phoneId);
 
   if (!foundPhone) {
     res.sendStatus(404);
@@ -37,4 +37,4 @@ export const getOne = (req: Request, res: Response) => {
   }
 
   res.send(foundPhone);
-}
+};

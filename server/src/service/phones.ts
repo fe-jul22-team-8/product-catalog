@@ -8,7 +8,7 @@ export function getAll() {
   return phones;
 }
 
-export function getById(phoneId:string) {
+export function getById(phoneId: string) {
   const foundPhone = phones.find(
     (phone: { id: string }) => phone.id === phoneId,
   );
