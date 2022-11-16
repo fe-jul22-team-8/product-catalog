@@ -31,13 +31,16 @@ function App() {
               />
               <main className="section">
                 <Routes>
-                  {/* Додав поки home i зредиректив на PhonePage */}
-                  {/* Додав phones до url ROUTER.phones, бо посилання на головну сторінку (тобто просто слеш = '/') */}
-                  {/* Зробив вкладенність */}
-                  <Route path={ROUTER.home} element={<Navigate to={`${ROUTER.phones}`} />} /> 
+                  <Route
+                    path={ROUTER.home}
+                    element={<Navigate to={`${ROUTER.phones}`} />}
+                  />
                   <Route path={ROUTER.phones}>
                     <Route index element={<PhonesPage />} />
-                    <Route path={ROUTER.productDetalePage} element={<ProductDetalePage />}/>
+                    <Route
+                      path={ROUTER.productDetalePage}
+                      element={<ProductDetalePage />}
+                    />
                   </Route>
                   <Route path={ROUTER.cart} element={<CartPages />} />
                   <Route path="*" element={<NotFoundPage />} />

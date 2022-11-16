@@ -39,7 +39,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
           <Card key={phone.id} phone={phone} />
         ))}
       </div>
-      
+
       {isCorrect && (
         <Pagination
           total={phonesList.length}

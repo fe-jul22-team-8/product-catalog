@@ -11,7 +11,8 @@ interface Props {
 }
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const { setCardData, cardData, setFavouriteList, favouriteList, } = useContext(CardContext);
+  const { setCardData, cardData, setFavouriteList, favouriteList } =
+    useContext(CardContext);
 
   const isCardInArray = cardData.includes(phone.id);
   const isFavouriteArray = favouriteList.includes(phone.id);
@@ -26,7 +27,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   const handleSetItemInFavourite = () => {
     if (!isFavouriteArray) {
-      setFavouriteList(oldState => [...oldState, phone.id]);
+      setFavouriteList((oldState) => [...oldState, phone.id]);
     } else {
       setFavouriteList((current) => current.filter((id) => id !== phone.id));
     }
@@ -66,14 +67,12 @@ export const Card: React.FC<Props> = ({ phone }) => {
         >
           {isCardInArray ? 'Added' : 'Add to cart'}
         </button>
-        <button 
-        className={classNames(
-          styles.card_wishlist, {
+        <button
+          className={classNames(styles.card_wishlist, {
             [styles.card_wishlist_heart]: isFavouriteArray,
-          }
-        )} 
-        onClick={handleSetItemInFavourite}>  
-        </button>
+          })}
+          onClick={handleSetItemInFavourite}
+        ></button>
       </div>
     </div>
   );

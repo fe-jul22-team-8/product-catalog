@@ -11,39 +11,39 @@ export function PhotosBlockSelecting() {
 
   const handleClick = (event: any) => {
     setCurrentImg(event.currentTarget.getAttribute('src'));
-  }
+  };
   return (
     <div className={styles.PhotosBlock}>
       <div className={styles.PhotosBlock__sidePanel}>
-        <img 
-          src={testPhoto1} 
+        <img
+          src={testPhoto1}
           className={styles.PhotosBlock__sidePanel_photo}
           onClick={handleClick}
         />
-        <img 
-          src={testPhoto2} 
+        <img
+          src={testPhoto2}
           className={styles.PhotosBlock__sidePanel_photo}
-          onClick={handleClick} 
+          onClick={handleClick}
         />
-          <img 
-            src={testPhoto3} 
-            className={styles.PhotosBlock__sidePanel_photo} 
-            onClick={handleClick} 
-          />
-        <img 
-          src={testPhoto4} 
-          className={styles.PhotosBlock__sidePanel_photo} 
-          onClick={handleClick}  
+        <img
+          src={testPhoto3}
+          className={styles.PhotosBlock__sidePanel_photo}
+          onClick={handleClick}
         />
-        <img 
-          src={testPhoto5} 
-          className={styles.PhotosBlock__sidePanel_photo} 
-          onClick={handleClick} 
+        <img
+          src={testPhoto4}
+          className={styles.PhotosBlock__sidePanel_photo}
+          onClick={handleClick}
+        />
+        <img
+          src={testPhoto5}
+          className={styles.PhotosBlock__sidePanel_photo}
+          onClick={handleClick}
         />
       </div>
       <div className={styles.PhotosBlock__mainPhoto}>
-        <img src={currentImg} className={styles.PhotosBlock__mainPhoto_photo}/>
+        <img src={currentImg} className={styles.PhotosBlock__mainPhoto_photo} />
       </div>
     </div>
-  )
+  );
 }
