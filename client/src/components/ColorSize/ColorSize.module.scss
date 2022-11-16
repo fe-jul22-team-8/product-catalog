@@ -1,0 +1,188 @@
+@import '../../styles/reset';
+@import '../../styles/vars';
+@import '../Card/Card.module.scss';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../fonts/Mont-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+.ActionBlock {
+  display: flex;
+  flex-direction: column;
+
+  &__option_text {
+    display: block;
+    margin-bottom: 8px;
+    color: #89939a;
+    font-family: 'Mont';
+    font-size: 12px;
+  }
+
+  &__underline {
+    border: 1px solid #e2e6e9;
+    margin: 25px 0;
+    width: 320px;
+  }
+}
+
+.ColorBlock {
+  &__list {
+    display: flex;
+
+    &__item {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+      border: 1px solid #e2e6e9;
+      border-radius: 100%;
+
+      &:hover {
+        border: 1px solid #b4bdc4;
+      }
+
+      &_active {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        border-radius: 100%;
+        border: 1px solid #313237;
+      }
+
+      &__link {
+        display: block;
+        margin: 1px;
+        border-radius: 100%;
+        margin-right: 10px;
+        height: 26px;
+        width: 26px;
+      }
+    }
+  }
+}
+
+.CapacityBlock {
+  &__list {
+    display: flex;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      width: 56px;
+      margin-right: 8px;
+      border: 1px solid #b4bdc4;
+
+      &_active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 56px;
+        margin-right: 8px;
+        border: 1px solid #b4bdc4;
+        background: #313237;
+      }
+
+      &:hover {
+        border: 1px solid #313237;
+      }
+
+      &__link {
+        display: block;
+        font-family: 'Mont';
+        font-size: 14px;
+        color: #313237;
+
+        &_active {
+          display: block;
+          font-family: 'Mont';
+          font-size: 14px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  border: none;
+  margin-top: 0px;
+  padding: 0px;
+  height: 440px;
+  width: 320px;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    border: none;
+    box-shadow: none;
+  }
+
+  &_price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: none;
+  }
+
+  &_newPrice {
+    font-family: 'Mont-Bold';
+    font-weight: 800;
+    font-size: 32px;
+  }
+
+  &_description {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    max-width: 100%;
+  }
+
+  &_oldPrice {
+    font-family: 'Mont';
+    color: $grey;
+    text-decoration-line: line-through;
+  }
+
+  &_checkout {
+    margin-bottom: 32px;
+    width: 85%;
+  }
+
+  &_uncheckout {
+    background: $colorWhite;
+    color: #27ae60;
+    border: 1px solid $colorElements;
+  }
+
+  &_wishlist {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #b4bdc3;
+    background-color: $colorWhite;
+    background-image: url('../../icons/favourites.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 8px;
+    transition: border 0.3s;
+    &:hover {
+      border-color: $black;
+      cursor: pointer;
+    }
+  }
+
+  &_buttons {
+    margin-top: 16px;
+    display: flex;
+  }
+}
