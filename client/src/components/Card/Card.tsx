@@ -3,6 +3,7 @@ import { BASE_URL } from '../../utils/fetchProducts';
 import { useContext } from 'react';
 import { CardContext, CardProvider } from '../../context/CardContext';
 import { Phone } from '../../types/Phone';
+import { Link } from "react-router-dom";
 import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
@@ -36,11 +37,14 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
     <div className={styles.card}>
+      <Link to={phone.id}>
       <img
         src={`${BASE_URL}/${image}`}
         alt="card-logo"
         className={styles.card_logo}
       />
+      </Link>
+
       <span className={styles.card_title}>{name} (iMT9G2FSA)</span>
       <div className={styles.card_price}>
         <span className={styles.card_newPrice}>${price}</span>
