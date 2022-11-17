@@ -18,21 +18,24 @@ export const PhotosBlockSelecting = () => {
   return (
     <div className={styles.PhotosBlock}>
       <div className={styles.PhotosBlock__sidePanel}>
-        {images?.map(img => (
-          <img
-          key={img}
-          src={`${BASE_URL}/${img}`}
-          className={styles.PhotosBlock__sidePanel_photo}
-          onClick={handleClick}
-        />
-        ))}
-
+        {images?.map(
+          (img) =>
+            img && (
+              <img
+                key={img}
+                src={`${BASE_URL}/${img}`}
+                className={styles.PhotosBlock__sidePanel_photo}
+                onClick={handleClick}
+              />
+            ),
+        )}
       </div>
       <div className={styles.PhotosBlock__mainPhoto}>
-        <img 
-          src={currentImg || (images && `${BASE_URL}/${images[0]}`)} 
-          className={styles.PhotosBlock__mainPhoto_photo} />
+        <img
+          src={currentImg || (images && `${BASE_URL}/${images[0]}`)}
+          className={styles.PhotosBlock__mainPhoto_photo}
+        />
       </div>
     </div>
   );
-}
+};
