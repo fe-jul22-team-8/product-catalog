@@ -3,7 +3,7 @@ import './headerList.scss';
 
 export const ROUTER = {
   home: '/',
-  phones: '/',
+  phones: '/phones',
   tablets: '/tablets',
   accessories: '/accessories',
   cart: '/cart',

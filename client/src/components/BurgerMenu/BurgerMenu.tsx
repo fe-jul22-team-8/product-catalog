@@ -20,7 +20,11 @@ export const BurgerMenu: React.FC<Props> = ({
       <div className={styles.burger__top}>
         <div className={styles.mainLogo}>
           <NavLink to="/">
-            <img src={logo} className={styles.logo_img} onClick={() => handlerClick(burgerMenuSelected)}/>
+            <img
+              src={logo}
+              className={styles.logo_img}
+              onClick={() => handlerClick(burgerMenuSelected)}
+            />
           </NavLink>
         </div>
         <div
@@ -35,22 +39,37 @@ export const BurgerMenu: React.FC<Props> = ({
 
       <nav>
         <ul className={styles.burger__list}>
-          <li className={styles.burger__item} >
-            <NavLink to="/" className={styles.burger__link} onClick={() => handlerClick(burgerMenuSelected)}>
+          <li className={styles.burger__item}>
+            <NavLink
+              to="/"
+              className={styles.burger__link}
+              onClick={() => handlerClick(burgerMenuSelected)}
+            >
               home
             </NavLink>
           </li>
           <li className={styles.burger__item}>
-            <NavLink to="/" className={styles.burger__link} onClick={() => handlerClick(burgerMenuSelected)}>
+            <NavLink
+              to="/"
+              className={styles.burger__link}
+              onClick={() => handlerClick(burgerMenuSelected)}
+            >
               phones
             </NavLink>
           </li>
           <li className={styles.burger__item}>
-            <NavLink to="/tablets" className={styles.burger__link} onClick={() => handlerClick(burgerMenuSelected)}>
+            <NavLink
+              to="/tablets"
+              className={styles.burger__link}
+              onClick={() => handlerClick(burgerMenuSelected)}
+            >
               tablets
             </NavLink>
           </li>
-          <li className={styles.burger__item} onClick={() => handlerClick(burgerMenuSelected)}>
+          <li
+            className={styles.burger__item}
+            onClick={() => handlerClick(burgerMenuSelected)}
+          >
             <NavLink
               to="/accessories"
               className={[styles.burger__link, styles.burger__accessories].join(
@@ -64,21 +83,29 @@ export const BurgerMenu: React.FC<Props> = ({
       </nav>
 
       <div className={styles.burger__bottom}>
-        <NavLink to="/favourite" className={styles.burger__favourites} onClick={() => handlerClick(burgerMenuSelected)}>
-          <img 
-          src={heart} 
-          alt="" 
-          className={styles.burger__heart} 
+        <NavLink
+          to="/favourite"
+          className={styles.burger__favourites}
           onClick={() => handlerClick(burgerMenuSelected)}
-        />
+        >
+          <img
+            src={heart}
+            alt=""
+            className={styles.burger__heart}
+            onClick={() => handlerClick(burgerMenuSelected)}
+          />
         </NavLink>
-        <NavLink to="/cart" className={styles.burger__basket} onClick={() => handlerClick(burgerMenuSelected)}>
-          <img 
-          src={basket} 
-          alt="" 
-          className={styles.basket_img} 
+        <NavLink
+          to="/cart"
+          className={styles.burger__basket}
           onClick={() => handlerClick(burgerMenuSelected)}
-        />
+        >
+          <img
+            src={basket}
+            alt=""
+            className={styles.basket_img}
+            onClick={() => handlerClick(burgerMenuSelected)}
+          />
         </NavLink>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { BASE_URL } from '../../utils/fetchProducts';
 import { useContext } from 'react';
 import { CardContext, CardProvider } from '../../context/CardContext';
 import { Phone } from '../../types/Phone';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
@@ -11,7 +12,8 @@ interface Props {
 }
 
 export const Card: React.FC<Props> = ({ phone }) => {
-  const { setCardData, cardData, setFavouriteList, favouriteList, } = useContext(CardContext);
+  const { setCardData, cardData, setFavouriteList, favouriteList } =
+    useContext(CardContext);
 
   const isCardInArray = cardData.includes(phone.id);
   const isFavouriteArray = favouriteList.includes(phone.id);
@@ -26,7 +28,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   const handleSetItemInFavourite = () => {
     if (!isFavouriteArray) {
-      setFavouriteList(oldState => [...oldState, phone.id]);
+      setFavouriteList((oldState) => [...oldState, phone.id]);
     } else {
       setFavouriteList((current) => current.filter((id) => id !== phone.id));
     }
@@ -35,11 +37,14 @@ export const Card: React.FC<Props> = ({ phone }) => {
   const { name, price, fullPrice, capacity, ram, screen, image } = phone;
   return (
     <div className={styles.card}>
-      <img
-        src={`${BASE_URL}/${image}`}
-        alt="card-logo"
-        className={styles.card_logo}
-      />
+      <Link to={phone.id}>
+        <img
+          src={`${BASE_URL}/${image}`}
+          alt="card-logo"
+          className={styles.card_logo}
+        />
+      </Link>
+
       <span className={styles.card_title}>{name} (iMT9G2FSA)</span>
       <div className={styles.card_price}>
         <span className={styles.card_newPrice}>${price}</span>
@@ -66,14 +71,12 @@ export const Card: React.FC<Props> = ({ phone }) => {
         >
           {isCardInArray ? 'Added' : 'Add to cart'}
         </button>
-        <button 
-        className={classNames(
-          styles.card_wishlist, {
+        <button
+          className={classNames(styles.card_wishlist, {
             [styles.card_wishlist_heart]: isFavouriteArray,
-          }
-        )} 
-        onClick={handleSetItemInFavourite}>  
-        </button>
+          })}
+          onClick={handleSetItemInFavourite}
+        ></button>
       </div>
     </div>
   );

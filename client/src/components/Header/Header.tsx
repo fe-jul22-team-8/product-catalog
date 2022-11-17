@@ -33,17 +33,18 @@ export const Header: React.FC<Props> = ({
           to="/favourite"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
-        {cardData.length > 0 &&
+        {cardData.length > 0 && (
           <div className={styles.header__counter}>
-            <span className={styles.header__counter_text}>{cardData.length}</span>
+            <span className={styles.header__counter_text}>
+              {cardData.length}
+            </span>
           </div>
-        }
+        )}
 
         <NavLink
           to="/cart"
           className={[styles.header__item, styles.header__cart].join(' ')}
         />
-
       </div>
 
       <div

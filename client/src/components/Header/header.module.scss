@@ -91,12 +91,11 @@
   &__counter {
     position: absolute;
 
-
     line-height: 0px;
     border-radius: 90%;
     border: 2px solid;
     font-size: 12px;
-    background-color: #FF8C00;
+    background-color: #ff8c00;
     cursor: default;
     min-width: 20px;
 
@@ -104,7 +103,6 @@
       bottom: 30px;
       right: 13px;
     }
-
 
     @media (min-width: 640px) and (max-width: 1439px) {
       bottom: 25px;

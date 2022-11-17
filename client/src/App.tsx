@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { PhonesPage } from './pages/PhonesPage';
 import { Header } from './components/Header';
@@ -31,12 +31,18 @@ function App() {
               />
               <main className="section">
                 <Routes>
-                  <Route path={ROUTER.phones} element={<PhonesPage />} />
-                  <Route path={ROUTER.cart} element={<CartPages />} />
                   <Route
-                    path={`${ROUTER.phones}/${ROUTER.productDetalePage}`}
-                    element={<ProductDetalePage />}
+                    path={ROUTER.home}
+                    element={<Navigate to={`${ROUTER.phones}`} />}
                   />
+                  <Route path={ROUTER.phones}>
+                    <Route index element={<PhonesPage />} />
+                    <Route
+                      path={ROUTER.productDetalePage}
+                      element={<ProductDetalePage />}
+                    />
+                  </Route>
+                  <Route path={ROUTER.cart} element={<CartPages />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
