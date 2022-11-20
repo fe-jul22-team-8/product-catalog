@@ -5,7 +5,6 @@ import { CardContext, CardProvider } from '../../context/CardContext';
 import { Phone } from '../../types/Phone';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { useParams } from 'react-router-dom';
 
 interface Props {
   phone: Phone;
@@ -32,12 +31,12 @@ export const Card: React.FC<Props> = ({ phone }) => {
     } else {
       setFavouriteList((current) => current.filter((id) => id !== phone.id));
     }
-    console.log(favouriteList);
   };
   const { name, price, fullPrice, capacity, ram, screen, image } = phone;
+  
   return (
     <div className={styles.card}>
-      <Link to={phone.id}>
+      <Link to={phone.phoneId}>
         <img
           src={`${BASE_URL}/${image}`}
           alt="card-logo"

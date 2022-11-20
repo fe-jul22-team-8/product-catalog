@@ -1,15 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { PhotosBlockSelecting } from '../../components/PhotosBlockSelecting';
-import style from './ProductDetalePage.module.scss';
+import style from './ProductDetailPage.module.scss';
 import { useContext } from 'react';
 import { PhonesDataContext } from '../../context/DataContext';
-import { Phone } from '../../types/Phone';
 import { ColorSize } from '../../components/ColorSize';
 
-export const ProductDetalePage = () => {
-  const { phonesList, isLoading } = useContext(PhonesDataContext);
-  const { productId } = useParams();
-  const currentPhone = phonesList.find((phone) => phone.id === productId);
+export const ProductDetailPage = () => {
+  const { phonesList } = useContext(PhonesDataContext);
+  const { phoneId } = useParams();
+  const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
 
   return (
     <div className={style.wrapper}>

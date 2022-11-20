@@ -10,3 +10,7 @@ interface Props {
 export const getPhones = (param: string) => {
   return client.get<Props>(param);
 };
+
+export const getPhonesByNameId = (phoneId: string | undefined) => {
+  return client.get(`/phones/${phoneId}`);
+};
