@@ -1,0 +1,49 @@
+@import '../../styles/mixin';
+
+p {
+  margin: 0;
+}
+
+.about {
+  @include onDesktop {
+    width: 560px;
+    padding-left: 33px;
+    padding-right: 64px;
+  }
+  @include onTablet {
+    padding-left: 25px;
+    padding-right: 24px;
+    width: 590px;
+  }
+  padding-left: 17px;
+  padding-right: 17px;
+
+  &__title {
+    @include onDesktop {
+      font-size: 22px;
+    }
+    font-family: 'Mont';
+    font-weight: 80;
+    font-size: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e6e9;
+    color: #313237;
+    margin-bottom: 32px;
+  }
+
+  &__subtitle {
+    @include onDesktop {
+      font-size: 20px;
+    }
+    font-family: 'Mont';
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    font-size: 14px;
+    font-family: 'Mont';
+    color: #89939a;
+    margin-bottom: 32px;
+  }
+}
