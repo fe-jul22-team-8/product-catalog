@@ -13,4 +13,9 @@ export interface Phone {
   year: number;
   image: string;
   images: string[];
+  colorsAvailable: string[];
+  capacityAvailable: string[];
+  namespaceId: string;
+  resolution: string;
+  processor: string;
 }

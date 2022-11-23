@@ -6,11 +6,13 @@ import { useParams } from 'react-router-dom';
 
 export const PhotosBlockSelecting = () => {
   const { phonesList, isLoading } = useContext(PhonesDataContext);
-  const { productId } = useParams();
-  const currentPhone = phonesList.find((phone) => phone.id === productId);
+  const { phoneId } = useParams();
+  console.log(phoneId);
+
+
+  const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
   const images = currentPhone?.images;
   const [currentImg, setCurrentImg] = useState('');
-  console.log(currentImg);
 
   const handleClick = (event: any) => {
     setCurrentImg(event.currentTarget.getAttribute('src'));

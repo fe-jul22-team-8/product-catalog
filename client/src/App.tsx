@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { BurgerMenu } from './components/BurgerMenu';
 import { PhoneDataProvider } from './context/DataContext';
 import { CardProvider } from './context/CardContext';
-import { ProductDetalePage } from './pages/ProductDetalePage/ProductDetalePage';
+import { ProductDetailPage } from './pages/ProductDetailPage';
 
 function App() {
   const [burgerMenuSelected, setBurgerMenuSelected] = useState(false);
@@ -39,7 +39,7 @@ function App() {
                     <Route index element={<PhonesPage />} />
                     <Route
                       path={ROUTER.productDetalePage}
-                      element={<ProductDetalePage />}
+                      element={<ProductDetailPage />}
                     />
                   </Route>
                   <Route path={ROUTER.cart} element={<CartPages />} />

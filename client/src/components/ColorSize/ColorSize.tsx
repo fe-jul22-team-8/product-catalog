@@ -1,31 +1,35 @@
 import styles from './ColorSize.module.scss';
-import classNames from 'classnames';
 import { useState } from 'react';
-import { Card } from '../Card';
-
-import { BASE_URL } from '../../utils/fetchProducts';
+import { PhonesDataContext } from '../../context/DataContext';
 import { useContext } from 'react';
-import { CardContext } from '../../context/CardContext';
-import { Phone } from '../../types/Phone';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-export const capacities = [
-  { id: '1', title: '64GB' },
-  { id: '2', title: '256GB' },
-  { id: '3', title: '512GB' },
-];
-
-export const colors = [
-  { id: '1', title: '#FCDBC1' },
-  { id: '2', title: '#5F7170' },
-  { id: '3', title: '#4C4C4C' },
-  { id: '4', title: '#F0F0F0' },
-];
+// export const existedColors = [
+//   { id: '1', title: 'black', value: '#000' },
+//   { id: '2', title: 'rosegold', value: '#E0BFB8' },
+//   { id: '3', title: 'gold', value: '#FFD700' },
+//   { id: '4', title: 'silver', value: '#C0C0C0' },
+//   { id: '5', title: 'spacegray', value: '#383637' },
+//   { id: '6', title: 'green', value: '#008000' },
+//   { id: '7', title: 'yellow', value: '#FFFF00' },
+//   { id: '8', title: 'white', value: '#FFF' },
+//   { id: '9', title: 'purple', value: '#800080' },
+//   { id: '10', title: 'red', value: '#FF0000' },
+//   { id: '11', title: 'midnight', value: '#3D473F' },
+//   { id: '12', title: 'coral', value: '#FF7F50' },
+// ];
 
 export const ColorSize: React.FC = () => {
-  const { setCardData, cardData } = useContext(CardContext);
-  const [isActiveColor, setIsActiveColor] = useState('1');
-  const [isActiveCapacity, setIsActiveCapacity] = useState('1');
+  const { phoneId } = useParams();
+  const { phonesList } = useContext(PhonesDataContext);
+  const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
+  const currentColor = currentPhone?.color
+  const currentCapacity = currentPhone?.capacity
+  const [isActiveColor=currentColor, setIsActiveColor] = useState(currentColor);
+  const [isActiveCapacity=currentCapacity, setIsActiveCapacity] = useState(currentCapacity);
+  
+  const colorsAvailable = currentPhone?.colorsAvailable;
+  const capacityAvailable = currentPhone?.capacityAvailable
 
   return (
     <>
@@ -36,20 +40,21 @@ export const ColorSize: React.FC = () => {
           </span>
 
           <ul className={styles.ColorBlock__list}>
-            {colors.map((color) => (
+            {colorsAvailable?.map((color) => (
               <li
-                key={color.id}
-                onClick={() => setIsActiveColor(color.id)}
+                key={color}
+                onClick={() => setIsActiveColor(color)}
                 className={
-                  isActiveColor === color.id
+                  isActiveColor === color
                     ? styles.ColorBlock__list__item_active
                     : styles.ColorBlock__list__item
                 }
               >
-                <a
+                <Link
+                  to={`../${currentPhone?.namespaceId}-${isActiveCapacity?.toLowerCase()}-${color}`}
                   className={styles.ColorBlock__list__item__link}
-                  style={{ backgroundColor: color.title }}
-                ></a>
+                  style={{ backgroundColor: color }}
+                ></Link>
               </li>
             ))}
           </ul>
@@ -63,25 +68,26 @@ export const ColorSize: React.FC = () => {
           </span>
 
           <ul className={styles.CapacityBlock__list}>
-            {capacities.map((capacity) => (
+            {capacityAvailable?.map((capacity) => (
               <li
-                key={capacity.id}
-                onClick={() => setIsActiveCapacity(capacity.id)}
+                key={capacity}
+                onClick={() => setIsActiveCapacity(capacity)}
                 className={
-                  isActiveCapacity === capacity.id
+                  isActiveCapacity === capacity
                     ? styles.CapacityBlock__list__item_active
                     : styles.CapacityBlock__list__item
                 }
               >
-                <a
+                <Link
+                  to={`../${currentPhone?.namespaceId}-${capacity.toLowerCase()}-${isActiveColor}`}
                   className={
-                    isActiveCapacity === capacity.id
+                    isActiveCapacity === capacity
                       ? styles.CapacityBlock__list__item__link_active
                       : styles.CapacityBlock__list__item__link
                   }
                 >
-                  {capacity.title}
-                </a>
+                  {capacity}
+                </Link>
               </li>
             ))}
           </ul>
@@ -94,8 +100,8 @@ export const ColorSize: React.FC = () => {
 
       <div className={styles.card}>
         <div className={styles.card_price}>
-          <span className={styles.card_newPrice}>$799</span>
-          <span className={styles.card_oldPrice}>$1199</span>
+          <span className={styles.card_newPrice}>{`$${currentPhone?.price}`}</span>
+          <span className={styles.card_oldPrice}>{`$${currentPhone?.fullPrice}`}</span>
         </div>
 
         <div className={styles.card_buttons}>
@@ -105,22 +111,22 @@ export const ColorSize: React.FC = () => {
 
         <div className={styles.card_description}>
           <span className={styles.card_text}>Screen</span>
-          <span className={styles.card_value}>6.5” OLED</span>
+          <span className={styles.card_value}>{currentPhone?.screen}</span>
         </div>
 
         <div className={styles.card_description}>
           <span className={styles.card_text}>Resolution</span>
-          <span className={styles.card_value}>2688x1242</span>
+          <span className={styles.card_value}>{currentPhone?.resolution}</span>
         </div>
 
         <div className={styles.card_description}>
           <span className={styles.card_text}>Processor</span>
-          <span className={styles.card_value}>Apple A12 Bionic</span>
+          <span className={styles.card_value}>{currentPhone?.processor}</span>
         </div>
 
         <div className={styles.card_description}>
           <span className={styles.card_text}>RAM</span>
-          <span className={styles.card_value}>3 GB</span>
+          <span className={styles.card_value}>{currentPhone?.ram}</span>
         </div>
       </div>
     </>
