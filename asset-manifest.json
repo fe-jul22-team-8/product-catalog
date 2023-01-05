@@ -1,33 +1,33 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.f757f420.css",
-    "main.js": "/product-catalog/static/js/main.289bd102.js",
-    "static/media/logo.svg": "/product-catalog/static/media/logo.ec3bd7f9b2d37fe60f8d77c9877d8006.svg",
+    "main.css": "/product-catalog/static/css/main.4045dc7d.css",
+    "main.js": "/product-catalog/static/js/main.5f788c2b.js",
+    "static/media/logo.svg": "/product-catalog/static/media/logo.28a233960cadaa54a9b6ce70972cfb5c.svg",
     "static/media/Mont-Regular.otf": "/product-catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product-catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/product-catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/NotFound.png": "/product-catalog/static/media/NotFound.56782ca118a7ce2c13c9.png",
     "static/media/succ.png": "/product-catalog/static/media/succ.352ded6746b5c38912f9.png",
     "static/media/basket.png": "/product-catalog/static/media/basket.c6e911c9ab7924ece73c.png",
-    "static/media/cart.svg": "/product-catalog/static/media/cart.0089c9921342187cd543.svg",
-    "static/media/heart.svg": "/product-catalog/static/media/heart.735d0b14070a97fc4cb385b6affd446b.svg",
-    "static/media/favourites.svg": "/product-catalog/static/media/favourites.0a756ff14a135ac4523f.svg",
-    "static/media/house.svg": "/product-catalog/static/media/house.1816ab2ca60cac7cf0eb9e2fa68610f0.svg",
-    "static/media/redHeart.svg": "/product-catalog/static/media/redHeart.9a0acd7b91ae2b20f628.svg",
+    "static/media/cart.svg": "/product-catalog/static/media/cart.f9632dca8fdaed9bb696.svg",
+    "static/media/heart.svg": "/product-catalog/static/media/heart.40718cb9e80841fa0951b9bab9faa235.svg",
+    "static/media/favourites.svg": "/product-catalog/static/media/favourites.8b204efcfb5a53cadd96.svg",
+    "static/media/house.svg": "/product-catalog/static/media/house.d4c29e4f137b3a79235a5293536d71a0.svg",
+    "static/media/redHeart.svg": "/product-catalog/static/media/redHeart.e06f68523386b982e85a.svg",
     "index.html": "/product-catalog/index.html",
-    "static/media/cross.svg": "/product-catalog/static/media/cross.67b950820b2a0df6ada0709831602a42.svg",
-    "static/media/plus.svg": "/product-catalog/static/media/plus.bd54c5aedcbdde6c0e617cee1b70a684.svg",
-    "static/media/union.svg": "/product-catalog/static/media/union.3eda38e880976ed7dd57.svg",
-    "static/media/arrowRight.svg": "/product-catalog/static/media/arrowRight.a36e74fa66c087c3db88ae6b2cd1af65.svg",
-    "static/media/greyArrowRight.svg": "/product-catalog/static/media/greyArrowRight.2fa48d83bd23bcb64688.svg",
-    "static/media/greyArrowLeft.svg": "/product-catalog/static/media/greyArrowLeft.4950b64053795792025bce907578cd24.svg",
-    "static/media/arrow.svg": "/product-catalog/static/media/arrow.58b2ee615d3cdaee40b0523297736069.svg",
-    "static/media/minus.svg": "/product-catalog/static/media/minus.0de499e5c6371c00800ad32f6fc98bfa.svg",
-    "main.f757f420.css.map": "/product-catalog/static/css/main.f757f420.css.map",
-    "main.289bd102.js.map": "/product-catalog/static/js/main.289bd102.js.map"
+    "static/media/cross.svg": "/product-catalog/static/media/cross.adff151dead090d2bb35af0399d6582c.svg",
+    "static/media/plus.svg": "/product-catalog/static/media/plus.1360842dc46a5a04000d6466314f511f.svg",
+    "static/media/union.svg": "/product-catalog/static/media/union.7d886604721a2522b7ee.svg",
+    "static/media/arrowRight.svg": "/product-catalog/static/media/arrowRight.2a072ff1bf1fd396b30e9dec3a108dcb.svg",
+    "static/media/greyArrowRight.svg": "/product-catalog/static/media/greyArrowRight.2a6718dfb8a2d0e21522.svg",
+    "static/media/greyArrowLeft.svg": "/product-catalog/static/media/greyArrowLeft.e653405303c0409c73fb79f48f70a002.svg",
+    "static/media/arrow.svg": "/product-catalog/static/media/arrow.7bc120797000c4ef90e29c5981a99d64.svg",
+    "static/media/minus.svg": "/product-catalog/static/media/minus.aae6901966bcc1d13c117dd760b92e23.svg",
+    "main.4045dc7d.css.map": "/product-catalog/static/css/main.4045dc7d.css.map",
+    "main.5f788c2b.js.map": "/product-catalog/static/js/main.5f788c2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f757f420.css",
-    "static/js/main.289bd102.js"
+    "static/css/main.4045dc7d.css",
+    "static/js/main.5f788c2b.js"
   ]
 }
