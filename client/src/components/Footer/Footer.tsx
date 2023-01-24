@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../icons/logo.svg';
 import arrow from '../../icons/arrow.svg';
-import styles from './footer.module.scss';
+import styles from './Footer.module.scss';
 import { animateScroll as scroll } from 'react-scroll';
 
 export const Footer = () => {

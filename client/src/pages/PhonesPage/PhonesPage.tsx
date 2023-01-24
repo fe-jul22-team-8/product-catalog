@@ -1,7 +1,3 @@
-import { CardProvider } from '../../context/CardContext';
-import { useEffect, useState } from 'react';
-import { getPhones } from '../../api/phones';
-
 import { PhonesDataContext } from '../../context/DataContext';
 import { useContext } from 'react';
 

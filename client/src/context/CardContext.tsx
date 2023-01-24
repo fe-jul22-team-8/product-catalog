@@ -1,5 +1,5 @@
 import { Phone } from '@/types/Phone';
-import React, {
+import {
   createContext,
   ReactNode,
   useState,

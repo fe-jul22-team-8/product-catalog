@@ -84,7 +84,7 @@ export const BurgerMenu: React.FC<Props> = ({
 
       <div className={styles.burger__bottom}>
         <NavLink
-          to="/favourite"
+          to="/favourites"
           className={styles.burger__favourites}
           onClick={() => handlerClick(burgerMenuSelected)}
         >

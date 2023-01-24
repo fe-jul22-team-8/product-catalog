@@ -1,20 +1,4 @@
-@import '../../styles/mixin';
-@import '../../styles/vars';
-@import '../../styles/reset';
-
-@font-face {
-  font-family: 'Mont-Bold';
-  font-style: bold;
-  font-weight: 900;
-  src: url('../../fonts/Mont-Bold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../fonts/Mont-Regular.otf') format('opentype');
-}
+@import '../../styles/main.scss';
 
 .title {
   display: flex;

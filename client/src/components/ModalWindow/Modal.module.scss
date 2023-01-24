@@ -1,31 +1,26 @@
-@import '../../styles/vars';
-@import '../../styles/mixin';
-
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../fonts/Mont-Regular.otf') format('opentype');
-}
+@import '../../styles/main.scss';
 
 .modal {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  position: fixed;
   z-index: 1;
 
   &_container {
+    display: flex;
+    flex-direction: column;
+
     width: 500px;
     height: 500px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    flex-direction: column;
     padding: 25px;
 
     @include onMobile {

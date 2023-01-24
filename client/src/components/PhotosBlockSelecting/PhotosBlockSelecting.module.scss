@@ -1,8 +1,4 @@
-@import '../../styles/mixin';
-
-* {
-  box-sizing: border-box;
-}
+@import '../../styles/main.scss';
 
 .PhotosBlock {
   @include onDesktop {

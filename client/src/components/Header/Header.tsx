@@ -1,6 +1,6 @@
 import { HeaderList } from './HeaderList';
 import { Link, NavLink } from 'react-router-dom';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import logo from '../../icons/logo.svg';
 import { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
@@ -30,7 +30,7 @@ export const Header: React.FC<Props> = ({
 
       <div className={styles.header__icons}>
         <NavLink
-          to="/favourite"
+          to="/favourites"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
         {cardData.length > 0 && (
