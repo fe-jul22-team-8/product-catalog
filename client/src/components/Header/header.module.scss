@@ -86,25 +86,48 @@
     }
   }
 
-  &__counter {
-    position: absolute;
-
+  &__counter_heart {
+    min-width: 20px;
     line-height: 0px;
+    font-size: 12px;
+    color: $colorWhite;
+    background-color: #EB5757;
     border-radius: 90%;
     border: 2px solid;
-    font-size: 12px;
-    background-color: #ff8c00;
-    cursor: default;
-    min-width: 20px;
 
-    @media (min-width: 1440px) {
-      bottom: 30px;
-      right: 13px;
+    cursor: default;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 24px;
+      right: 58px;
     }
 
-    @media (min-width: 640px) and (max-width: 1439px) {
-      bottom: 25px;
-      right: 5px;
+    @include onDesktop {
+      bottom: 30px;
+      right: 75px;
+    }
+  }
+
+  &__counter_cart {
+    min-width: 20px;
+    line-height: 0px;
+    font-size: 12px;
+    color: $colorWhite;
+    background-color: #EB5757;
+    border-radius: 90%;
+    border: 2px solid;
+
+    cursor: default;
+
+    @include onTablet {
+      bottom: 24px;
+      right: 10px;
+    }
+
+    @include onDesktop {
+      bottom: 30px;
+      right: 13px;
     }
   }
 

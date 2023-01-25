@@ -9,7 +9,6 @@ export const PhotosBlockSelecting = () => {
   const { phoneId } = useParams();
   console.log(phoneId);
 
-
   const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
   const images = currentPhone?.images;
   const [currentImg, setCurrentImg] = useState('');

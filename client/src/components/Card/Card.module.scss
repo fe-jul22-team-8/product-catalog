@@ -13,13 +13,25 @@
   padding: 32px;
   transition: box-shadow 0.3s;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @include onTablet {
     height: 506px;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
   }
 
   @include onDesktop {
     width: 272px;
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
   }
+}
 
   &_logo {
     height: 130px;

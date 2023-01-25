@@ -23,5 +23,5 @@ export const FavouritesTitle = () => {
       <h1 className={styles.title_lable}>Favourites</h1>
       <p className={styles.title_count}>{`${count} items`}</p>
     </div>
-  )
-}
+  );
+};

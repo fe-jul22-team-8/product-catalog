@@ -15,7 +15,10 @@ export const Header: React.FC<Props> = ({
   burgerMenuSelected,
 }) => {
   const { cardData } = useContext(CardContext);
+  const { favouriteList } = useContext(CardContext);
+
   const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
+
   return (
     <div className={styles.header}>
       <div className={styles.header__nav}>
@@ -29,12 +32,21 @@ export const Header: React.FC<Props> = ({
       </div>
 
       <div className={styles.header__icons}>
+        {favouriteList.length > 0 && (
+          <div className={styles.header__counter_heart}>
+            <span className={styles.header__counter_text}>
+              {favouriteList.length}
+            </span>
+          </div>
+        )}
+
         <NavLink
           to="/favourites"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
+
         {cardData.length > 0 && (
-          <div className={styles.header__counter}>
+          <div className={styles.header__counter_cart}>
             <span className={styles.header__counter_text}>
               {cardData.length}
             </span>

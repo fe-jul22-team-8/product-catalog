@@ -44,7 +44,10 @@ function App() {
                     />
                   </Route>
                   <Route path={ROUTER.cart} element={<CartPages />} />
-                  <Route path={ROUTER.favourites} element={<FavouritesPage />} />
+                  <Route
+                    path={ROUTER.favourites}
+                    element={<FavouritesPage />}
+                  />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>
