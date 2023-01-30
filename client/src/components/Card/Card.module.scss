@@ -30,8 +30,8 @@
 
     &:nth-last-child(-n + 4) {
       margin-bottom: 0;
+    }
   }
-}
 
   &_logo {
     height: 130px;
@@ -64,6 +64,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
+    min-height: 42px;
 
     display: inline-block;
     vertical-align: top;

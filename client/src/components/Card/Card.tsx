@@ -45,7 +45,7 @@ export const Card: React.FC<Props> = ({ phone }) => {
         />
       </Link>
 
-      <span className={styles.card_title}>{name} (iMT9G2FSA)</span>
+      <span className={styles.card_title}>{name}</span>
       <div className={styles.card_price}>
         <span className={styles.card_newPrice}>${price}</span>
         <span className={styles.card_oldPrice}>${fullPrice}</span>

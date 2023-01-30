@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import logo from '../../icons/logo.svg';
 import { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
+import { Counter } from '../Counter';
 
 interface Props {
   setBurgerMenuSelected: (value: boolean) => void;
@@ -33,10 +34,8 @@ export const Header: React.FC<Props> = ({
 
       <div className={styles.header__icons}>
         {favouriteList.length > 0 && (
-          <div className={styles.header__counter_heart}>
-            <span className={styles.header__counter_text}>
-              {favouriteList.length}
-            </span>
+          <div className={styles.header__heart}>
+            <Counter count={favouriteList.length} />
           </div>
         )}
 
@@ -46,10 +45,8 @@ export const Header: React.FC<Props> = ({
         />
 
         {cardData.length > 0 && (
-          <div className={styles.header__counter_cart}>
-            <span className={styles.header__counter_text}>
-              {cardData.length}
-            </span>
+          <div className={styles.header__bag}>
+            <Counter count={cardData.length} />
           </div>
         )}
 

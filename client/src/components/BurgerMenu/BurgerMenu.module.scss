@@ -1,9 +1,5 @@
 @import '../../styles/main.scss';
 
-html {
-  height: 100%;
-}
-
 .burger {
   background-color: $colorWhite;
   height: 100vh;
@@ -20,10 +16,6 @@ html {
 
     &:first-child {
       margin-top: 32px;
-    }
-
-    &:last-child {
-      margin-bottom: 260px;
     }
   }
 
@@ -81,7 +73,17 @@ html {
   }
 
   &__heart {
-    height: 15px;
+    position: absolute;
+
+    bottom: 32px;
+    left: 80px;
+  }
+
+  &__bag {
+    position: absolute;
+
+    bottom: 32px;
+    right: 60px;
   }
 
   &__basket {
@@ -114,6 +116,10 @@ html {
       border-bottom: 2px solid $colorPrimary;
     }
   }
+}
+
+.heart_img {
+  height: 15px;
 }
 
 .basket_img {

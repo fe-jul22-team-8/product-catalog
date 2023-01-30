@@ -86,17 +86,7 @@
     }
   }
 
-  &__counter_heart {
-    min-width: 20px;
-    line-height: 0px;
-    font-size: 12px;
-    color: $colorWhite;
-    background-color: #EB5757;
-    border-radius: 90%;
-    border: 2px solid;
-
-    cursor: default;
-
+  &__heart {
     @include onTablet {
       position: absolute;
       bottom: 24px;
@@ -109,18 +99,9 @@
     }
   }
 
-  &__counter_cart {
-    min-width: 20px;
-    line-height: 0px;
-    font-size: 12px;
-    color: $colorWhite;
-    background-color: #EB5757;
-    border-radius: 90%;
-    border: 2px solid;
-
-    cursor: default;
-
+  &__bag {
     @include onTablet {
+      position: absolute;
       bottom: 24px;
       right: 10px;
     }
@@ -129,12 +110,5 @@
       bottom: 30px;
       right: 13px;
     }
-  }
-
-  &__counter_text {
-    display: block;
-    padding-top: 50%;
-    padding-bottom: 50%;
-    text-align: center;
   }
 }

@@ -10,8 +10,10 @@ export const FavouritesList = () => {
   const { favouriteList } = useContext(CardContext);
 
   const renderList = useMemo(() => {
-    return phonesList.filter((phone: Phone) => favouriteList.includes(phone.id))
-  }, [phonesList, favouriteList])
+    return phonesList.filter((phone: Phone) =>
+      favouriteList.includes(phone.id),
+    );
+  }, [phonesList, favouriteList]);
 
   return (
     <div className={styles.container}>

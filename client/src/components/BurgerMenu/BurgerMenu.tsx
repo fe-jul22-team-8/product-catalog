@@ -4,6 +4,9 @@ import logo from '../../icons/logo.svg';
 import cross from '../../icons/cross.png';
 import basket from '../../icons/basket.png';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { CardContext } from '../../context/CardContext';
+import { Counter } from '../Counter/Counter';
 
 interface Props {
   setBurgerMenuSelected: (value: boolean) => void;
@@ -14,7 +17,11 @@ export const BurgerMenu: React.FC<Props> = ({
   setBurgerMenuSelected,
   burgerMenuSelected,
 }) => {
+  const { cardData } = useContext(CardContext);
+  const { favouriteList } = useContext(CardContext);
+
   const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
+
   return (
     <div className={styles.burger}>
       <div className={styles.burger__top}>
@@ -91,10 +98,17 @@ export const BurgerMenu: React.FC<Props> = ({
           <img
             src={heart}
             alt=""
-            className={styles.burger__heart}
+            className={styles.heart_img}
             onClick={() => handlerClick(burgerMenuSelected)}
           />
         </NavLink>
+
+        {favouriteList.length > 0 && (
+          <div className={styles.burger__heart}>
+            <Counter count={favouriteList.length} />
+          </div>
+        )}
+
         <NavLink
           to="/cart"
           className={styles.burger__basket}
@@ -107,6 +121,13 @@ export const BurgerMenu: React.FC<Props> = ({
             onClick={() => handlerClick(burgerMenuSelected)}
           />
         </NavLink>
+
+        {cardData.length > 0 && (
+          <div className={styles.burger__bag}>
+            <Counter count={cardData.length} />
+          </div>
+        )}
+
       </div>
     </div>
   );
