@@ -31,6 +31,7 @@ export const PhonesList: React.FC<Props> = ({ phonesList }) => {
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
   };
+
   return (
     <>
       <Title count={phonesList.length} />

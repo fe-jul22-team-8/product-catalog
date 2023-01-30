@@ -1,12 +1,4 @@
-@import '../../../styles/mixin';
-@import '../../../styles/reset';
-@import '../../../styles/vars';
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../../../fonts/Mont-SemiBold.otf') format('opentype');
-}
+@import '../../../styles/main.scss';
 
 .header {
   &__list {
@@ -50,6 +42,7 @@
 
     &:hover {
       color: $colorPrimary;
+
       &::after {
         content: '';
         position: absolute;

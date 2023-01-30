@@ -1,27 +1,12 @@
-@import '../../styles/mixin';
-@import '../../styles/reset';
-@import '../../styles/vars';
-
-@font-face {
-  font-family: 'Mont-Bold';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../../fonts/Mont-SemiBold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../fonts/Mont-Regular.otf') format('opentype');
-}
+@import '../../styles/main.scss';
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
   padding: 0 16px;
   margin-top: auto;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 
   border-top: 1px solid $colorElements;
   background-color: $colorWhite;
@@ -41,10 +26,10 @@
     margin-bottom: 32px;
 
     @include onTablet {
-      height: 96px;
-      margin-bottom: 0;
       flex-direction: row;
       justify-content: space-between;
+      height: 96px;
+      margin-bottom: 0;
     }
   }
 

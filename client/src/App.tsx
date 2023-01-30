@@ -11,6 +11,7 @@ import { BurgerMenu } from './components/BurgerMenu';
 import { PhoneDataProvider } from './context/DataContext';
 import { CardProvider } from './context/CardContext';
 import { ProductDetailPage } from './pages/ProductDetailPage';
+import { FavouritesPage } from './pages/FavouritesPage';
 
 function App() {
   const [burgerMenuSelected, setBurgerMenuSelected] = useState(false);
@@ -43,6 +44,10 @@ function App() {
                     />
                   </Route>
                   <Route path={ROUTER.cart} element={<CartPages />} />
+                  <Route
+                    path={ROUTER.favourites}
+                    element={<FavouritesPage />}
+                  />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

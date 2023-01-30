@@ -1,6 +1,4 @@
-@import '../../styles/mixin';
-@import '../../styles/reset';
-@import '../../styles/vars';
+@import '../../styles/main.scss';
 
 .header {
   display: flex;
@@ -88,32 +86,29 @@
     }
   }
 
-  &__counter {
-    position: absolute;
-
-    line-height: 0px;
-    border-radius: 90%;
-    border: 2px solid;
-    font-size: 12px;
-    background-color: #ff8c00;
-    cursor: default;
-    min-width: 20px;
-
-    @media (min-width: 1440px) {
-      bottom: 30px;
-      right: 13px;
+  &__heart {
+    @include onTablet {
+      position: absolute;
+      bottom: 24px;
+      right: 58px;
     }
 
-    @media (min-width: 640px) and (max-width: 1439px) {
-      bottom: 25px;
-      right: 5px;
+    @include onDesktop {
+      bottom: 30px;
+      right: 75px;
     }
   }
 
-  &__counter_text {
-    display: block;
-    padding-top: 50%;
-    padding-bottom: 50%;
-    text-align: center;
+  &__bag {
+    @include onTablet {
+      position: absolute;
+      bottom: 24px;
+      right: 10px;
+    }
+
+    @include onDesktop {
+      bottom: 30px;
+      right: 13px;
+    }
   }
 }

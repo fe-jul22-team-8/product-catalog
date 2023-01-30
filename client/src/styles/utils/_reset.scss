@@ -1,6 +1,7 @@
 h1,
 h2,
 h3,
+ul,
 p {
   margin: 0;
 }
@@ -11,10 +12,12 @@ a {
 
 button {
   border: none;
+  padding: 0;
 }
 
 ul {
   padding: 0;
+  list-style: none;
 }
 
 body {

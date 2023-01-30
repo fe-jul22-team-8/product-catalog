@@ -23,13 +23,15 @@ export const ColorSize: React.FC = () => {
   const { phoneId } = useParams();
   const { phonesList } = useContext(PhonesDataContext);
   const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
-  const currentColor = currentPhone?.color
-  const currentCapacity = currentPhone?.capacity
-  const [isActiveColor=currentColor, setIsActiveColor] = useState(currentColor);
-  const [isActiveCapacity=currentCapacity, setIsActiveCapacity] = useState(currentCapacity);
-  
+  const currentColor = currentPhone?.color;
+  const currentCapacity = currentPhone?.capacity;
+  const [isActiveColor = currentColor, setIsActiveColor] =
+    useState(currentColor);
+  const [isActiveCapacity = currentCapacity, setIsActiveCapacity] =
+    useState(currentCapacity);
+
   const colorsAvailable = currentPhone?.colorsAvailable;
-  const capacityAvailable = currentPhone?.capacityAvailable
+  const capacityAvailable = currentPhone?.capacityAvailable;
 
   return (
     <>
@@ -51,7 +53,9 @@ export const ColorSize: React.FC = () => {
                 }
               >
                 <Link
-                  to={`../${currentPhone?.namespaceId}-${isActiveCapacity?.toLowerCase()}-${color}`}
+                  to={`../${
+                    currentPhone?.namespaceId
+                  }-${isActiveCapacity?.toLowerCase()}-${color}`}
                   className={styles.ColorBlock__list__item__link}
                   style={{ backgroundColor: color }}
                 ></Link>
@@ -79,7 +83,9 @@ export const ColorSize: React.FC = () => {
                 }
               >
                 <Link
-                  to={`../${currentPhone?.namespaceId}-${capacity.toLowerCase()}-${isActiveColor}`}
+                  to={`../${
+                    currentPhone?.namespaceId
+                  }-${capacity.toLowerCase()}-${isActiveColor}`}
                   className={
                     isActiveCapacity === capacity
                       ? styles.CapacityBlock__list__item__link_active
@@ -100,8 +106,12 @@ export const ColorSize: React.FC = () => {
 
       <div className={styles.card}>
         <div className={styles.card_price}>
-          <span className={styles.card_newPrice}>{`$${currentPhone?.price}`}</span>
-          <span className={styles.card_oldPrice}>{`$${currentPhone?.fullPrice}`}</span>
+          <span
+            className={styles.card_newPrice}
+          >{`$${currentPhone?.price}`}</span>
+          <span
+            className={styles.card_oldPrice}
+          >{`$${currentPhone?.fullPrice}`}</span>
         </div>
 
         <div className={styles.card_buttons}>

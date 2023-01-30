@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import '../../styles/main';
 
 .title {
   width: 100%;
@@ -14,17 +14,16 @@
   }
 
   &_arrow {
-    margin-right: 15px;
+    margin-right: 14px;
   }
 
   &_lable {
+    margin-top: 40px;
     font-family: 'Mont-Bold';
     font-weight: 800;
     font-size: 48px;
     line-height: 56px;
     color: $colorPrimary;
-
-    margin-top: 40px;
 
     @include onMobile {
       margin-top: 24px;
@@ -46,17 +45,5 @@
     font-family: 'Mont';
     font-size: 14px;
     line-height: 21px;
-  }
-
-  &_select_text {
-    margin-top: 32px;
-    color: $colorSecondary;
-    font-family: 'Mont';
-    font-size: 14px;
-    line-height: 21px;
-
-    @include onTablet {
-      margin-top: 40px;
-    }
   }
 }
