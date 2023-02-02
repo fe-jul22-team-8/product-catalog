@@ -54,6 +54,28 @@
       width: 64px;
       height: 64px;
     }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        height: 4px;
+        width: 64px;
+        background-color: $colorPrimary;
+      }
+    }
+
+    &:focus {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        height: 4px;
+        width: 64px;
+        background-color: $colorPrimary;
+      }
+    }
   }
 
   &__cart {
