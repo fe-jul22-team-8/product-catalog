@@ -127,7 +127,6 @@ export const BurgerMenu: React.FC<Props> = ({
             <Counter count={cardData.length} />
           </div>
         )}
-
       </div>
     </div>
   );

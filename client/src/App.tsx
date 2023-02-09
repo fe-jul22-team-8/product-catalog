@@ -12,7 +12,7 @@ import { PhoneDataProvider } from './context/DataContext';
 import { CardProvider } from './context/CardContext';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { FavouritesPage } from './pages/FavouritesPage';
-import { HomePage } from './pages/HomePage/HomePage';
+import { HomePage } from './pages/HomePage';
 
 function App() {
   const [burgerMenuSelected, setBurgerMenuSelected] = useState(false);
@@ -33,10 +33,7 @@ function App() {
               />
               <main className="section">
                 <Routes>
-                  <Route
-                    path={ROUTER.home}
-                    element={<HomePage />}
-                  />
+                  <Route path={ROUTER.home} element={<HomePage />} />
                   <Route path={ROUTER.phones}>
                     <Route index element={<PhonesPage />} />
                     <Route

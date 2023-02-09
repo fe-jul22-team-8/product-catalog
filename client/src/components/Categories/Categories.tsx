@@ -1,7 +1,7 @@
 import { PhonesDataContext } from '../../context/DataContext';
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom'
-import styles from './Categories.module.scss'
+import { NavLink } from 'react-router-dom';
+import styles from './Categories.module.scss';
 
 export const Categories = () => {
   const { phonesList } = useContext(PhonesDataContext);
@@ -14,27 +14,17 @@ export const Categories = () => {
           <div
             className={`${styles.categories__photo} ${styles.categories__mobileimg}`}
           ></div>
-          <p className={styles.categories__subtitle}>
-            Mobile phones
-          </p>
-          <p className={styles.categories__count}>
-            {phonesList.length} models
-          </p>
+          <p className={styles.categories__subtitle}>Mobile phones</p>
+          <p className={styles.categories__count}>{phonesList.length} models</p>
         </NavLink>
-        <NavLink
-          to="/tablets"
-          className={styles.categories__card}
-        >
+        <NavLink to="/tablets" className={styles.categories__card}>
           <div
             className={`${styles.categories__photo} ${styles.categories__tabletsimg}`}
           ></div>
           <p className={styles.categories__subtitle}>Tablets</p>
           <p className={styles.categories__count}>0 models</p>
         </NavLink>
-        <NavLink
-          to="/accessories"
-          className={styles.categories__card}
-        >
+        <NavLink to="/accessories" className={styles.categories__card}>
           <div
             className={`${styles.categories__photo} ${styles.categories__accessoriesimg}`}
           ></div>
@@ -43,5 +33,5 @@ export const Categories = () => {
         </NavLink>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -54,26 +54,25 @@ export const Pagination: React.FC<Props> = ({
             onClick={handleSetPage}
           ></a>
         </li>
-        {getNumbers(1, totalPages)
-          .map((page) => (
-            <li
-              key={page}
-              className={classNames(styles.page_item, {
-                [styles.page_active]: page === currentPage,
+        {getNumbers(1, totalPages).map((page) => (
+          <li
+            key={page}
+            className={classNames(styles.page_item, {
+              [styles.page_active]: page === currentPage,
+            })}
+          >
+            <a
+              className={classNames(styles.page_link, {
+                [styles.link_active]: page === currentPage,
               })}
+              data-current-page={page}
+              href={`#${page}`}
+              onClick={handleSetPage}
             >
-              <a
-                className={classNames(styles.page_link, {
-                  [styles.link_active]: page === currentPage,
-                })}
-                data-current-page={page}
-                href={`#${page}`}
-                onClick={handleSetPage}
-              >
-                {page}
-              </a>
-            </li>
-          ))}
+              {page}
+            </a>
+          </li>
+        ))}
         <li className={styles.page_item}>
           <a
             className={classNames(
