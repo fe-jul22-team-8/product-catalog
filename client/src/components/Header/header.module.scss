@@ -7,6 +7,7 @@
 
   position: sticky;
   top: 0;
+  z-index: 1;
 
   height: 48px;
   padding-left: 16px;
@@ -53,6 +54,28 @@
     @include onDesktop {
       width: 64px;
       height: 64px;
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        height: 4px;
+        width: 64px;
+        background-color: $colorPrimary;
+      }
+    }
+
+    &:focus {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        height: 4px;
+        width: 64px;
+        background-color: $colorPrimary;
+      }
     }
   }
 
