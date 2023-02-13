@@ -11,7 +11,6 @@ import './Swiper.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import { NavLink } from 'react-router-dom';
 
 export const Slider = () => {

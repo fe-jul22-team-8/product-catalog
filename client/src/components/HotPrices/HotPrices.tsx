@@ -1,18 +1,16 @@
-import { getDiscound } from "../../api/phones";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Card } from "../Card"
+import { getDiscound } from '../../api/phones';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Card } from '../Card';
 import './HotPrices.scss';
-import { Phone } from "../../types/Phone";
-import { Navigation } from "swiper";
+import { Phone } from '../../types/Phone';
+import { Navigation } from 'swiper';
 
 export const HotPrices = () => {
   const [hotPhones, setHotPhones] = useState<Phone[]>([]);
 
   useEffect(() => {
-    getDiscound()
-      .then(setHotPhones)
-      .catch();
+    getDiscound().then(setHotPhones).catch();
   }, []);
 
   return (
@@ -61,5 +59,5 @@ export const HotPrices = () => {
         ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};

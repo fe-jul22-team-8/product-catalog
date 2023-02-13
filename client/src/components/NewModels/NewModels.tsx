@@ -1,22 +1,20 @@
-import { Phone } from "../../types/Phone";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Card } from "../Card"
-import './NewModels.scss'
-import { getNew } from "../../api/phones";
-import { Navigation } from "swiper";
+import { Phone } from '../../types/Phone';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Card } from '../Card';
+import './NewModels.scss';
+import { getNew } from '../../api/phones';
+import { Navigation } from 'swiper';
 
 export const NewModels = () => {
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
 
   useEffect(() => {
-    getNew()
-      .then(setNewPhones)
-      .catch();
+    getNew().then(setNewPhones).catch();
   }, []);
 
   return (
-    <div className='new'>
+    <div className="new">
       <div className="new__nav">
         <div>
           <h1 className="new__subtitle">Brands new models</h1>
@@ -40,15 +38,11 @@ export const NewModels = () => {
             slidesPerView: 1,
             slidesPerGroup: 1,
           },
-          490: {
+          640: {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
-          768: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-          },
-          1024: {
+          1200: {
             slidesPerView: 4,
             slidesPerGroup: 4,
           },
@@ -61,5 +55,5 @@ export const NewModels = () => {
         ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};

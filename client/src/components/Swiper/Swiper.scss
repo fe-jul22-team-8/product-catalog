@@ -29,10 +29,7 @@
 
   &__slider {
     margin: 0 auto 18px;
-
-    @include onMobile {
-      width: 100vw;
-    }
+    width: 100%;
 
     @include onTablet {
       width: 490px;
@@ -44,10 +41,6 @@
   }
 }
 
-.navigation-buttons {
-  display: flex;
-}
-
 .prev {
   @include onMobile {
     display: none;
@@ -55,7 +48,6 @@
 
   @include onTablet {
     display: inline-block;
-    position: relative;
     margin-right: 19px;
     width: 32px;
     height: 189px;
@@ -90,7 +82,6 @@
 
   @include onTablet {
     display: inline-block;
-    position: relative;
     margin-left: 19px;
     width: 32px;
     height: 189px;
@@ -118,9 +109,13 @@
   }
 }
 
+.swiper {
+  z-index: 0 !important;
+}
+
 .swiper-pagination {
   position: relative !important;
-  z-index: 5 !important;
+  z-index: 0 !important;
   margin-bottom: 66px !important;
 
   @include onTablet {
