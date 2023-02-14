@@ -1,0 +1,216 @@
+@import '../../styles/mixin';
+@import '../../styles/vars';
+
+@font-face {
+  font-family: 'Mont-Bold';
+  font-style: bold;
+  font-weight: 900;
+  src: url('../../fonts/Mont-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/Mont-Regular.otf') format('opentype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.recommendedGoods {
+
+  &__top {
+    @include onTablet {
+      padding-right: 24px;
+      padding-left: 24px;
+      margin-bottom: 28px;
+    }
+    @include onDesktop {
+      margin-bottom: 28px;
+      padding-right: 32px;
+      padding-left: 32px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &_text {
+      @include onTablet {
+        font-family: 'Mont-Bold';
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 41px;
+      }
+
+      @include onDesktop {
+        font-family: 'Mont-Bold';
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 41px;
+      }
+
+      font-family: 'Mont-Bold';
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+    }
+
+    &_button {
+      width: 32px;
+      height: 32px;
+      margin-right: 16px;
+      border: 1px solid #B4BDC4;
+      background-color: #fff;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @include onDesktop {
+    padding-left: 152px;
+    padding-right: 152px;
+  }
+
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    @include onDesktop {
+      width: 272px;
+    }
+
+    width: 212px;
+    margin-right: 16px;
+    border: 1px solid $colorElements;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_img {
+      @include onDesktop {
+        width: 208px;
+        height: 196px;
+      }
+
+      margin-top: 32px;
+      margin-bottom: 24px;
+      height: 108px;
+      width: 148px;
+      object-fit: contain;
+    }
+
+    &_title {
+      font-family: 'Mont';
+      font-weight: 600;
+      font-size: 14px;
+
+      &_text {
+        margin-bottom: 8px;
+        margin-top: 0;
+      }
+    }
+
+    &_prices {
+      padding-bottom: 8px;
+      border-bottom: 1px solid $colorElements;
+      margin-bottom: 16px;
+
+      &_new {
+        font-family: 'Mont-Bold';
+        font-weight: 800;
+        font-size: 22px;
+        color: #313237;
+        margin-right: 8px;
+      }
+
+      &_old {
+        font-family: 'Mont';
+        color: #89939a;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 28px;
+        text-decoration-line: line-through;
+      }
+    }
+
+    &_characteristics {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 16px;
+
+      &_text {
+        color: #89939a;
+      }
+
+      &_value {
+        color: #313237;
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      margin-bottom: 32px;
+
+      &_checkout {
+        background: #313237;
+        color: $colorWhite;
+        height: 40px;
+        width: 80%;
+        transition: box-shadow .3s;
+        border: none;
+        font-family: 'Mont';
+        font-weight: 700;
+        font-size: 14px;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+        }
+      }
+
+      &_wishlist {
+        height: 40px;
+        width: 40px;
+        border: 1px solid #b4bdc3;
+        background-color: $colorWhite;
+        background-image: url('../../icons/favourites.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 8px;
+        transition: border .3s;
+
+        &:hover {
+          border-color: #313237;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}
