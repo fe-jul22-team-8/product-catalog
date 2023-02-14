@@ -10,7 +10,9 @@ import { useState } from 'react';
 import { BurgerMenu } from './components/BurgerMenu';
 import { PhoneDataProvider } from './context/DataContext';
 import { CardProvider } from './context/CardContext';
-import { ProductDetalePage } from './pages/ProductDetalePage/ProductDetalePage';
+import { ProductDetailPage } from './pages/ProductDetailPage';
+import { FavouritesPage } from './pages/FavouritesPage';
+import { HomePage } from './pages/HomePage';
 
 function App() {
   const [burgerMenuSelected, setBurgerMenuSelected] = useState(false);
@@ -31,18 +33,19 @@ function App() {
               />
               <main className="section">
                 <Routes>
-                  <Route
-                    path={ROUTER.home}
-                    element={<Navigate to={`${ROUTER.phones}`} />}
-                  />
+                  <Route path={ROUTER.home} element={<HomePage />} />
                   <Route path={ROUTER.phones}>
                     <Route index element={<PhonesPage />} />
                     <Route
                       path={ROUTER.productDetalePage}
-                      element={<ProductDetalePage />}
+                      element={<ProductDetailPage />}
                     />
                   </Route>
                   <Route path={ROUTER.cart} element={<CartPages />} />
+                  <Route
+                    path={ROUTER.favourites}
+                    element={<FavouritesPage />}
+                  />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </main>

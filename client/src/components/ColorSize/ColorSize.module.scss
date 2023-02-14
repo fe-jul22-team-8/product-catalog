@@ -1,20 +1,5 @@
-@import '../../styles/reset';
-@import '../../styles/vars';
+@import '../../styles/main.scss';
 @import '../Card/Card.module.scss';
-
-@font-face {
-  font-family: 'Mont-Bold';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../../fonts/Mont-SemiBold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../fonts/Mont-Regular.otf') format('opentype');
-}
 
 .ActionBlock {
   display: flex;
@@ -150,7 +135,7 @@
 
   &_oldPrice {
     font-family: 'Mont';
-    color: $grey;
+    color: $colorSecondary;
     text-decoration-line: line-through;
   }
 
@@ -176,7 +161,7 @@
     margin-left: 8px;
     transition: border 0.3s;
     &:hover {
-      border-color: $black;
+      border-color: $colorPrimary;
       cursor: pointer;
     }
   }

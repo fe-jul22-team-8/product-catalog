@@ -1,27 +1,20 @@
-@import '../../styles/mixin';
-
-p {
-  margin: 0;
-}
+@import '../../styles/main.scss';
 
 .about {
-  @include onDesktop {
-    width: 560px;
-    padding-left: 33px;
-    padding-right: 64px;
-  }
+  padding-left: 17px;
+  padding-right: 17px;
+
   @include onTablet {
     padding-left: 25px;
     padding-right: 24px;
     width: 590px;
   }
-  padding-left: 17px;
-  padding-right: 17px;
 
   &__title {
     @include onDesktop {
       font-size: 22px;
     }
+   
     font-family: 'Mont';
     font-weight: 80;
     font-size: 20px;
@@ -29,6 +22,13 @@ p {
     border-bottom: 1px solid #e2e6e9;
     color: #313237;
     margin-bottom: 32px;
+
+  @include onDesktop {
+    width: 560px;
+    padding-left: 33px;
+    padding-right: 64px;
+  }
+
   }
 
   &__subtitle {

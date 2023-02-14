@@ -1,35 +1,7 @@
-@import '../../styles/vars';
-@import '../../styles/mixin';
-
-@font-face {
-  font-family: 'Mont-Bold';
-  font-style: bold;
-  font-weight: 900;
-  src: url('../../fonts/Mont-Bold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../fonts/Mont-Regular.otf') format('opentype');
-}
+@import '../../styles/main.scss';
 
 .title {
-  margin: 0 auto;
-  max-width: 1136px;
-
-  @media (min-width: 900px) and (max-width: 1199px) {
-    max-width: 845px;
-  }
-
-  @media (min-width: 640px) and (max-width: 900px) {
-    max-width: 560px;
-  }
-
-  @include onMobile {
-    max-width: 270px;
-  }
+  width: 100%;
 
   &_navigation {
     margin-top: 25px;
@@ -46,12 +18,13 @@
   }
 
   &_lable {
-    margin-top: 40px;
     font-family: 'Mont-Bold';
     font-weight: 800;
     font-size: 48px;
     line-height: 56px;
     color: $colorPrimary;
+
+    margin-top: 40px;
 
     @include onMobile {
       margin-top: 24px;
@@ -76,10 +49,14 @@
   }
 
   &_select_text {
-    margin-top: 40px;
+    margin-top: 32px;
     color: $colorSecondary;
     font-family: 'Mont';
     font-size: 14px;
     line-height: 21px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
   }
 }

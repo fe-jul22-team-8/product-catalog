@@ -1,0 +1,15 @@
+@import '../../styles/main.scss';
+
+.container {
+  max-width: 1136px;
+  padding: 0 16px 56px;
+
+  @include onTablet {
+    padding: 0 24px 64px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    margin: 0 auto 80px;
+  }
+}

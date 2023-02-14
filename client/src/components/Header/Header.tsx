@@ -1,9 +1,10 @@
 import { HeaderList } from './HeaderList';
 import { Link, NavLink } from 'react-router-dom';
-import styles from './header.module.scss';
+import styles from './Header.module.scss';
 import logo from '../../icons/logo.svg';
 import { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
+import { Counter } from '../Counter';
 
 interface Props {
   setBurgerMenuSelected: (value: boolean) => void;
@@ -15,7 +16,10 @@ export const Header: React.FC<Props> = ({
   burgerMenuSelected,
 }) => {
   const { cardData } = useContext(CardContext);
+  const { favouriteList } = useContext(CardContext);
+
   const handlerClick = (value: boolean) => setBurgerMenuSelected(!value);
+
   return (
     <div className={styles.header}>
       <div className={styles.header__nav}>
@@ -29,15 +33,20 @@ export const Header: React.FC<Props> = ({
       </div>
 
       <div className={styles.header__icons}>
+        {favouriteList.length > 0 && (
+          <div className={styles.header__heart}>
+            <Counter count={favouriteList.length} />
+          </div>
+        )}
+
         <NavLink
-          to="/favourite"
+          to="/favourites"
           className={[styles.header__item, styles.header__favourites].join(' ')}
         />
+
         {cardData.length > 0 && (
-          <div className={styles.header__counter}>
-            <span className={styles.header__counter_text}>
-              {cardData.length}
-            </span>
+          <div className={styles.header__bag}>
+            <Counter count={cardData.length} />
           </div>
         )}
 

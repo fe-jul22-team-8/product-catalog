@@ -2,6 +2,8 @@ import styles from './Title.module.scss';
 import house from '../../icons/house.svg';
 import arrow from '../../icons/arrowRight.svg';
 import { ItemSelect } from './ItemSelect/ItemSelect';
+import { NavLink } from 'react-router-dom';
+import { ROUTER } from '../Header/HeaderList';
 
 interface Props {
   count: number;
@@ -10,7 +12,9 @@ interface Props {
 export const Title: React.FC<Props> = ({ count }) => (
   <div className={styles.title}>
     <div className={styles.title_navigation}>
-      <img src={house} alt="home" className={styles.title_house} />
+      <NavLink to={ROUTER.home}>
+        <img src={house} alt="home" className={styles.title_house} />
+      </NavLink>
       <img src={arrow} alt="arrow" className={styles.title_arrow} />
       <p className={styles.title_arrowText}>Phones</p>
     </div>

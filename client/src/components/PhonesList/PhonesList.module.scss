@@ -1,18 +1,16 @@
+@import '../../styles/main.scss';
+
 .container {
-  $card-width: 272px;
-  $card-gap: 16px;
-  $each-media: 900px 1199px 3 2, 639px 900px 2 1, 0 639px 1 0;
+  display: flex;
+  flex-wrap: wrap;
 
-  display: grid;
-  margin: 0 auto;
-  gap: 16px;
   max-width: 1136px;
-  grid-template-columns: repeat(4, $card-width);
 
-  @each $min-width, $max-width, $columns, $gaps in $each-media {
-    @media (min-width: $min-width) and (max-width: $max-width) {
-      grid-template-columns: repeat($columns, $card-width);
-      max-width: $card-width * $columns + $card-gap * $gaps;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include onTablet {
+    gap: 16px;
   }
 }

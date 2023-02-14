@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://creepy-catacombs-90757.herokuapp.com';
+export const BASE_URL = 'https://product-catalog-s3ze.onrender.com';
 
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
