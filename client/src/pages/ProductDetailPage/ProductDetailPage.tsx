@@ -9,7 +9,7 @@ import { AboutSection } from '../../components/AboutSection';
 import { SpecsSection } from '../../components/SpecsSection';
 import { PhoneType } from '../../types/PhoneType';
 import { getOnePhone } from '../../api/item';
-import { RecommendedGoods } from '../../components/RecommendedGoods';
+import { RecommendedGoods } from '../../components/Recommended';
 
 export const ProductDetailPage = () => {
   const { phonesList } = useContext(PhonesDataContext);
