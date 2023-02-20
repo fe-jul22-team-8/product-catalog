@@ -9,7 +9,7 @@ export const NewModels = () => {
   const { phonesList } = useContext(PhonesDataContext);
 
   const newModels = useMemo(() => {
-    return phonesList.filter(phone => phone.year >= 2019);
+    return phonesList.filter((phone) => phone.year >= 2019);
   }, [phonesList]);
 
   return (

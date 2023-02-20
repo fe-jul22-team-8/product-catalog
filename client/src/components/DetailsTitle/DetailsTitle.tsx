@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './DetailsTitle.module.scss';
 
 interface Props {
@@ -14,22 +14,14 @@ export const DetailsTitle: React.FC<Props> = ({ name }) => {
         <div className={styles.nav__logo}>
           <Link to="/" className={styles.logo_home} />
           <Link to="/" className={styles.logo_vector} />
-          <Link
-            to="/Phones"
-            className={styles.logo_link}
-          >
+          <Link to="/Phones" className={styles.logo_link}>
             Phones
           </Link>
           <Link to="/" className={styles.logo_vector} />
-          <p className={styles.logo_text}>
-            {name}
-          </p>
+          <p className={styles.logo_text}>{name}</p>
         </div>
         <div className={styles.nav__btn}>
-          <Link
-            to="/Phones"
-            className={styles.btn_vector}
-          />
+          <Link to="/Phones" className={styles.btn_vector} />
           <button
             type="submit"
             className={styles.btn_link}
@@ -41,5 +33,5 @@ export const DetailsTitle: React.FC<Props> = ({ name }) => {
       </div>
       <h1 className={styles.title}>{name}</h1>
     </>
-  )
-}
+  );
+};

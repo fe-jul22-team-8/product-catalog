@@ -17,7 +17,7 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
   const currentColor = phone?.color;
   const currentCapacity = phone?.capacity;
 
-  const currentId = phone ? phone.id : '1'
+  const currentId = phone ? phone.id : '1';
 
   const isCardInArray = cardData.includes(currentId);
   const isFavouriteArray = favouriteList.includes(currentId);
@@ -25,7 +25,6 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
   const handleSetCardInData = () => {
     if (!isCardInArray) {
       setCardData([...cardData, currentId]);
-      console.log(currentId)
     } else {
       setCardData((current) => current.filter((id) => id !== currentId));
     }
@@ -51,9 +50,7 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
   return (
     <div className={styles.ActionBlock}>
       <div className={styles.ColorBlock}>
-        <p className={styles.ActionBlock__option_text}>
-          Available Colors
-        </p>
+        <p className={styles.ActionBlock__option_text}>Available Colors</p>
 
         <ul className={styles.ColorBlock__list}>
           {colorsAvailable?.map((color) => (
@@ -80,9 +77,7 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
       <div className={styles.ActionBlock__underline}></div>
 
       <div className={styles.CapacityBlock}>
-        <span className={styles.ActionBlock__option_text}>
-          Select capacity
-        </span>
+        <span className={styles.ActionBlock__option_text}>Select capacity</span>
 
         <ul className={styles.CapacityBlock__list}>
           {capacityAvailable?.map((capacity) => (
@@ -139,8 +134,7 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
               [styles.characteristic__wishlist_heart]: isFavouriteArray,
             })}
             onClick={handleSetItemInFavourite}
-          >
-          </button>
+          ></button>
         </div>
 
         <div className={styles.characteristic__description}>
@@ -150,12 +144,16 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
 
         <div className={styles.characteristic__description}>
           <span className={styles.characteristic__text}>Resolution</span>
-          <span className={styles.characteristic__value}>{phone?.resolution}</span>
+          <span className={styles.characteristic__value}>
+            {phone?.resolution}
+          </span>
         </div>
 
         <div className={styles.characteristic__description}>
           <span className={styles.characteristic__text}>Processor</span>
-          <span className={styles.characteristic__value}>{phone?.processor}</span>
+          <span className={styles.characteristic__value}>
+            {phone?.processor}
+          </span>
         </div>
 
         <div className={styles.characteristic__description}>

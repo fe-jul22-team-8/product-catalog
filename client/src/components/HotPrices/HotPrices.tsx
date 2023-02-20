@@ -9,7 +9,7 @@ export const HotPrices = () => {
   const { phonesList } = useContext(PhonesDataContext);
 
   const hotList = useMemo(() => {
-    return phonesList.filter(phone => phone.price <= 1300);
+    return phonesList.filter((phone) => phone.price <= 1300);
   }, [phonesList]);
 
   return (

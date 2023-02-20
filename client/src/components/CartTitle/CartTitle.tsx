@@ -12,6 +12,6 @@ export const CartTitle = () => {
         <p className={styles.title__arrowText}>Back</p>
       </div>
       <h1 className={styles.title__headline}>Cart</h1>
-    </div >
+    </div>
   );
 };

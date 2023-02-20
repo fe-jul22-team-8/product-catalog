@@ -22,7 +22,7 @@ export interface PhoneType {
       title: string;
       text: [string];
     },
-  ],
+  ];
   screen: string;
   resolution: string;
   processor: string;

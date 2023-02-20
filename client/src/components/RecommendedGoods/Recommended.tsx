@@ -39,7 +39,7 @@ export const RecommendedGoods = () => {
             slidesPerGroup: 2,
           },
           1200: {
-            slidesPerView: 4
+            slidesPerView: 4,
           },
         }}
       >
