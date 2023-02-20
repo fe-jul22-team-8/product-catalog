@@ -1,80 +1,82 @@
 @import '../../styles/main.scss';
 
-.PhotosBlock {
-  @include onDesktop {
-    flex-direction: row;
-  }
-  @media (min-width: 640px) and (max-width: 1440px) {
-    align-items: flex-start;
-    flex-direction: row;
-  }
+.photoBlock {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
 
-  width: 100%;
+  margin-bottom: 40px;
 
-  &__sidePanel {
-    @include onDesktop {
-      flex-direction: column;
-      padding-right: 28px;
-    }
+  @include onTablet {
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: flex-start;
 
-    @media (min-width: 640px) and (max-width: 1440px) {
-      flex-direction: column;
-      padding-right: 23px;
-    }
-
-    display: inline-flex;
-
-    &_photo {
-      @include onDesktop {
-        width: 80px;
-        height: 80px;
-        margin-right: 0;
-        margin-bottom: 17px;
-      }
-
-      @media (min-width: 640px) and (max-width: 1440px) {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 8px;
-      }
-
-      width: 50px;
-      height: 50px;
-      margin-right: 8px;
-      border: 1px solid #c4c4c4;
-      cursor: pointer;
-      transition: 0.4s;
-
-      &:hover {
-        @include onDesktop {
-          border: 2px solid #000;
-        }
-
-        border: 1px solid #000;
-        transition: 0.4s;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+    margin-bottom: 0;
   }
 
-  &__mainPhoto {
+  &__img {
+    width: 274px;
+    height: 274px;
+
+    object-fit: contain;
+    margin-bottom: 23px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
     @include onDesktop {
       width: 442px;
       height: 442px;
     }
-    width: 274px;
-    height: 274px;
+  }
 
-    margin-bottom: 23px;
+  &__sidePanel {
+    display: flex;
+    gap: 8px;
+    max-width: 288px;
 
-    &_photo {
-      height: 442px;
+    @include onTablet {
+      flex-direction: column;
+      padding-right: 23px;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      gap: 16px;
+      padding-right: 16px;
+    }
+
+    &_item {
+      width: 51px;
+      height: 50px;
+      object-fit: contain;
+
+      padding: 5px;
+
+      border: 1px solid #c4c4c4;
+      cursor: pointer;
+      transition: 0.4s;
+
+      @include onTablet {
+        width: 35px;
+        height: 35px;
+
+        padding: 3px;
+      }
+
+      @include onDesktop {
+        width: 80px;
+        height: 80px;
+
+        padding: 7px;
+      }
+
+      &:hover {
+        border: 1px solid $colorPrimary;
+        transition: 0.4s;
+      }
     }
   }
 }

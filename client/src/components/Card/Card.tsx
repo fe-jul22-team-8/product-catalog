@@ -3,7 +3,7 @@ import { BASE_URL } from '../../utils/fetchProducts';
 import { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
 import { Phone } from '../../types/Phone';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 interface Props {
@@ -37,13 +37,13 @@ export const Card: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className={styles.card}>
-      <Link to={phone.phoneId}>
+      <NavLink to={`/phones/${phone.phoneId}`}>
         <img
           src={`${BASE_URL}/${image}`}
           alt="card-logo"
           className={styles.card_logo}
         />
-      </Link>
+      </NavLink>
 
       <span className={styles.card_title}>{name}</span>
       <div className={styles.card_price}>

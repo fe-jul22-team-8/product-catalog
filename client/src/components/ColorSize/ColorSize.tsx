@@ -1,144 +1,166 @@
 import styles from './ColorSize.module.scss';
 import { useState } from 'react';
-import { PhonesDataContext } from '../../context/DataContext';
 import { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { CardContext } from '../../context/CardContext';
+import classNames from 'classnames';
+import { Phone } from '../../types/Phone';
 
-// export const existedColors = [
-//   { id: '1', title: 'black', value: '#000' },
-//   { id: '2', title: 'rosegold', value: '#E0BFB8' },
-//   { id: '3', title: 'gold', value: '#FFD700' },
-//   { id: '4', title: 'silver', value: '#C0C0C0' },
-//   { id: '5', title: 'spacegray', value: '#383637' },
-//   { id: '6', title: 'green', value: '#008000' },
-//   { id: '7', title: 'yellow', value: '#FFFF00' },
-//   { id: '8', title: 'white', value: '#FFF' },
-//   { id: '9', title: 'purple', value: '#800080' },
-//   { id: '10', title: 'red', value: '#FF0000' },
-//   { id: '11', title: 'midnight', value: '#3D473F' },
-//   { id: '12', title: 'coral', value: '#FF7F50' },
-// ];
+interface Props {
+  phone: Phone | undefined;
+}
 
-export const ColorSize: React.FC = () => {
-  const { phoneId } = useParams();
-  const { phonesList } = useContext(PhonesDataContext);
-  const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
-  const currentColor = currentPhone?.color;
-  const currentCapacity = currentPhone?.capacity;
+export const ColorSize: React.FC<Props> = ({ phone }) => {
+  const { setCardData, cardData, setFavouriteList, favouriteList } =
+    useContext(CardContext);
+
+  const currentColor = phone?.color;
+  const currentCapacity = phone?.capacity;
+
+  const currentId = phone ? phone.id : '1';
+
+  const isCardInArray = cardData.includes(currentId);
+  const isFavouriteArray = favouriteList.includes(currentId);
+
+  const handleSetCardInData = () => {
+    if (!isCardInArray) {
+      setCardData([...cardData, currentId]);
+    } else {
+      setCardData((current) => current.filter((id) => id !== currentId));
+    }
+  };
+
+  const handleSetItemInFavourite = () => {
+    if (!isFavouriteArray) {
+      setFavouriteList((oldState) => [...oldState, currentId]);
+    } else {
+      setFavouriteList((current) => current.filter((id) => id !== currentId));
+    }
+  };
+
   const [isActiveColor = currentColor, setIsActiveColor] =
     useState(currentColor);
+
   const [isActiveCapacity = currentCapacity, setIsActiveCapacity] =
     useState(currentCapacity);
 
-  const colorsAvailable = currentPhone?.colorsAvailable;
-  const capacityAvailable = currentPhone?.capacityAvailable;
+  const colorsAvailable = phone?.colorsAvailable;
+  const capacityAvailable = phone?.capacityAvailable;
 
   return (
-    <>
-      <div className={styles.ActionBlock}>
-        <div className={styles.ColorBlock}>
-          <span className={styles.ActionBlock__option_text}>
-            Available Colors
-          </span>
+    <div className={styles.ActionBlock}>
+      <div className={styles.ColorBlock}>
+        <p className={styles.ActionBlock__option_text}>Available Colors</p>
 
-          <ul className={styles.ColorBlock__list}>
-            {colorsAvailable?.map((color) => (
-              <li
-                key={color}
-                onClick={() => setIsActiveColor(color)}
-                className={
-                  isActiveColor === color
-                    ? styles.ColorBlock__list__item_active
-                    : styles.ColorBlock__list__item
-                }
-              >
-                <Link
-                  to={`../${
-                    currentPhone?.namespaceId
+        <ul className={styles.ColorBlock__list}>
+          {colorsAvailable?.map((color) => (
+            <li
+              key={color}
+              onClick={() => setIsActiveColor(color)}
+              className={
+                isActiveColor === color
+                  ? styles.ColorBlock__list__item_active
+                  : styles.ColorBlock__list__item
+              }
+            >
+              <Link
+                to={`../${phone?.namespaceId
                   }-${isActiveCapacity?.toLowerCase()}-${color}`}
-                  className={styles.ColorBlock__list__item__link}
-                  style={{ backgroundColor: color }}
-                ></Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                className={styles.ColorBlock__list__item__link}
+                style={{ backgroundColor: color }}
+              ></Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div className={styles.ActionBlock__underline}></div>
+      <div className={styles.ActionBlock__underline}></div>
 
-        <div className={styles.CapacityBlock}>
-          <span className={styles.ActionBlock__option_text}>
-            Select capacity
-          </span>
+      <div className={styles.CapacityBlock}>
+        <span className={styles.ActionBlock__option_text}>Select capacity</span>
 
-          <ul className={styles.CapacityBlock__list}>
-            {capacityAvailable?.map((capacity) => (
-              <li
-                key={capacity}
-                onClick={() => setIsActiveCapacity(capacity)}
+        <ul className={styles.CapacityBlock__list}>
+          {capacityAvailable?.map((capacity) => (
+            <li
+              key={capacity}
+              onClick={() => setIsActiveCapacity(capacity)}
+              className={
+                isActiveCapacity === capacity
+                  ? styles.CapacityBlock__list__item_active
+                  : styles.CapacityBlock__list__item
+              }
+            >
+              <Link
+                to={`../${phone?.namespaceId
+                  }-${capacity.toLowerCase()}-${isActiveColor}`}
                 className={
                   isActiveCapacity === capacity
-                    ? styles.CapacityBlock__list__item_active
-                    : styles.CapacityBlock__list__item
+                    ? styles.CapacityBlock__list__item__link_active
+                    : styles.CapacityBlock__list__item__link
                 }
               >
-                <Link
-                  to={`../${
-                    currentPhone?.namespaceId
-                  }-${capacity.toLowerCase()}-${isActiveColor}`}
-                  className={
-                    isActiveCapacity === capacity
-                      ? styles.CapacityBlock__list__item__link_active
-                      : styles.CapacityBlock__list__item__link
-                  }
-                >
-                  {capacity}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                {capacity}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-          <div className={styles.action_block__underline}></div>
-        </div>
-
-        <div className={styles.ActionBlock__underline}></div>
+        <div className={styles.action_block__underline}></div>
       </div>
 
-      <div className={styles.card}>
-        <div className={styles.card_price}>
+      <div className={styles.ActionBlock__underline}></div>
+
+      <div className={styles.characteristic}>
+        <div className={styles.characteristic__price}>
           <span
-            className={styles.card_newPrice}
-          >{`$${currentPhone?.price}`}</span>
+            className={styles.characteristic__newPrice}
+          >{`$${phone?.price}`}</span>
           <span
-            className={styles.card_oldPrice}
-          >{`$${currentPhone?.fullPrice}`}</span>
+            className={styles.characteristic__oldPrice}
+          >{`$${phone?.fullPrice}`}</span>
         </div>
 
-        <div className={styles.card_buttons}>
-          <button className={styles.card_checkout}>Add to card</button>
-          <button className={styles.card_wishlist}></button>
+        <div className={styles.characteristic__buttons}>
+          <button
+            className={classNames(styles.characteristic__checkout, {
+              [styles.characteristic__uncheckout]: isCardInArray,
+            })}
+            onClick={handleSetCardInData}
+          >
+            {isCardInArray ? 'Added' : 'Add to cart'}
+          </button>
+          <button
+            className={classNames(styles.characteristic__wishlist, {
+              [styles.characteristic__wishlist_heart]: isFavouriteArray,
+            })}
+            onClick={handleSetItemInFavourite}
+          ></button>
         </div>
 
-        <div className={styles.card_description}>
-          <span className={styles.card_text}>Screen</span>
-          <span className={styles.card_value}>{currentPhone?.screen}</span>
+        <div className={styles.characteristic__description}>
+          <span className={styles.characteristic__text}>Screen</span>
+          <span className={styles.characteristic__value}>{phone?.screen}</span>
         </div>
 
-        <div className={styles.card_description}>
-          <span className={styles.card_text}>Resolution</span>
-          <span className={styles.card_value}>{currentPhone?.resolution}</span>
+        <div className={styles.characteristic__description}>
+          <span className={styles.characteristic__text}>Resolution</span>
+          <span className={styles.characteristic__value}>
+            {phone?.resolution}
+          </span>
         </div>
 
-        <div className={styles.card_description}>
-          <span className={styles.card_text}>Processor</span>
-          <span className={styles.card_value}>{currentPhone?.processor}</span>
+        <div className={styles.characteristic__description}>
+          <span className={styles.characteristic__text}>Processor</span>
+          <span className={styles.characteristic__value}>
+            {phone?.processor}
+          </span>
         </div>
 
-        <div className={styles.card_description}>
-          <span className={styles.card_text}>RAM</span>
-          <span className={styles.card_value}>{currentPhone?.ram}</span>
+        <div className={styles.characteristic__description}>
+          <span className={styles.characteristic__text}>RAM</span>
+          <span className={styles.characteristic__value}>{phone?.ram}</span>
         </div>
       </div>
-    </>
+    </div>
   );
 };

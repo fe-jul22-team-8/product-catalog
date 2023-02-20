@@ -1,27 +1,23 @@
-import { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
-import './HotPrices.scss';
+import './Recommended.scss';
 import { Navigation } from 'swiper';
 import { PhonesDataContext } from '../../context/DataContext';
 
-export const HotPrices = () => {
+export const RecommendedGoods = () => {
   const { phonesList } = useContext(PhonesDataContext);
 
-  const hotList = useMemo(() => {
-    return phonesList.filter((phone) => phone.price <= 1300);
-  }, [phonesList]);
-
   return (
-    <div className="hot">
-      <div className="hot__nav">
+    <div className="recommended">
+      <div className="recommended__nav">
         <div>
-          <h1 className="hot__subtitle">Hot prices</h1>
+          <h1 className="recommended__subtitle">You may also like</h1>
         </div>
 
-        <div className="hot__buttons">
-          <div className="hot__prev"></div>
-          <div className="hot__next"></div>
+        <div className="recommended__buttons">
+          <div className="recommended__prev"></div>
+          <div className="recommended__next"></div>
         </div>
       </div>
 
@@ -29,29 +25,25 @@ export const HotPrices = () => {
         spaceBetween={16}
         modules={[Navigation]}
         navigation={{
-          prevEl: '.hot__prev',
-          nextEl: '.hot__next',
+          prevEl: '.recommended__prev',
+          nextEl: '.recommended__next',
         }}
+        loop={true}
         breakpoints={{
           320: {
             slidesPerView: 1,
             slidesPerGroup: 1,
           },
-          490: {
+          640: {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
-          768: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-          },
-          1024: {
+          1200: {
             slidesPerView: 4,
-            slidesPerGroup: 4,
           },
         }}
       >
-        {hotList.map((phone) => (
+        {phonesList.map((phone) => (
           <SwiperSlide>
             <Card phone={phone} key={phone.id} />
           </SwiperSlide>

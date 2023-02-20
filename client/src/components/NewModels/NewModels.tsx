@@ -1,17 +1,16 @@
-import { Phone } from '../../types/Phone';
-import { useEffect, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
 import './NewModels.scss';
-import { getNew } from '../../api/phones';
 import { Navigation } from 'swiper';
+import { PhonesDataContext } from '../../context/DataContext';
 
 export const NewModels = () => {
-  const [newPhones, setNewPhones] = useState<Phone[]>([]);
+  const { phonesList } = useContext(PhonesDataContext);
 
-  useEffect(() => {
-    getNew().then(setNewPhones).catch();
-  }, []);
+  const newModels = useMemo(() => {
+    return phonesList.filter((phone) => phone.year >= 2019);
+  }, [phonesList]);
 
   return (
     <div className="new">
@@ -48,7 +47,7 @@ export const NewModels = () => {
           },
         }}
       >
-        {newPhones.map((phone) => (
+        {newModels.map((phone) => (
           <SwiperSlide>
             <Card phone={phone} key={phone.id} />
           </SwiperSlide>

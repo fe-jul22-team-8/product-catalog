@@ -57,7 +57,7 @@ export const BurgerMenu: React.FC<Props> = ({
           </li>
           <li className={styles.burger__item}>
             <NavLink
-              to="/"
+              to="/phones"
               className={styles.burger__link}
               onClick={() => handlerClick(burgerMenuSelected)}
             >

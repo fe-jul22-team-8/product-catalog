@@ -1,4 +1,4 @@
-import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { PhonesPage } from './pages/PhonesPage';
 import { Header } from './components/Header';
