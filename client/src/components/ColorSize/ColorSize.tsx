@@ -64,8 +64,9 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
               }
             >
               <Link
-                to={`../${phone?.namespaceId
-                  }-${isActiveCapacity?.toLowerCase()}-${color}`}
+                to={`../${
+                  phone?.namespaceId
+                }-${isActiveCapacity?.toLowerCase()}-${color}`}
                 className={styles.ColorBlock__list__item__link}
                 style={{ backgroundColor: color }}
               ></Link>
@@ -91,8 +92,9 @@ export const ColorSize: React.FC<Props> = ({ phone }) => {
               }
             >
               <Link
-                to={`../${phone?.namespaceId
-                  }-${capacity.toLowerCase()}-${isActiveColor}`}
+                to={`../${
+                  phone?.namespaceId
+                }-${capacity.toLowerCase()}-${isActiveColor}`}
                 className={
                   isActiveCapacity === capacity
                     ? styles.CapacityBlock__list__item__link_active

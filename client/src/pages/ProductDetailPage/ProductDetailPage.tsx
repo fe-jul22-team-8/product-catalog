@@ -25,7 +25,7 @@ export const ProductDetailPage = () => {
       })
       .catch(() => {
         return console.log('Error');
-      })
+      });
   }, [phoneId]);
 
   const currentPhone = phonesList.find((phone) => phone.phoneId === phoneId);
