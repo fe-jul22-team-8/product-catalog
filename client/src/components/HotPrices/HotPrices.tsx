@@ -1,17 +1,16 @@
-import { getDiscound } from '../../api/phones';
-import { useEffect, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
 import './HotPrices.scss';
-import { Phone } from '../../types/Phone';
 import { Navigation } from 'swiper';
+import { PhonesDataContext } from '../../context/DataContext';
 
 export const HotPrices = () => {
-  const [hotPhones, setHotPhones] = useState<Phone[]>([]);
+  const { phonesList } = useContext(PhonesDataContext);
 
-  useEffect(() => {
-    getDiscound().then(setHotPhones).catch();
-  }, []);
+  const hotList = useMemo(() => {
+    return phonesList.filter(phone => phone.price <= 1300);
+  }, [phonesList]);
 
   return (
     <div className="hot">
@@ -52,7 +51,7 @@ export const HotPrices = () => {
           },
         }}
       >
-        {hotPhones.map((phone) => (
+        {hotList.map((phone) => (
           <SwiperSlide>
             <Card phone={phone} key={phone.id} />
           </SwiperSlide>

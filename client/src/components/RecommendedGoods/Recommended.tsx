@@ -1,27 +1,23 @@
-import { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card } from '../Card';
-import './NewModels.scss';
+import './Recommended.scss';
 import { Navigation } from 'swiper';
 import { PhonesDataContext } from '../../context/DataContext';
 
-export const NewModels = () => {
+export const RecommendedGoods = () => {
   const { phonesList } = useContext(PhonesDataContext);
 
-  const newModels = useMemo(() => {
-    return phonesList.filter(phone => phone.year >= 2019);
-  }, [phonesList]);
-
   return (
-    <div className="new">
-      <div className="new__nav">
+    <div className="recommended">
+      <div className="recommended__nav">
         <div>
-          <h1 className="new__subtitle">Brands new models</h1>
+          <h1 className="recommended__subtitle">You may also like</h1>
         </div>
 
-        <div className="new__buttons">
-          <div className="new__prev"></div>
-          <div className="new__next"></div>
+        <div className="recommended__buttons">
+          <div className="recommended__prev"></div>
+          <div className="recommended__next"></div>
         </div>
       </div>
 
@@ -29,9 +25,10 @@ export const NewModels = () => {
         spaceBetween={16}
         modules={[Navigation]}
         navigation={{
-          prevEl: '.new__prev',
-          nextEl: '.new__next',
+          prevEl: '.recommended__prev',
+          nextEl: '.recommended__next',
         }}
+        loop={true}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -42,12 +39,11 @@ export const NewModels = () => {
             slidesPerGroup: 2,
           },
           1200: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
+            slidesPerView: 4
           },
         }}
       >
-        {newModels.map((phone) => (
+        {phonesList.map((phone) => (
           <SwiperSlide>
             <Card phone={phone} key={phone.id} />
           </SwiperSlide>

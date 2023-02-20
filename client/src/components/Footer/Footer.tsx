@@ -8,6 +8,7 @@ export const Footer = () => {
   const handleToTheTop = () => {
     scroll.scrollToTop();
   };
+
   return (
     <div className={styles.footer}>
       <div className={styles.footer__content}>

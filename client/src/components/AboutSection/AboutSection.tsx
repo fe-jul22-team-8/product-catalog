@@ -1,6 +1,6 @@
 import styles from './AboutSection.module.scss';
 
-export function AboutSection() {
+export const AboutSection = () => {
   return (
     <div className={styles.about}>
       <div className={styles.about__title}>
